@@ -1,11 +1,10 @@
-package com.roc.study;
+package com.roc.SuperMaster;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SuperMasterApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(SuperMasterApplication.class, args);
     }
