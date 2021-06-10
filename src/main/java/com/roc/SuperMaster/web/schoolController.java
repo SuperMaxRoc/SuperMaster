@@ -5,6 +5,7 @@ import com.roc.SuperMaster.mapper.StudentsMapper;
 import com.roc.SuperMaster.service.StudentsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import java.util.List;
 
 @Api(tags = "第一个测试接口")
 @RestController
+@Slf4j
 @RequestMapping("/test")
 public class schoolController {
 
@@ -35,11 +37,13 @@ public class schoolController {
         }
     }
 
+
     @ApiOperation(value = "查询全部的学生")
     @PostMapping("/getStudents")
     private void getStudents(){
         List<Students> studentsList = studentsMapper.selectStudentList();
         for (Students students : studentsList) {
+//            log.info("每一位学生的ID"+students.getId());
             System.out.println(students);
         }
     }
