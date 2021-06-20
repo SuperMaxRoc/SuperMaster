@@ -1,5 +1,6 @@
 package com.roc.SuperMaster.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.roc.SuperMaster.domain.Students;
 
 import java.util.List;
@@ -9,8 +10,7 @@ import java.util.List;
  * @date  2021/6/9 17:31
  * @version 1.0
  */
-
-public interface StudentsMapper {
+public interface StudentsMapper extends BaseMapper<Students> {
     int deleteByPrimaryKey(Integer id);
 
     int insert(Students record);

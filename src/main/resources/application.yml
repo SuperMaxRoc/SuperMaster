@@ -14,7 +14,8 @@ mybatis-plus:
   typeAliasesPackage: com.roc.SuperMaster.domain
   check-config-location: true
   configuration:
-    map-underscore-to-camel-case: true
+#   关闭严格的大小写映射
+    map-underscore-to-camel-case: false
     cache-enabled: false
     call-setters-on-nulls: true
     jdbc-type-for-null: 'null'
@@ -30,8 +31,6 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
 
-
-
-#logging:
-#  level:   ##打印sql
-#    com.roc.SuperMaster.mapper: debug   # mapper/dao层的路径
+logging:
+  level:   ##打印sql
+    com.roc.SuperMaster.mapper: debug   # mapper/dao层的路径

@@ -1,6 +1,8 @@
 package com.roc.SuperMaster.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.roc.SuperMaster.domain.Students;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -10,7 +12,8 @@ import java.util.List;
  * @version 1.0
  */
 
-public interface StudentsService{
+@Service
+public interface StudentsService extends IService<Students> {
 
 
     int deleteByPrimaryKey(Integer id);

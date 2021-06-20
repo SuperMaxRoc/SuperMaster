@@ -1,8 +1,10 @@
 package com.roc.SuperMaster.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.roc.SuperMaster.domain.Students;
 import com.roc.SuperMaster.mapper.StudentsMapper;
 import com.roc.SuperMaster.service.StudentsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -13,11 +15,10 @@ import java.util.List;
  * @date  2021/6/9 17:31
  * @version 1.0
  */
-
 @Service
-public class StudentsServiceImpl implements StudentsService {
+public class StudentsServiceImpl extends ServiceImpl<StudentsMapper, Students> implements StudentsService{
 
-    @Resource
+    @Autowired
     private StudentsMapper studentsMapper;
 
     @Override

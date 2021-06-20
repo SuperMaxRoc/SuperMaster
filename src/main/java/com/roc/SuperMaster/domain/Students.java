@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
 
+import javax.persistence.Column;
+
 /**
  * @author  Roc
  * @date  2021/6/9 17:31
@@ -18,8 +20,10 @@ public class Students implements Serializable {
 
     private Integer age;
 
+    @Column(name = "createTime")
     private Date createTime;
 
+    @Column(name = "updateTime")
     private Date updateTime;
 
     private Integer status;
