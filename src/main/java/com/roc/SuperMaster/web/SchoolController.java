@@ -10,14 +10,19 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.transform.Result;
 import java.util.List;
 
-@Api(tags = "第一个测试接口")
+/**
+ * @author Roc
+ * @version 1.0
+ * @date 2021年7月13日
+ */
+
+@Api(tags = "学生测试接口")
 @RestController
 @Slf4j
 @RequestMapping("/test")
-public class schoolController {
+public class SchoolController {
 
     @Autowired
     public StudentsService studentsService;
@@ -26,19 +31,23 @@ public class schoolController {
     public StudentsMapper studentsMapper;
 
     @ApiOperation(value = "根据输入的内容，做出响应")
-    @PostMapping("/hello")
-    private String hello(@RequestParam(name = "输入的内容" , required = true) String name){
+    @GetMapping("/hello")
+    private String hello(
+            @RequestParam(name = "name", required = false) String name
+    ) {
         String str = "wang";
-        if(name.equals(str)){
+        if (name.equals(str)) {
+            System.out.println(name);
             return "hello world and SpringBoot";
-        }else{
+        } else {
+            System.out.println(name);
             return "you lost";
         }
     }
 
     @ApiOperation(value = "查询全部的学生")
     @PostMapping("/getStudents")
-    private void getStudents(){
+    private void getStudents() {
         List<Students> studentsList = studentsMapper.selectStudentList();
         for (Students students : studentsList) {
 //            log.info("每一位学生的ID"+students.getId());
@@ -48,7 +57,7 @@ public class schoolController {
 
     @ApiOperation(value = "查询全部的学生json")
     @GetMapping("/getStudentsJson")
-    public List<Students> getStudentsJson(){
+    public List<Students> getStudentsJson() {
         List<Students> studentsList = studentsMapper.selectStudentList();
         for (Students students : studentsList) {
 //            log.info("每一位学生的ID"+students.getId());
@@ -59,7 +68,7 @@ public class schoolController {
 
     @ApiOperation(value = "按照年龄排序学生")
     @PostMapping("/getStudentsListByAge")
-    public List<Students> getStudentsListByAge(){
+    public List<Students> getStudentsListByAge() {
 
         QueryWrapper<Students> queryWrapper = new QueryWrapper<>();
         queryWrapper.orderByDesc("age");
@@ -70,6 +79,7 @@ public class schoolController {
         }
         return studentsList;
     }
+
 
 }
 

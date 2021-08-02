@@ -11,12 +11,12 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @author  Roc
- * @date  2021/6/9 17:31
+ * @author Roc
  * @version 1.0
+ * @date 2021/6/9 17:31
  */
 @Service
-public class StudentsServiceImpl extends ServiceImpl<StudentsMapper, Students> implements StudentsService{
+public class StudentsServiceImpl extends ServiceImpl<StudentsMapper, Students> implements StudentsService {
 
     @Autowired
     private StudentsMapper studentsMapper;
@@ -52,7 +52,7 @@ public class StudentsServiceImpl extends ServiceImpl<StudentsMapper, Students> i
     }
 
     @Override
-    public List<Students> selectStudentsList(){
+    public List<Students> selectStudentsList() {
         return studentsMapper.selectStudentList();
     }
 

@@ -10,5 +10,4 @@ public class SuperMasterApplication {
     public static void main(String[] args) {
         SpringApplication.run(SuperMasterApplication.class, args);
     }
-
 }

@@ -18,13 +18,14 @@ import springfox.documentation.spring.web.plugins.Docket;
 @Api(tags = "swagger3的配置类")
 public class swaggerConfig3 {
     @Bean
-    public Docket getDocket(){
+    public Docket getDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(swaggerDemoApiInfo())
                 .select()
                 .build();
     }
-    private ApiInfo swaggerDemoApiInfo(){
+
+    private ApiInfo swaggerDemoApiInfo() {
         return new ApiInfoBuilder()
                 //添加联系人的联系方式
                 .contact(new Contact("西米豆豆", "公司主页", "PM的email"))

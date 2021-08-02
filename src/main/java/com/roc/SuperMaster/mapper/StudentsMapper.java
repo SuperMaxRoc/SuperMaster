@@ -6,11 +6,12 @@ import com.roc.SuperMaster.domain.Students;
 import java.util.List;
 
 /**
- * @author  Roc
- * @date  2021/6/9 17:31
+ * @author Roc
  * @version 1.0
+ * @date 2021/6/9 17:31
  */
 public interface StudentsMapper extends BaseMapper<Students> {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(Students record);

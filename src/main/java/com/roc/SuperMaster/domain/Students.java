@@ -1,17 +1,18 @@
 package com.roc.SuperMaster.domain;
 
-import java.io.Serializable;
-import java.util.Date;
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
 import javax.persistence.Column;
+import java.io.Serializable;
+import java.util.Date;
 
 /**
- * @author  Roc
- * @date  2021/6/9 17:31
+ * @author Roc
  * @version 1.0
+ * @date 2021/6/9 17:31
  */
-
+@ApiModel(value = "学生实体类")
 @Data
 public class Students implements Serializable {
     private Integer id;
