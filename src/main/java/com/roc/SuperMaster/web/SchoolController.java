@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -50,7 +51,6 @@ public class SchoolController {
     private void getStudents() {
         List<Students> studentsList = studentsMapper.selectStudentList();
         for (Students students : studentsList) {
-//            log.info("每一位学生的ID"+students.getId());
             System.out.println(students);
         }
     }
@@ -60,7 +60,6 @@ public class SchoolController {
     public List<Students> getStudentsJson() {
         List<Students> studentsList = studentsMapper.selectStudentList();
         for (Students students : studentsList) {
-//            log.info("每一位学生的ID"+students.getId());
             System.out.println(students);
         }
         return studentsList;
@@ -78,6 +77,27 @@ public class SchoolController {
             System.out.println(students);
         }
         return studentsList;
+    }
+
+    @ApiOperation(value = "添加一个新学生")
+    @PostMapping("/insertStudent")
+    public void insertStudent(
+            @RequestBody Students students
+    ){
+        log.info("开始添加一个新的学生");
+        try {
+            students.setId(students.getId());
+            students.setName("test");
+            students.setAge(students.getAge());
+            students.setCreateTime(new Date());
+            students.setUpdateTime(new Date());
+            students.setStatus(1);
+            studentsMapper.insert(students);
+        }catch (Exception e){
+            e.printStackTrace();
+            log.error("异常信息：{}",e.getMessage());
+        }
+        log.info("添加学生-结束");
     }
 
 

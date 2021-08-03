@@ -84,12 +84,16 @@ public class TestController {
     //强制停止报错
     @Test
     public void testErrorMassage() {
-        int a = 0;
-        int b = 0;
-        String errorMassage = String.valueOf(a / b);
-        System.out.println("errorMassage:" + "");
+        log.info("开始测试");
+        try {
+            int i = 1;
+            int b = 0;
+            System.out.println(i / b);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("异常信息：{}", e.getMessage());
+        }
     }
-
 
     @Test
     public void testMap() {
