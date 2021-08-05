@@ -68,6 +68,7 @@
             <version>3.0.0</version>
         </dependency>
 
+        <!--fastJson-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
@@ -102,7 +103,6 @@
         </dependency>
 
         <!--Mybatis-->
-
         <!--Mybatis-plus-->
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -175,12 +175,19 @@
             <version>4.12</version>
         </dependency>
 
+        <!--huTool工具类-->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
             <version>5.3.8</version>
         </dependency>
 
+        <!--quartz定时器-->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.3.2</version>
+        </dependency>
     </dependencies>
 
     <!--构架项目的设置-->
