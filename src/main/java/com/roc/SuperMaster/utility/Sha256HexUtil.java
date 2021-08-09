@@ -1,6 +1,6 @@
 package com.roc.SuperMaster.utility;
 
-import com.sun.istack.internal.NotNull;
+import com.sun.istack.NotNull;
 import io.swagger.annotations.ApiModel;
 
 import java.io.UnsupportedEncodingException;
