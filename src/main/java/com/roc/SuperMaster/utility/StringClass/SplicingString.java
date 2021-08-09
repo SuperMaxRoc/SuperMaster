@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility;
+package com.roc.SuperMaster.utility.StringClass;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.buf.StringUtils;
@@ -31,15 +31,16 @@ public class SplicingString {
     /**
      * 拼接字符串的方法效率排行
      * 采用方法：方法执行前和执行后的时间相减，ns为单位
+     * 排序仅拼接两个字符串，实验结果同样受计算机的执行速度等因素，且暂不考虑。
      *
      * +:                   39,166.66ns
      * String.Concat:       48,333.33ns
      * String.Join:         218,533.33ns
      * StringUtils.join：   42,675,266.66ns
-     * StringBuilder:       38200ns
+     * StringBuilder:       38,200ns
      * StringBuffer:        51,933.33ns
      * 排序：StringBuilder>+>String.Concat>StringBuffer>String.Join>StringUtils.Join
-     * 推荐使用StringBuilder及 + 拼接字符串，其中 + 的底层仍是StringBuilder
+     * 推荐使用StringBuilder或者StringBuffer拼接字符串，其中 + 的底层仍是StringBuilder
      * */
 
     /**
@@ -63,7 +64,7 @@ public class SplicingString {
         //开始时间
         long startTime = System.nanoTime();
         //测试的方法
-        System.out.println("拼接之后的字符串："+ string01 + string02);
+        System.out.println("拼接之后的字符串：" + string01 + string02);
         //结束时间
         long endTime = System.nanoTime();
         //打印消耗的时间
