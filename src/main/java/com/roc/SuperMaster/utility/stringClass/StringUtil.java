@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility;
+package com.roc.SuperMaster.utility.stringClass;
 
 import io.swagger.annotations.ApiModel;
 

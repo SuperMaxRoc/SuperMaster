@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.StringClass;
+package com.roc.SuperMaster.utility.stringClass;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -76,8 +76,8 @@ public class StringBB {
         //已经第二次反转
         System.out.println("反转字符串：" + reverse);
         System.out.println("------------------------------------------------------------------------------");
-        //当前容量
-        System.out.println("当前stringBuffer的容量：" + stringBuffer.capacity());//发现被扩容了
+        //当前容量//发现被扩容了
+        System.out.println("当前stringBuffer的容量：" + stringBuffer.capacity());
         System.out.println("------------------------------------------------------------------------------");
         //返回此序列中某个索引的char值，索引值从0开始
         char charAt = stringBuffer.charAt(0);
@@ -118,7 +118,7 @@ public class StringBB {
         //开始测试异常
         try{
             StringBuffer buffer = new StringBuffer();
-            for (int i = 0;i<=3;i++){
+            for (int i = 0;i<= 3;i++){
                 buffer.append(i);
                 System.out.println(buffer);
             }

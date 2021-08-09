@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility;
+package com.roc.SuperMaster.utility.DESUtils;
 
 import io.swagger.annotations.ApiModel;
 import org.junit.Test;

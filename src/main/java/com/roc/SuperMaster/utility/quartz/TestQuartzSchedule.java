@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.Quartz;
+package com.roc.SuperMaster.utility.quartz;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

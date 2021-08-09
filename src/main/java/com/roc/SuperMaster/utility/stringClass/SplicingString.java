@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.StringClass;
+package com.roc.SuperMaster.utility.stringClass;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.buf.StringUtils;
