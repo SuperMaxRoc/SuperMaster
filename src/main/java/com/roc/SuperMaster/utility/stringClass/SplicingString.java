@@ -129,7 +129,6 @@ public class SplicingString {
         long startTime = System.nanoTime();
         //测试的方法
         System.out.println("拼接好的字符串：" + String.join(" ",list));
-
         //方法结束时间
         long endTime = System.nanoTime();
         //打印消耗的时间

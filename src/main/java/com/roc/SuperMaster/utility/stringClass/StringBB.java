@@ -87,7 +87,7 @@ public class StringBB {
         int index = stringBuffer.indexOf(string02);
         System.out.println("返回第一次出现指定字符串中的索引:" + index);
         System.out.println("------------------------------------------------------------------------------");
-        //返回长度，不考虑空字符串
+        //返回长度，不考虑空字符
         int length = stringBuffer.length();
         System.out.println("stringBuffer的长度：" + length);
         System.out.println("------------------------------------------------------------------------------");
