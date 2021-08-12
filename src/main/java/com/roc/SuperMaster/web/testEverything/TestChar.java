@@ -1,6 +1,9 @@
 package com.roc.SuperMaster.web.testEverything;
 
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import org.junit.Test;
+
+import java.util.UUID;
 
 /**
  * @Author: WP
@@ -18,5 +21,12 @@ public class TestChar {
         Integer integer = 55;
         String s = "A";
         System.out.println(s);
+        System.out.println(UUID.randomUUID());
+        String string = " ";
+        if(StringUtils.isBlank(string)){
+            System.out.println("是空白");
+        }else {
+            System.out.println("不是空白");
+        }
     }
 }

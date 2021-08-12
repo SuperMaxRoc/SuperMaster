@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility;
+package com.roc.SuperMaster.utility.webResult;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
