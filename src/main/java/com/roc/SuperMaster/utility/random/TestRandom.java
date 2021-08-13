@@ -52,6 +52,9 @@ public class TestRandom {
         String equipmentCode = "SN";
 
         //String.format("%03d", i)在数字前面补零
+
+
     }
+
 
 }
