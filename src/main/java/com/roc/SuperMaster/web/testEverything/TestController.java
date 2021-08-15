@@ -1,7 +1,7 @@
 package com.roc.SuperMaster.web.testEverything;
 
-import com.roc.SuperMaster.utility.DESUtils.Md5Util;
-import com.roc.SuperMaster.utility.DESUtils.Sha256HexUtil;
+import com.roc.SuperMaster.utility.desUtils.Md5Util;
+import com.roc.SuperMaster.utility.desUtils.Sha256HexUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
