@@ -22,7 +22,6 @@ public class StringUtil {
         System.out.println(strings[0]);
 
 
-
     }
 
     @Test

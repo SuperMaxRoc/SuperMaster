@@ -20,16 +20,16 @@ public class springUtils {
     @Test
     public void testSpringStopWatch(){
         try {
-            //1.
+            //1.Task001
             StopWatch stopWatch = new StopWatch("SpringStopWatch001");
             stopWatch.start("计算for循环的时间");
             for (int i = 0; i < 1000; i++) {        }
             stopWatch.stop();
-            //2.
+            //2.Task002
             stopWatch.start("起床");
             Thread.sleep(1000);
             stopWatch.stop();
-            //3.
+            //3.Task003
             stopWatch.start("吃饭");
             Thread.sleep(2000);
             stopWatch.stop();
