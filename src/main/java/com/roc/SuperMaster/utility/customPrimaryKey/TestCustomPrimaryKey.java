@@ -84,7 +84,8 @@ public class TestCustomPrimaryKey {
 
         //2.Mybatis-generate
 
-        //3.整体思路：库中没有数据，固定插入第一条数据的固定ID/库中有数据，获取最新创建的数据的ID，截取然后+1形成行的ID
+        //3.整体思路：库中没有数据，固定插入第一条数据的固定ID/库中有数据，获取最新创建的数据的ID，截取然后+1形成新的ID
+        //查询库中的数据
         List<TestOrder> list = testOrderService.list();
 
         //格式化ID的数字部分
@@ -117,6 +118,7 @@ public class TestCustomPrimaryKey {
 
             //拼接最新的数据的ID
             int targetIdByInt = parseInt + 1;
+            //格式化目标ID的数字部分，然后拼接
             String lastTargetId = decimalFormat.format(targetIdByInt);
             StringBuilder stringBuilder = new StringBuilder();
             String targetOrderByString = stringBuilder.append("FB").append(lastTargetId).toString();
@@ -158,8 +160,8 @@ public class TestCustomPrimaryKey {
     public void testVoid(){
         DecimalFormat decimalFormat=new DecimalFormat("000000");
         String code="XQ20190417000100";
-        String codenew=code.substring(10, code.length());
-        int i=Integer.parseInt(codenew)+1;
+        String codeNew = code.substring(10, code.length());
+        int i=Integer.parseInt(codeNew)+1;
         String k=decimalFormat.format(i);
         System.out.println(k);
     }

@@ -1,7 +1,7 @@
-package com.roc.SuperMaster.web;
+package com.roc.SuperMaster.web.sys;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.roc.SuperMaster.domain.Students;
+import com.roc.SuperMaster.entity.domain.Students;
 import com.roc.SuperMaster.mapper.StudentsMapper;
 import com.roc.SuperMaster.service.StudentsService;
 import io.swagger.annotations.Api;

@@ -1,7 +1,7 @@
 package com.roc.SuperMaster.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.roc.SuperMaster.domain.Students;
+import com.roc.SuperMaster.entity.domain.Students;
 
 import java.util.List;
 

@@ -11,7 +11,7 @@ spring:
 #mybatis-plus
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**.xml
-  typeAliasesPackage: com.roc.SuperMaster.domain
+  typeAliasesPackage: com.roc.SuperMaster.entity.domain
   check-config-location: true
   configuration:
     #   关闭严格的大小写映射

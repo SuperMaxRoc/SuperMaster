@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.roc.SuperMaster.mapper.StudentsMapper">
-    <resultMap id="BaseResultMap" type="com.roc.SuperMaster.domain.Students">
+    <resultMap id="BaseResultMap" type="com.roc.SuperMaster.entity.domain.Students">
         <!--@Table students-->
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
@@ -23,14 +23,14 @@
         delete from students
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.roc.SuperMaster.domain.Students"
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.roc.SuperMaster.entity.domain.Students"
             useGeneratedKeys="true">
         insert into students (`name`, age, create_Time,
         update_Time, `status`)
         values (#{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
         #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER})
     </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.roc.SuperMaster.domain.Students"
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.roc.SuperMaster.entity.domain.Students"
             useGeneratedKeys="true">
         insert into students
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -68,7 +68,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.roc.SuperMaster.domain.Students">
+    <update id="updateByPrimaryKeySelective" parameterType="com.roc.SuperMaster.entity.domain.Students">
         update students
         <set>
             <if test="name != null">
@@ -89,7 +89,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.roc.SuperMaster.domain.Students">
+    <update id="updateByPrimaryKey" parameterType="com.roc.SuperMaster.entity.domain.Students">
         update students
         set `name` = #{name,jdbcType=VARCHAR},
         age = #{age,jdbcType=INTEGER},
@@ -98,7 +98,7 @@
         `status` = #{status,jdbcType=INTEGER}
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <select id="selectStudentList" resultType="com.roc.SuperMaster.domain.Students">
+    <select id="selectStudentList" resultType="com.roc.SuperMaster.entity.domain.Students">
         select * from students;
     </select>
 </mapper>
