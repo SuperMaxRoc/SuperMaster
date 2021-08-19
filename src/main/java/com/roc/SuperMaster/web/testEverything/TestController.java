@@ -104,4 +104,12 @@ public class TestController {
         System.out.println(objectObjectMap);
     }
 
+    @Test
+    public void testLength(){
+        String string = "B03A05A02A04";
+        System.out.println(string.length());
+        String substring = string.substring(1, 3);
+        System.out.println(substring);
+    }
+
 }

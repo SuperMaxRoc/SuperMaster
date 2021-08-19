@@ -1,9 +1,10 @@
 package com.roc.SuperMaster.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Column;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -21,10 +22,11 @@ public class Students implements Serializable {
 
     private Integer age;
 
-    @Column(name = "createTime")
+    @DateTimeFormat
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 
-    @Column(name = "updateTime")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
 
     private Integer status;

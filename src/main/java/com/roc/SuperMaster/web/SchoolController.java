@@ -10,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -86,12 +85,12 @@ public class SchoolController {
     ){
         log.info("开始添加一个新的学生");
         try {
-            students.setId(students.getId());
-            students.setName("test");
-            students.setAge(students.getAge());
-            students.setCreateTime(new Date());
-            students.setUpdateTime(new Date());
-            students.setStatus(1);
+//            students.setId(students.getId());
+//            students.setName("test");
+//            students.setAge(students.getAge());
+//            students.setCreateTime(new Date());
+//            students.setUpdateTime(new Date());
+//            students.setStatus(1);
             studentsMapper.insert(students);
         }catch (Exception e){
             e.printStackTrace();

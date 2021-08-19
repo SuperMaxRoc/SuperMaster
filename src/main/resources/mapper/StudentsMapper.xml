@@ -6,12 +6,12 @@
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="age" jdbcType="INTEGER" property="age"/>
-        <result column="createTime" jdbcType="TIMESTAMP" property="createTime"/>
-        <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="create_Time" jdbcType="DATE" property="createTime"/>
+        <result column="update_Time" jdbcType="DATE" property="updateTime"/>
         <result column="status" jdbcType="INTEGER" property="status"/>
     </resultMap>
     <sql id="Base_Column_List">
-        id, `name`, age, createTime, updateTime, `status`
+        id, `name`, age, create_Time, update_Time, `status`
     </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
@@ -25,8 +25,8 @@
     </delete>
     <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.roc.SuperMaster.domain.Students"
             useGeneratedKeys="true">
-        insert into students (`name`, age, createTime,
-        updateTime, `status`)
+        insert into students (`name`, age, create_Time,
+        update_Time, `status`)
         values (#{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
         #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER})
     </insert>
