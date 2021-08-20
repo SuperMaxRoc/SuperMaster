@@ -38,10 +38,12 @@ May the force be with you forever！
 3. Http处理：httpclient/hutool_http_client
 4. 大数据处理
 5. redis
-6. shiro
+6. 安全框架/权限表的设计
 7. 字典表的应用
 8. 国际化
-9. 权限表的设计
+9. 消息队列
 10. 整合前端
 11. 工作流
+12. 金钱交易
+13. 疑点问题随机记录
 

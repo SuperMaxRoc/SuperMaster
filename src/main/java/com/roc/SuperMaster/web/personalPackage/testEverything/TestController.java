@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.web.testEverything;
+package com.roc.SuperMaster.web.personalPackage.testEverything;
 
 import com.roc.SuperMaster.utility.desUtils.Md5Util;
 import com.roc.SuperMaster.utility.desUtils.Sha256HexUtil;

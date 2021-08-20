@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.web.testEverything;
+package com.roc.SuperMaster.web.personalPackage.testEverything;
 
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import org.junit.Test;
