@@ -2,27 +2,27 @@ package com.roc.SuperMaster.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.roc.SuperMaster.entity.domain.Students;
-
-import java.util.List;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
- * @author Roc
- * @version 1.0
- * @date 2021/6/9 17:31
+ * @Author: WP
+ * @Date: 2021/8/22 14:15
+ * @Version 1.0
+ * @ClassName StudentsMapper.java
+ * @Description ToDo
+ * @UpdateUser WP
  */
+@Mapper
 public interface StudentsMapper extends BaseMapper<Students> {
-
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(String studentId);
 
     int insert(Students record);
 
     int insertSelective(Students record);
 
-    Students selectByPrimaryKey(Integer id);
+    Students selectByPrimaryKey(String studentId);
 
     int updateByPrimaryKeySelective(Students record);
 
     int updateByPrimaryKey(Students record);
-
-    List<Students> selectStudentList();
 }

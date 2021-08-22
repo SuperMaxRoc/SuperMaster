@@ -4,25 +4,26 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.roc.SuperMaster.entity.domain.Students;
 import com.roc.SuperMaster.mapper.StudentsMapper;
 import com.roc.SuperMaster.service.StudentsService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
+import javax.annotation.Resource;
 /**
- * @author Roc
- * @version 1.0
- * @date 2021/6/9 17:31
+ * @Author: WP
+ * @Date: 2021/8/22 14:15
+ * @Version 1.0
+ * @ClassName StudentsServiceImpl.java
+ * @Description ToDo
+ * @UpdateUser WP
  */
 @Service
-public class StudentsServiceImpl extends ServiceImpl<StudentsMapper, Students> implements StudentsService {
+public class StudentsServiceImpl extends ServiceImpl<StudentsMapper,Students> implements StudentsService {
 
-    @Autowired
+    @Resource
     private StudentsMapper studentsMapper;
 
     @Override
-    public int deleteByPrimaryKey(Integer id) {
-        return studentsMapper.deleteByPrimaryKey(id);
+    public int deleteByPrimaryKey(String studentId) {
+        return studentsMapper.deleteByPrimaryKey(studentId);
     }
 
     @Override
@@ -36,8 +37,8 @@ public class StudentsServiceImpl extends ServiceImpl<StudentsMapper, Students> i
     }
 
     @Override
-    public Students selectByPrimaryKey(Integer id) {
-        return studentsMapper.selectByPrimaryKey(id);
+    public Students selectByPrimaryKey(String studentId) {
+        return studentsMapper.selectByPrimaryKey(studentId);
     }
 
     @Override
@@ -48,11 +49,6 @@ public class StudentsServiceImpl extends ServiceImpl<StudentsMapper, Students> i
     @Override
     public int updateByPrimaryKey(Students record) {
         return studentsMapper.updateByPrimaryKey(record);
-    }
-
-    @Override
-    public List<Students> selectStudentsList() {
-        return studentsMapper.selectStudentList();
     }
 
 }

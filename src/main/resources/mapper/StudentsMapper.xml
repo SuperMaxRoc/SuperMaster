@@ -2,103 +2,404 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.roc.SuperMaster.mapper.StudentsMapper">
     <resultMap id="BaseResultMap" type="com.roc.SuperMaster.entity.domain.Students">
+        <!--@mbg.generated-->
         <!--@Table students-->
-        <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="name" jdbcType="VARCHAR" property="name"/>
-        <result column="age" jdbcType="INTEGER" property="age"/>
-        <result column="create_Time" jdbcType="DATE" property="createTime"/>
-        <result column="update_Time" jdbcType="DATE" property="updateTime"/>
-        <result column="status" jdbcType="INTEGER" property="status"/>
+        <id column="student_id" jdbcType="VARCHAR" property="studentId"/>
+        <result column="student_name" jdbcType="VARCHAR" property="studentName"/>
+        <result column="student_number" jdbcType="VARCHAR" property="studentNumber"/>
+        <result column="student_card_id" jdbcType="VARCHAR" property="studentCardId"/>
+        <result column="student_sex" jdbcType="VARCHAR" property="studentSex"/>
+        <result column="student_age" jdbcType="INTEGER" property="studentAge"/>
+        <result column="student_grade" jdbcType="VARCHAR" property="studentGrade"/>
+        <result column="student_grade_name" jdbcType="VARCHAR" property="studentGradeName"/>
+        <result column="student_class" jdbcType="VARCHAR" property="studentClass"/>
+        <result column="student_class_name" jdbcType="VARCHAR" property="studentClassName"/>
+        <result column="student_email" jdbcType="VARCHAR" property="studentEmail"/>
+        <result column="student_status" jdbcType="VARCHAR" property="studentStatus"/>
+        <result column="student_birthday" jdbcType="VARCHAR" property="studentBirthday"/>
+        <result column="student_address" jdbcType="VARCHAR" property="studentAddress"/>
+        <result column="student_phone" jdbcType="VARCHAR" property="studentPhone"/>
+        <result column="student_guardian_id" jdbcType="VARCHAR" property="studentGuardianId"/>
+        <result column="student_guardian_name" jdbcType="VARCHAR" property="studentGuardianName"/>
+        <result column="student_guardian_phone" jdbcType="VARCHAR" property="studentGuardianPhone"/>
+        <result column="student_guardian_relationship" jdbcType="VARCHAR" property="studentGuardianRelationship"/>
+        <result column="student_admission_time" jdbcType="DATE" property="studentAdmissionTime"/>
+        <result column="student_leave_time" jdbcType="DATE" property="studentLeaveTime"/>
+        <result column="student_Registered_residence" jdbcType="VARCHAR" property="studentRegisteredResidence"/>
+        <result column="remark" jdbcType="LONGVARCHAR" property="remark"/>
+        <result column="create_by" jdbcType="VARCHAR" property="createBy"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_by" jdbcType="VARCHAR" property="updateBy"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="delete_by" jdbcType="VARCHAR" property="deleteBy"/>
+        <result column="delete_time" jdbcType="TIMESTAMP" property="deleteTime"/>
+        <result column="delete_status" jdbcType="BOOLEAN" property="deleteStatus"/>
     </resultMap>
     <sql id="Base_Column_List">
-        id, `name`, age, create_Time, update_Time, `status`
+        <!--@mbg.generated-->
+        student_id, student_name, student_number, student_card_id, student_sex, student_age,
+        student_grade, student_grade_name, student_class, student_class_name, student_email,
+        student_status, student_birthday, student_address, student_phone, student_guardian_id,
+        student_guardian_name, student_guardian_phone, student_guardian_relationship, student_admission_time,
+        student_leave_time, student_Registered_residence, remark, create_by, create_time,
+        update_by, update_time, delete_by, delete_time, delete_status
     </sql>
-    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
         select
         <include refid="Base_Column_List"/>
         from students
-        where id = #{id,jdbcType=INTEGER}
+        where student_id = #{studentId,jdbcType=VARCHAR}
     </select>
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-        delete from students
-        where id = #{id,jdbcType=INTEGER}
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        <!--@mbg.generated-->
+        delete
+        from students
+        where student_id = #{studentId,jdbcType=VARCHAR}
     </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.roc.SuperMaster.entity.domain.Students"
-            useGeneratedKeys="true">
-        insert into students (`name`, age, create_Time,
-        update_Time, `status`)
-        values (#{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
-        #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER})
+    <insert id="insert" parameterType="com.roc.SuperMaster.entity.domain.Students">
+        <!--@mbg.generated-->
+        insert into students (student_id, student_name, student_number,
+                              student_card_id, student_sex, student_age,
+                              student_grade, student_grade_name, student_class,
+                              student_class_name, student_email, student_status,
+                              student_birthday, student_address, student_phone,
+                              student_guardian_id, student_guardian_name,
+                              student_guardian_phone, student_guardian_relationship,
+                              student_admission_time, student_leave_time, student_Registered_residence,
+                              remark, create_by, create_time,
+                              update_by, update_time, delete_by,
+                              delete_time, delete_status)
+        values (#{studentId,jdbcType=VARCHAR}, #{studentName,jdbcType=VARCHAR}, #{studentNumber,jdbcType=VARCHAR},
+                #{studentCardId,jdbcType=VARCHAR}, #{studentSex,jdbcType=VARCHAR}, #{studentAge,jdbcType=INTEGER},
+                #{studentGrade,jdbcType=VARCHAR}, #{studentGradeName,jdbcType=VARCHAR},
+                #{studentClass,jdbcType=VARCHAR},
+                #{studentClassName,jdbcType=VARCHAR}, #{studentEmail,jdbcType=VARCHAR},
+                #{studentStatus,jdbcType=VARCHAR},
+                #{studentBirthday,jdbcType=VARCHAR}, #{studentAddress,jdbcType=VARCHAR},
+                #{studentPhone,jdbcType=VARCHAR},
+                #{studentGuardianId,jdbcType=VARCHAR}, #{studentGuardianName,jdbcType=VARCHAR},
+                #{studentGuardianPhone,jdbcType=VARCHAR}, #{studentGuardianRelationship,jdbcType=VARCHAR},
+                #{studentAdmissionTime,jdbcType=DATE}, #{studentLeaveTime,jdbcType=DATE},
+                #{studentRegisteredResidence,jdbcType=VARCHAR},
+                #{remark,jdbcType=LONGVARCHAR}, #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+                #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{deleteBy,jdbcType=VARCHAR},
+                #{deleteTime,jdbcType=TIMESTAMP}, #{deleteStatus,jdbcType=BOOLEAN})
     </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.roc.SuperMaster.entity.domain.Students"
-            useGeneratedKeys="true">
+    <insert id="insertSelective" parameterType="com.roc.SuperMaster.entity.domain.Students">
+        <!--@mbg.generated-->
         insert into students
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="name != null">
-                `name`,
+            <if test="studentId != null">
+                student_id,
             </if>
-            <if test="age != null">
-                age,
+            <if test="studentName != null">
+                student_name,
+            </if>
+            <if test="studentNumber != null">
+                student_number,
+            </if>
+            <if test="studentCardId != null">
+                student_card_id,
+            </if>
+            <if test="studentSex != null">
+                student_sex,
+            </if>
+            <if test="studentAge != null">
+                student_age,
+            </if>
+            <if test="studentGrade != null">
+                student_grade,
+            </if>
+            <if test="studentGradeName != null">
+                student_grade_name,
+            </if>
+            <if test="studentClass != null">
+                student_class,
+            </if>
+            <if test="studentClassName != null">
+                student_class_name,
+            </if>
+            <if test="studentEmail != null">
+                student_email,
+            </if>
+            <if test="studentStatus != null">
+                student_status,
+            </if>
+            <if test="studentBirthday != null">
+                student_birthday,
+            </if>
+            <if test="studentAddress != null">
+                student_address,
+            </if>
+            <if test="studentPhone != null">
+                student_phone,
+            </if>
+            <if test="studentGuardianId != null">
+                student_guardian_id,
+            </if>
+            <if test="studentGuardianName != null">
+                student_guardian_name,
+            </if>
+            <if test="studentGuardianPhone != null">
+                student_guardian_phone,
+            </if>
+            <if test="studentGuardianRelationship != null">
+                student_guardian_relationship,
+            </if>
+            <if test="studentAdmissionTime != null">
+                student_admission_time,
+            </if>
+            <if test="studentLeaveTime != null">
+                student_leave_time,
+            </if>
+            <if test="studentRegisteredResidence != null">
+                student_Registered_residence,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="createBy != null">
+                create_by,
             </if>
             <if test="createTime != null">
-                createTime,
+                create_time,
+            </if>
+            <if test="updateBy != null">
+                update_by,
             </if>
             <if test="updateTime != null">
-                updateTime,
+                update_time,
             </if>
-            <if test="status != null">
-                `status`,
+            <if test="deleteBy != null">
+                delete_by,
+            </if>
+            <if test="deleteTime != null">
+                delete_time,
+            </if>
+            <if test="deleteStatus != null">
+                delete_status,
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="name != null">
-                #{name,jdbcType=VARCHAR},
+            <if test="studentId != null">
+                #{studentId,jdbcType=VARCHAR},
             </if>
-            <if test="age != null">
-                #{age,jdbcType=INTEGER},
+            <if test="studentName != null">
+                #{studentName,jdbcType=VARCHAR},
+            </if>
+            <if test="studentNumber != null">
+                #{studentNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="studentCardId != null">
+                #{studentCardId,jdbcType=VARCHAR},
+            </if>
+            <if test="studentSex != null">
+                #{studentSex,jdbcType=VARCHAR},
+            </if>
+            <if test="studentAge != null">
+                #{studentAge,jdbcType=INTEGER},
+            </if>
+            <if test="studentGrade != null">
+                #{studentGrade,jdbcType=VARCHAR},
+            </if>
+            <if test="studentGradeName != null">
+                #{studentGradeName,jdbcType=VARCHAR},
+            </if>
+            <if test="studentClass != null">
+                #{studentClass,jdbcType=VARCHAR},
+            </if>
+            <if test="studentClassName != null">
+                #{studentClassName,jdbcType=VARCHAR},
+            </if>
+            <if test="studentEmail != null">
+                #{studentEmail,jdbcType=VARCHAR},
+            </if>
+            <if test="studentStatus != null">
+                #{studentStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="studentBirthday != null">
+                #{studentBirthday,jdbcType=VARCHAR},
+            </if>
+            <if test="studentAddress != null">
+                #{studentAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="studentPhone != null">
+                #{studentPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="studentGuardianId != null">
+                #{studentGuardianId,jdbcType=VARCHAR},
+            </if>
+            <if test="studentGuardianName != null">
+                #{studentGuardianName,jdbcType=VARCHAR},
+            </if>
+            <if test="studentGuardianPhone != null">
+                #{studentGuardianPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="studentGuardianRelationship != null">
+                #{studentGuardianRelationship,jdbcType=VARCHAR},
+            </if>
+            <if test="studentAdmissionTime != null">
+                #{studentAdmissionTime,jdbcType=DATE},
+            </if>
+            <if test="studentLeaveTime != null">
+                #{studentLeaveTime,jdbcType=DATE},
+            </if>
+            <if test="studentRegisteredResidence != null">
+                #{studentRegisteredResidence,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="createBy != null">
+                #{createBy,jdbcType=VARCHAR},
             </if>
             <if test="createTime != null">
                 #{createTime,jdbcType=TIMESTAMP},
             </if>
+            <if test="updateBy != null">
+                #{updateBy,jdbcType=VARCHAR},
+            </if>
             <if test="updateTime != null">
                 #{updateTime,jdbcType=TIMESTAMP},
             </if>
-            <if test="status != null">
-                #{status,jdbcType=INTEGER},
+            <if test="deleteBy != null">
+                #{deleteBy,jdbcType=VARCHAR},
+            </if>
+            <if test="deleteTime != null">
+                #{deleteTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="deleteStatus != null">
+                #{deleteStatus,jdbcType=BOOLEAN},
             </if>
         </trim>
     </insert>
     <update id="updateByPrimaryKeySelective" parameterType="com.roc.SuperMaster.entity.domain.Students">
+        <!--@mbg.generated-->
         update students
         <set>
-            <if test="name != null">
-                `name` = #{name,jdbcType=VARCHAR},
+            <if test="studentName != null">
+                student_name = #{studentName,jdbcType=VARCHAR},
             </if>
-            <if test="age != null">
-                age = #{age,jdbcType=INTEGER},
+            <if test="studentNumber != null">
+                student_number = #{studentNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="studentCardId != null">
+                student_card_id = #{studentCardId,jdbcType=VARCHAR},
+            </if>
+            <if test="studentSex != null">
+                student_sex = #{studentSex,jdbcType=VARCHAR},
+            </if>
+            <if test="studentAge != null">
+                student_age = #{studentAge,jdbcType=INTEGER},
+            </if>
+            <if test="studentGrade != null">
+                student_grade = #{studentGrade,jdbcType=VARCHAR},
+            </if>
+            <if test="studentGradeName != null">
+                student_grade_name = #{studentGradeName,jdbcType=VARCHAR},
+            </if>
+            <if test="studentClass != null">
+                student_class = #{studentClass,jdbcType=VARCHAR},
+            </if>
+            <if test="studentClassName != null">
+                student_class_name = #{studentClassName,jdbcType=VARCHAR},
+            </if>
+            <if test="studentEmail != null">
+                student_email = #{studentEmail,jdbcType=VARCHAR},
+            </if>
+            <if test="studentStatus != null">
+                student_status = #{studentStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="studentBirthday != null">
+                student_birthday = #{studentBirthday,jdbcType=VARCHAR},
+            </if>
+            <if test="studentAddress != null">
+                student_address = #{studentAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="studentPhone != null">
+                student_phone = #{studentPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="studentGuardianId != null">
+                student_guardian_id = #{studentGuardianId,jdbcType=VARCHAR},
+            </if>
+            <if test="studentGuardianName != null">
+                student_guardian_name = #{studentGuardianName,jdbcType=VARCHAR},
+            </if>
+            <if test="studentGuardianPhone != null">
+                student_guardian_phone = #{studentGuardianPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="studentGuardianRelationship != null">
+                student_guardian_relationship = #{studentGuardianRelationship,jdbcType=VARCHAR},
+            </if>
+            <if test="studentAdmissionTime != null">
+                student_admission_time = #{studentAdmissionTime,jdbcType=DATE},
+            </if>
+            <if test="studentLeaveTime != null">
+                student_leave_time = #{studentLeaveTime,jdbcType=DATE},
+            </if>
+            <if test="studentRegisteredResidence != null">
+                student_Registered_residence = #{studentRegisteredResidence,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                remark = #{remark,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy,jdbcType=VARCHAR},
             </if>
             <if test="createTime != null">
-                createTime = #{createTime,jdbcType=TIMESTAMP},
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy,jdbcType=VARCHAR},
             </if>
             <if test="updateTime != null">
-                updateTime = #{updateTime,jdbcType=TIMESTAMP},
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
             </if>
-            <if test="status != null">
-                `status` = #{status,jdbcType=INTEGER},
+            <if test="deleteBy != null">
+                delete_by = #{deleteBy,jdbcType=VARCHAR},
+            </if>
+            <if test="deleteTime != null">
+                delete_time = #{deleteTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="deleteStatus != null">
+                delete_status = #{deleteStatus,jdbcType=BOOLEAN},
             </if>
         </set>
-        where id = #{id,jdbcType=INTEGER}
+        where student_id = #{studentId,jdbcType=VARCHAR}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.roc.SuperMaster.entity.domain.Students">
+        <!--@mbg.generated-->
         update students
-        set `name` = #{name,jdbcType=VARCHAR},
-        age = #{age,jdbcType=INTEGER},
-        createTime = #{createTime,jdbcType=TIMESTAMP},
-        updateTime = #{updateTime,jdbcType=TIMESTAMP},
-        `status` = #{status,jdbcType=INTEGER}
-        where id = #{id,jdbcType=INTEGER}
+        set student_name                  = #{studentName,jdbcType=VARCHAR},
+            student_number                = #{studentNumber,jdbcType=VARCHAR},
+            student_card_id               = #{studentCardId,jdbcType=VARCHAR},
+            student_sex                   = #{studentSex,jdbcType=VARCHAR},
+            student_age                   = #{studentAge,jdbcType=INTEGER},
+            student_grade                 = #{studentGrade,jdbcType=VARCHAR},
+            student_grade_name            = #{studentGradeName,jdbcType=VARCHAR},
+            student_class                 = #{studentClass,jdbcType=VARCHAR},
+            student_class_name            = #{studentClassName,jdbcType=VARCHAR},
+            student_email                 = #{studentEmail,jdbcType=VARCHAR},
+            student_status                = #{studentStatus,jdbcType=VARCHAR},
+            student_birthday              = #{studentBirthday,jdbcType=VARCHAR},
+            student_address               = #{studentAddress,jdbcType=VARCHAR},
+            student_phone                 = #{studentPhone,jdbcType=VARCHAR},
+            student_guardian_id           = #{studentGuardianId,jdbcType=VARCHAR},
+            student_guardian_name         = #{studentGuardianName,jdbcType=VARCHAR},
+            student_guardian_phone        = #{studentGuardianPhone,jdbcType=VARCHAR},
+            student_guardian_relationship = #{studentGuardianRelationship,jdbcType=VARCHAR},
+            student_admission_time        = #{studentAdmissionTime,jdbcType=DATE},
+            student_leave_time            = #{studentLeaveTime,jdbcType=DATE},
+            student_Registered_residence  = #{studentRegisteredResidence,jdbcType=VARCHAR},
+            remark                        = #{remark,jdbcType=LONGVARCHAR},
+            create_by                     = #{createBy,jdbcType=VARCHAR},
+            create_time                   = #{createTime,jdbcType=TIMESTAMP},
+            update_by                     = #{updateBy,jdbcType=VARCHAR},
+            update_time                   = #{updateTime,jdbcType=TIMESTAMP},
+            delete_by                     = #{deleteBy,jdbcType=VARCHAR},
+            delete_time                   = #{deleteTime,jdbcType=TIMESTAMP},
+            delete_status                 = #{deleteStatus,jdbcType=BOOLEAN}
+        where student_id = #{studentId,jdbcType=VARCHAR}
     </update>
-    <select id="selectStudentList" resultType="com.roc.SuperMaster.entity.domain.Students">
-        select * from students;
-    </select>
 </mapper>
