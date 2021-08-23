@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.roc.SuperMaster.entity.domain.Students;
 import com.roc.SuperMaster.service.StudentsService;
+import com.roc.SuperMaster.service.impl.ParseIdCardService;
 import com.roc.SuperMaster.utility.webResult.WebApiResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -31,6 +32,9 @@ public class StudentController {
 
     @Autowired
     private StudentsService studentsService;
+
+    @Autowired
+    private ParseIdCardService parseIdCardService;
 
     /**
      * @Author: WP
@@ -72,14 +76,13 @@ public class StudentController {
 
     @ApiOperation(value = "新增新的学生")
     @PostMapping("/addStudent")
-    public WebApiResult addStudent(
+    public WebApiResult<?> addStudent(
             @RequestBody Students student
     ){
         log.info("开始新增新的学生：{}",JSONUtil.toJsonStr(student));
         try{
 
             //
-
             student.setStudentId("RB0001");
             student.setStudentName("");
             student.setStudentNumber("");
@@ -126,6 +129,25 @@ public class StudentController {
             log.error("捕获异常信息：{}",e.getMessage());
             return WebApiResult.error("新增学生失败");
         }
+    }
+
+    @ApiOperation("")
+    @GetMapping("/Waimenxiedao")
+    public void testParseIdCard(
+            @RequestParam String idCard
+    ){
+
+        //省市区
+        String substringToPCA = idCard.substring(0, 6);
+        //生日
+        String substringToBirth = idCard.substring(6, 14);
+        //性别
+        String substringToSex = idCard.substring(16, 17);
+
+        System.out.println(parseIdCardService.parsePCA(substringToPCA));
+        System.out.println(parseIdCardService.parseSex(substringToSex));
+        System.out.println(parseIdCardService.parseBirth(substringToBirth));
+        System.out.println(parseIdCardService.parseAge(substringToBirth));
     }
 
 }
