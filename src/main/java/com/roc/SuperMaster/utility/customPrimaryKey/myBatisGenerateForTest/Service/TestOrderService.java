@@ -1,6 +1,7 @@
-package com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerate;
+package com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.Service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.TestOrder;
 
 /**
  * @Author  Roc

@@ -1,7 +1,9 @@
-package com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerate;
+package com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.Service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.roc.SuperMaster.mapper.TestOrderMapper;
+import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.Mapper.TestOrderMapper;
+import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.Service.TestOrderService;
+import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.TestOrder;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
@@ -14,7 +16,7 @@ import javax.annotation.Resource;
  * @UpdateUser Roc
  */
 @Service
-public class TestOrderServiceImpl extends ServiceImpl<TestOrderMapper,TestOrder> implements TestOrderService{
+public class TestOrderServiceImpl extends ServiceImpl<TestOrderMapper, TestOrder> implements TestOrderService {
 
     @Resource
     private TestOrderMapper testOrderMapper;

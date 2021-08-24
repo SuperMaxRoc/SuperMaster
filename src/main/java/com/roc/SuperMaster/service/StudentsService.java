@@ -12,7 +12,6 @@ import com.roc.SuperMaster.entity.domain.Students;
  */
 public interface StudentsService extends IService<Students> {
 
-
     int deleteByPrimaryKey(String studentId);
 
     int insert(Students record);

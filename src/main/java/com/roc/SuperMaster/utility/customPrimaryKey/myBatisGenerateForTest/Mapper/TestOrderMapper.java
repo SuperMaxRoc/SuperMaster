@@ -1,7 +1,7 @@
-package com.roc.SuperMaster.mapper;
+package com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.Mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerate.TestOrder;
+import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.TestOrder;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

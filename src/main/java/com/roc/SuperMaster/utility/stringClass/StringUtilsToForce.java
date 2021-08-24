@@ -9,7 +9,7 @@ import org.junit.Test;
  * @date 2021/7/13 17:18
  */
 @ApiModel(value = "String工具类")
-public class StringUtil {
+public class StringUtilsToForce {
 
     /**
      * String相关的工具类

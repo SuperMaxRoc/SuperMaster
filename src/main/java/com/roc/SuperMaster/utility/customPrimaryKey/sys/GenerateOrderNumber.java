@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.customPrimaryKey;
+package com.roc.SuperMaster.utility.customPrimaryKey.sys;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -1,8 +1,8 @@
-package com.roc.SuperMaster.utility.customPrimaryKey;
+package com.roc.SuperMaster.utility.customPrimaryKey.sys;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerate.TestOrder;
-import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerate.TestOrderService;
+import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.TestOrder;
+import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.Service.TestOrderService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -29,7 +29,7 @@ import java.util.List;
 @Api(value = "自定义数据库主键的实现方案")
 @RestController
 @RequestMapping
-public class TestCustomPrimaryKey {
+public class TestCustomPrimaryKeyController {
 
     @Autowired
     TestOrderService testOrderService;

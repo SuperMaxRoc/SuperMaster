@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerate;
+package com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity;
 
 import lombok.Data;
 
