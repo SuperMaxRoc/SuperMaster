@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @RequestMapping("/TestScheduledExecutorService")
 @RestController
-@Api(tags = "用于测试实现定时任务的方法02")
+@Api(tags = "用于测试实现定时任务的方法02部分")
 public class TestScheduledExecutorService {
     /**
      * @Author: WP

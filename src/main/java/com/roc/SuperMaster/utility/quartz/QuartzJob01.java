@@ -12,13 +12,13 @@ import org.springframework.stereotype.Component;
  * @Date 2021/8/6 13:30
  * @Version 1.0.0
  * @ClassName TestQuartzJob.java
- * @Description 创建Quartz的Job
+ * @Description 使用Quartz的第一步：创建Job
  * @UpdateUser Roc
  */
 @Slf4j
 @Api
 @Component
-public class TestQuartzJob implements Job {
+public class QuartzJob01 implements Job {
     //使用Quartz的第一步
     //创建用于执行的job，相当于Timer的task
     /**

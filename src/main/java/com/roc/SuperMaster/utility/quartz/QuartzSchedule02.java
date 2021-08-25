@@ -5,7 +5,6 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,15 +16,14 @@ import java.util.concurrent.TimeUnit;
  * @Date 2021/8/6 13:35
  * @Version 1.0.0
  * @ClassName TestQuartzSchedule.java
- * @Description 创建Quartz的执行类
+ * @Description 使用Quartz的第二部：创建Quartz调用器Schedule
  * @UpdateUser Roc
  */
-@Component
 @Api(tags = "testQuartzSchedule")
 @Slf4j
 @RequestMapping("/TestQuartzSchedule")
 @RestController
-public class TestQuartzSchedule {
+public class QuartzSchedule02 {
 
     /**
      * @Author: WP
@@ -46,7 +44,7 @@ public class TestQuartzSchedule {
             Scheduler scheduler = stdSchedulerFactory.getScheduler();
 
             //2.创建JobDetail实例，并绑定执行类
-            JobDetail build = JobBuilder.newJob(TestQuartzJob.class).withIdentity("Quartz1", "QuartzGroup1").build();
+            JobDetail build = JobBuilder.newJob(QuartzJob01.class).withIdentity("Quartz1", "QuartzGroup1").build();
 
             //3.构建Trigger的实例
             CronTrigger build1 = TriggerBuilder.newTrigger().withIdentity("Trigger1", "QuartzTrigger1")

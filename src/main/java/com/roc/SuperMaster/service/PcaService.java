@@ -7,11 +7,10 @@ import com.roc.SuperMaster.entity.domain.Pca;
  * @Date: 2021/8/23 22:48
  * @Version 1.0
  * @ClassName PcaService.java
- * @Description ToDo
+ * @Description 基础的PCA服务
  * @UpdateUser WP
  */
 public interface PcaService extends IService<Pca> {
-
 
     int deleteByPrimaryKey(Long pcaId);
 
@@ -25,6 +24,7 @@ public interface PcaService extends IService<Pca> {
 
     int updateByPrimaryKey(Pca record);
 
+    //根据PCACode获取PCAName
     String getPcaNameByCode(String code);
 
 }

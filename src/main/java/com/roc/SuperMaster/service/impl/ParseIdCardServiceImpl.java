@@ -1,5 +1,6 @@
 package com.roc.SuperMaster.service.impl;
 
+import com.roc.SuperMaster.service.ParseIdCardService;
 import com.roc.SuperMaster.service.PcaService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -13,17 +14,18 @@ import java.util.Date;
  * @Author: WP
  * @Date: 2021/8/23 22:51
  * @Version 1.0
- * @ClassName ParseIdCardService.java
+ * @ClassName ParseIdCardServiceImpl.java
  * @Description 解析身份证，获得省市区、年龄、生日、性别
  * @UpdateUser WP
  */
 @Slf4j
 @Service
-public class ParseIdCardService {
+public class ParseIdCardServiceImpl implements ParseIdCardService {
 
     @Autowired
     PcaService pcaService;
 
+    @Override
     public String parseIdCard(
             String idCard
     ) {
@@ -36,6 +38,7 @@ public class ParseIdCardService {
         }
     }
 
+    @Override
     public String parsePCA(
             String code
     ) {
@@ -48,6 +51,7 @@ public class ParseIdCardService {
         }
     }
 
+    @Override
     public String parseAge(
             String substringToBirth
     ) {
@@ -65,6 +69,7 @@ public class ParseIdCardService {
         }
     }
 
+    @Override
     public String parseBirth(
             String substringToBirth
     ) {
@@ -82,6 +87,7 @@ public class ParseIdCardService {
         }
     }
 
+    @Override
     public String parseSex(
             String substringToSex
     ) {

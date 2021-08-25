@@ -9,12 +9,12 @@ import java.util.Random;
  * @Author Roc
  * @Date 2021/8/12 20:50
  * @Version 1.0.0
- * @ClassName TestRandom.java
+ * @ClassName RandomUtils.java
  * @Description 测试随机数的相关用法
  * @UpdateUser Roc
  */
 @Slf4j
-public class TestRandom {
+public class RandomUtils {
 
     /**
      * @Author: WP

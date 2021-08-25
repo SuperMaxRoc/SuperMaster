@@ -7,7 +7,7 @@ import com.roc.SuperMaster.entity.domain.Students;
  * @Date: 2021/8/22 14:15
  * @Version 1.0
  * @ClassName StudentsService.java
- * @Description ToDo
+ * @Description 基本的学生服务
  * @UpdateUser WP
  */
 public interface StudentsService extends IService<Students> {

@@ -2,7 +2,6 @@ package com.roc.SuperMaster.utility.quartz;
 
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +16,6 @@ import java.util.Date;
  * @UpdateUser Roc
  */
 @Slf4j
-@Component
 @RequestMapping("/TestSpringTask")
 @RestController
 @Api(tags = "用于测试实现定时任务的方法03")
@@ -42,5 +40,4 @@ public class TestSpringTask {
             log.error("捕获异常信息：{}",e.getMessage());
         }
     }
-
 }

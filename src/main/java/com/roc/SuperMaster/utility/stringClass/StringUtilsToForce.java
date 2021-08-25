@@ -13,8 +13,8 @@ public class StringUtilsToForce {
 
     /**
      * String相关的工具类
-     *
      * */
+
     @Test
     public void testStrings(){
         String[] strings = new String[1];
