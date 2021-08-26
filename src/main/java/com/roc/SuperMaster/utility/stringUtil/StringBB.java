@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.stringClass;
+package com.roc.SuperMaster.utility.stringUtil;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

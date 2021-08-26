@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.desUtils;
+package com.roc.SuperMaster.utility.desUtil;
 
 import com.sun.istack.NotNull;
 import io.swagger.annotations.ApiModel;

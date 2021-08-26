@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.math;
+package com.roc.SuperMaster.utility.mathUtil;
 
 import lombok.extern.slf4j.Slf4j;
 

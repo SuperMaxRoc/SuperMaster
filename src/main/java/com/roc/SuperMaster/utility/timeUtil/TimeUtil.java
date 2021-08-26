@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.timeUtils;
+package com.roc.SuperMaster.utility.timeUtil;
 
 import org.junit.Test;
 
