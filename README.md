@@ -35,10 +35,10 @@ May the force be with you forever！
 
 1. 导入导出
 2. Excel处理
-3. Http处理：httpclient/hutool_http_client
+3. Http处理：httpclient/hutool_http_client/RestTemplate
 4. 大数据处理
 5. redis
-6. 安全框架/权限表的设计
+6. 安全框架/权限表的设计：Shiro
 7. 字典表的应用
 8. 国际化
 9. 消息队列
