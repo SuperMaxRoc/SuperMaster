@@ -56,5 +56,20 @@ public class RandomUtils {
 
     }
 
-
+    /**
+     * @Author: WP
+     * @Date: 2021/8/26 20:26
+     * @Version 1.0
+     * @Description: 获取一定范围内的随机数
+     * @UpdateUser WP
+     * @param
+     * @return void
+     */
+    @Test
+    public void getRandom(){
+        Random random = new Random();
+        //规定随机数的最大范围
+        int i = random.nextInt(100);
+        System.out.println("100范围内的随机整数：" + i);
+    }
 }
