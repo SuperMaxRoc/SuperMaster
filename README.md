@@ -16,34 +16,34 @@ May the force be with you forever！
 
 目前涵盖：
 
-1. mybatis-plus的简单实用
+1. mybatis-plus
 2. 自定义注解
-3. 自定义主键生成
-4. 加解密
-5. 定时任务
-6. 随机数
-7. Spring提供的工具类
-8. 处理String字符串的方法及工具类
-9. 时间处理工具类
-10. 重新封装返回体结果体
-11. Swagger
-12. log日志
+3. 加解密
+4. Quartz定时任务工具类
+5. Random随机数相关工具类
+6. Spring提供的工具类
+7. 处理String字符串的方法及工具类
+8. 时间处理工具类
+9. 重新封装返回体结果体
+10. Swagger3.0
+11. Log日志记录
+12. 自定义主键生成
 
 
 
 尚未涵盖即将涵盖：
 
-1. 导入导出
-2. Excel处理
-3. Http处理：httpclient/hutool_http_client/RestTemplate
-4. 大数据处理
-5. redis
-6. 安全框架/权限表的设计：Shiro
-7. 字典表的应用
+
+1. Http处理：httpclient/hutool_http_client/RestTemplate 
+2. 导入导出Excel处理
+3. 安全框架/权限表的设计：Shiro/···
+4. 字典表的应用
+5. 消息队列
+6. redis
+7. 大数据处理
 8. 国际化
-9. 消息队列
-10. 整合前端
-11. 工作流
-12. 金钱交易
-13. 疑点问题随机记录
+9. 整合前端
+10. 工作流
+11. 金钱交易
+12. 疑点问题随机记录
 

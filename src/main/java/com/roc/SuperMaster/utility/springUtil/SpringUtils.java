@@ -15,7 +15,7 @@ import org.springframework.util.StopWatch;
  */
 @Api
 @Slf4j
-public class springUtils {
+public class SpringUtils {
 
     @Test
     public void testSpringStopWatch(){
