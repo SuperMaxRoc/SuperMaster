@@ -1,7 +1,7 @@
 package com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.Service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.Mapper.TestOrderMapper;
+import com.roc.SuperMaster.mapper.TestOrderMapper;
 import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.Service.TestOrderService;
 import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.TestOrder;
 import org.springframework.stereotype.Service;

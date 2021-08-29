@@ -59,6 +59,7 @@ public class MathToForce {
         int parseInt1 = Integer.parseInt(target,2);
         int parseInt2 = Integer.parseInt(target,8);
         int parseInt3 = Integer.parseInt(target,16);
+
         System.out.println("二进制的Int：" + parseInt1);
         System.out.println("八进制的Int：" + parseInt2);
         System.out.println("十六进制的Int：" + parseInt3);
@@ -105,32 +106,186 @@ public class MathToForce {
     public void trigonometricFunction(){
         //正弦值
         double sin = Math.sin(2);
-        System.out.println(sin);
+        System.out.println("正弦值：" + sin);
 
         //反正弦
         double asin = Math.asin(2);
-        System.out.println(asin);
+        System.out.println("反正弦：" + asin);
 
         //余弦值
         double cos = Math.cos(2);
-        System.out.println(cos);
+        System.out.println("余弦值：" + cos);
+
         //反余弦
         double acos = Math.acos(2);
-        System.out.println(acos);
+        System.out.println("反余弦：" + acos);
 
         //正切值
         double tan = Math.tan(90);
-        System.out.println(tan);
+        System.out.println("正切值：" + tan);
         //反正切
         double atan = Math.atan(90);
-        System.out.println(atan);
+        System.out.println("反正切：" + atan);
 
         //将用弧度表示的角转换成近似相等的用角度表示的角
         double toDegrees = Math.toDegrees(2);
-        System.out.println(toDegrees);
+        System.out.println("将用弧度表示的角转换成近似相等的用角度表示的角：" + toDegrees);
+
         //将用角度表示的角转换成近似相等的用弧度表示的角
         double toRadians = Math.toRadians(2);
-        System.out.println(toRadians);
+        System.out.println("将用角度表示的角转换成近似相等的用弧度表示的角：" + toRadians);
+    }
+
+    /**
+     * @Author: WP
+     * @Date: 2021/8/28 18:05
+     * @Version 1.0
+     * @Description: 指数运算
+     * @UpdateUser WP
+     * @param
+     * @return void
+     */
+    @Test
+    public void exponentialOperation(){
+
+    }
+
+    /**
+     * @Author: WP
+     * @Date: 2021/8/28 18:08
+     * @Version 1.0
+     * @Description: 比大小
+     * @UpdateUser WP
+     * @param
+     * @return void
+     */
+    @Test
+    public void bigOrSmall(){
+        int num01 = 10;
+        int num02 = 9;
+        final int max = Math.max(num01, num02);
+        final int min = Math.min(num01, num02);
+
+        System.out.println("较大的数：" + max);
+        System.out.println("较小的数：" + min);
+    }
+
+    /**
+     * @Author: WP
+     * @Date: 2021/8/28 18:09
+     * @Version 1.0
+     * @Description: 平均数
+     * @UpdateUser WP
+     * @param
+     * @return void
+     */
+    @Test
+    public void average(){
+        int num01 = 10;
+        int num02 = 9;
+
+
+    }
+
+    /**
+     * @Author: WP
+     * @Date: 2021/8/28 18:10
+     * @Version 1.0
+     * @Description: 比较数字相等
+     * @UpdateUser WP
+     * @param
+     * @return void
+     */
+    @Test
+    public void isEqual(){
+        //解决世界性难题：==是判断两个人是不是住在同一个地址，而equals是判断同一个地址里住的人是不是同一个
+        //判断的问题设计到java常量池的概念
+        //同一类型且字面量相等的变量：引用地址相等。
+        //同一类型但字面量不相等的变量：引用地址是不相等的。
+
+        //同一类型且字面量相等的变量
+        int num01 = 10;
+        int num02 = 10;
+        int num05 = 9+1;
+        if (num01 == num02) {
+            //true
+            System.out.println("对比的数字相等");
+        }
+        if (num01 == num05) {
+            //true
+            System.out.println("对比的数字相等");
+        }
+
+        //同一类型且字面量不相等的变量
+        int num03 = 10;
+        int num04 = 11;
+        if (num03 == num04) {
+            //false
+            System.out.println("对比的数字相等");
+        }
+
+
+        String string01 = "hello";
+        String string02 = "hello";
+        Integer string03 = 6;
+        Integer string04 = 6;
+        String string05 = "he" + "ll";
+        System.out.println(string01 == string02);
+        System.out.println(string01.equals(string02));
+        System.out.println(string03.equals(string04));
+
+        System.out.println(System.identityHashCode(string01));
+        System.out.println(System.identityHashCode(string02));
+        System.out.println(System.identityHashCode(string03));
+        System.out.println(System.identityHashCode(string04));
+
+        System.out.println("-----------------");
+        System.out.println(string01.equals(string05));
+        System.out.println(System.identityHashCode(string05));
+
+    }
+
+    /**
+     * @Author: WP
+     * @Date: 2021/8/28 18:11
+     * @Version 1.0
+     * @Description: 求整运算
+     * @UpdateUser WP
+     * @param
+     * @return void
+     */
+    @Test
+    public void toInteger(){
+
+    }
+
+
+    /**
+     * @Author: WP
+     * @Date: 2021/8/28 18:12
+     * @Version 1.0
+     * @Description: Math的静态常量
+     * @UpdateUser WP
+     * @param
+     * @return void
+     */
+    @Test
+    public void staticMath(){
+
+    }
+
+    /**
+     * @Author: WP
+     * @Date: 2021/8/28 18:13
+     * @Version 1.0
+     * @Description: 对数运算
+     * @UpdateUser WP
+     * @param
+     * @return void
+     */
+    @Test
+    public void logarithm() {
+
     }
 
 }

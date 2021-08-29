@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.Mapper.TestOrderMapper">
+<mapper namespace="com.roc.SuperMaster.mapper.TestOrderMapper">
   <resultMap id="BaseResultMap" type="com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.TestOrder">
     <!--@mbg.generated-->
     <!--@Table test_order-->
