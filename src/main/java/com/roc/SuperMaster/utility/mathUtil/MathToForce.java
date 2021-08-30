@@ -207,7 +207,7 @@ public class MathToForce {
     @Test
     public void isEqual(){
         //解决世界性难题：==是判断两个人是不是住在同一个地址，而equals是判断同一个地址里住的人是不是同一个
-        //判断的问题设计到java常量池的概念
+        //判断的问题涉及到java常量池的概念
         //同一类型且字面量相等的变量：引用地址相等。
         //同一类型但字面量不相等的变量：引用地址是不相等的。
 
@@ -231,7 +231,6 @@ public class MathToForce {
             //false
             System.out.println("对比的数字相等");
         }
-
 
         String string01 = "hello";
         String string02 = "hello";

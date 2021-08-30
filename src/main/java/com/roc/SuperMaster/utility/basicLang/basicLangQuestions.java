@@ -18,7 +18,7 @@ public class basicLangQuestions {
      * @Author: WP
      * @Date: 2021/8/30 17:31
      * @Version 1.0
-     * @Description: 单精度、双精度、半精度、混合精度的问题
+     * @Description: 数据精度问题：单精度、双精度、半精度、混合精度的问题
      * @UpdateUser WP
      * @param  
      * @return void
@@ -30,7 +30,7 @@ public class basicLangQuestions {
          * 数据精度问题
          */
         //精度问题常存在与程序涉及数学计算的时候以及程序语言基本数据类型转换过程中。
-        //丢失精度会造成问题，尤其是银行等金融行业。
+        //丢失精度会造成极其严重的问题，尤其是银行等金融行业。
 
         //自动类型转换
         //强制类型转换
