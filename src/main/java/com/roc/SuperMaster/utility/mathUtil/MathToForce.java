@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 /**
  * @Author Roc
  * @Date 2021/8/25 10:47
@@ -183,7 +185,13 @@ public class MathToForce {
     public void average(){
         int num01 = 10;
         int num02 = 9;
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        arrayList.add(num01);
+        arrayList.add(num02);
 
+        System.out.println(arrayList.size());
+        double i = Math.round((num01 + num02) / arrayList.size());
+        System.out.println(i);
 
     }
 
