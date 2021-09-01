@@ -47,3 +47,7 @@ May the force be with you forever！
 11. 金钱交易
 12. 疑点问题随机记录
 
+注：项目结构暂未遵循严格的java规范，Util包下仅为代码块的展示及调用测试
+
+实际项目需以Alibaba的java编程规范为标准。
+
