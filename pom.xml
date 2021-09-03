@@ -61,18 +61,23 @@
             <version>2.5.0</version>
         </dependency>
 
+        <!--fastJson-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.47</version>
+        </dependency>
+
         <!--Swagger3.0.0-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
             <version>3.0.0</version>
         </dependency>
-
-        <!--fastJson-->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.47</version>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>1.6.2</version>
         </dependency>
 
         <!--Swagger2.x.x-->
@@ -197,6 +202,7 @@
             <artifactId>jaxb-impl</artifactId>
             <version>3.0.0</version>
         </dependency>
+
         <!--EasyPoi-->
         <dependency>
             <groupId>cn.afterturn</groupId>
@@ -213,6 +219,7 @@
             <artifactId>easypoi-annotation</artifactId>
             <version>4.4.0</version>
         </dependency>
+
 
     </dependencies>
 
