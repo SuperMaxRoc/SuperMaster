@@ -24,27 +24,78 @@ public class ParseIdCardServiceImpl implements ParseIdCardService {
 
     @Autowired
     PcaService pcaService;
-
-    @Override
-    public String parseIdCard(
+    /**
+     * @Author: WP
+     * @Date: 2021/9/3 14:01
+     * @Version 1.0
+     * @Description: 获取PCA代码
+     * @UpdateUser WP
+     * @param idCard
+     * @return java.lang.String
+     */
+    public String getStringToPCA(
             String idCard
     ) {
+        String substringToPCA = idCard.substring(0, 6);
+        return substringToPCA;
+    }
+
+    /**
+     * @Author: WP
+     * @Date: 2021/9/3 14:01
+     * @Version 1.0
+     * @Description: 获取BirthAndAge代码
+     * @UpdateUser WP
+     * @param idCard
+     * @return java.lang.String
+     */
+    public String getStringToBirthAndAge(
+            String idCard
+    ){
+        String substringToBirthAndAge = idCard.substring(6, 14);
+        return substringToBirthAndAge;
+    }
+
+    /**
+     * @Author: WP
+     * @Date: 2021/9/3 14:02
+     * @Version 1.0
+     * @Description: 获取Sex代码
+     * @UpdateUser WP
+     * @param idCard
+     * @return java.lang.String
+     */
+    public String getStringToSex(
+            String idCard
+    ){
+        String substringToToSex = idCard.substring(16,17);
+        return substringToToSex;
+    }
+
+    @Override
+    public boolean parseIdCard(
+            String idCard
+    ) {
+        //目前仅验证了IDCard的长度
         int length = idCard.length();
         if (length == 18) {
-            return "IDCard合法";
+            log.info("IDCard合法");
+            return true;
         } else {
             log.error("IDCard非法");
-            return null;
+            return false;
         }
     }
 
     @Override
     public String parsePCA(
-            String code
+            String idCard
     ) {
-        String pcaNameByCode = pcaService.getPcaNameByCode(code);
+        String stringToPCA = this.getStringToPCA(idCard);
+        String pcaNameByCode = pcaService.getPcaNameByCode(stringToPCA);
         if (pcaNameByCode == null) {
             log.error("无法解析PCA，请输入正确的身份证号码");
+            int a = 1/0;
             return null;
         } else {
             return pcaNameByCode;
@@ -52,35 +103,41 @@ public class ParseIdCardServiceImpl implements ParseIdCardService {
     }
 
     @Override
-    public String parseAge(
-            String substringToBirth
+    public int parseAge(
+            String idCard
     ) {
+        String stringToBirthAndAge = this.getStringToBirthAndAge(idCard);
         Date date = new Date();
         String dateFormat = "yyyy";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(dateFormat);
+        //获取当前年份
         int nowYear = Integer.parseInt(simpleDateFormat.format(date).toString());
-        int oldBirthYear = Integer.parseInt(substringToBirth.substring(0, 4));
+        //获取IDCard年份
+        int oldBirthYear = Integer.parseInt(stringToBirthAndAge.substring(0, 4));
         int age = nowYear - oldBirthYear;
         if (age >= 1 & age <= 100) {
-            return String.valueOf(age);
+            return age;
         } else {
             log.error("年龄解析不合法，请输入正确的身份证号码");
-            return null;
+            int a = 1/0;
+            return 0;
         }
     }
 
     @Override
     public String parseBirth(
-            String substringToBirth
+            String idCard
     ) {
-        String parseAge = this.parseAge(substringToBirth);
-        if (parseAge == null) {
+        String stringToBirthAndAge = this.getStringToBirthAndAge(idCard);
+        int parseAge = this.parseAge(idCard);
+        if (parseAge == 0) {
             log.error("生日解析不合法，请输入正确的身份证号码");
+            int a = 1/0;
             return null;
         } else {
-            String year = substringToBirth.substring(0, 4);
-            String month = substringToBirth.substring(4, 6);
-            String day = substringToBirth.substring(6, 8);
+            String year = stringToBirthAndAge.substring(0, 4);
+            String month = stringToBirthAndAge.substring(4, 6);
+            String day = stringToBirthAndAge.substring(6, 8);
             StringBuilder stringBuilder = new StringBuilder();
             String string = stringBuilder.append(year).append("-").append(month).append("-").append(day).toString();
             return string;
@@ -89,11 +146,12 @@ public class ParseIdCardServiceImpl implements ParseIdCardService {
 
     @Override
     public String parseSex(
-            String substringToSex
+            String idCard
     ) {
         //StringUtils.isNumeric() 方法:isNumeric() 可以判断 字符串是否为数字字符串，即只能判断纯数字字符串
-        if (StringUtils.isNumeric(substringToSex)){
-            int i = Integer.parseInt(substringToSex);
+        String stringToSex = this.getStringToSex(idCard);
+        if (StringUtils.isNumeric(stringToSex)){
+            int i = Integer.parseInt(stringToSex);
             if (i % 2 == 0) {
                 return "女";
             } else {
@@ -101,6 +159,7 @@ public class ParseIdCardServiceImpl implements ParseIdCardService {
             }
         }else {
             log.error("性别解析不合法，请输入正确的身份证号");
+            int a = 1/0;
             return null;
         }
     }

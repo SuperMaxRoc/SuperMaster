@@ -149,7 +149,7 @@ public class Students implements Serializable {
     */
     @ApiModelProperty(value="学生入学时间")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date studentAdmissionTime;
 
     /**
@@ -157,7 +157,7 @@ public class Students implements Serializable {
     */
     @ApiModelProperty(value="学生毕业时间")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date studentLeaveTime;
 
     /**
@@ -183,7 +183,7 @@ public class Students implements Serializable {
     */
     @ApiModelProperty(value="创建时间")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date createTime;
 
     /**
@@ -197,7 +197,7 @@ public class Students implements Serializable {
     */
     @ApiModelProperty(value="更新时间")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date updateTime;
 
     /**
@@ -211,7 +211,7 @@ public class Students implements Serializable {
     */
     @ApiModelProperty(value="删除时间")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date deleteTime;
 
     /**

@@ -11,13 +11,13 @@ package com.roc.SuperMaster.service;
 public interface ParseIdCardService {
 
     //验证IDCard合法性
-    String parseIdCard(String idCard);
+    boolean parseIdCard(String idCard);
 
     //解析PCA
     String parsePCA(String code);
 
     //解析Age
-    String parseAge(String substringToBirth);
+    int parseAge(String substringToBirth);
 
     //解析生日
     String parseBirth(String substringToBirth);
