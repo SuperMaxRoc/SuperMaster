@@ -1,11 +1,6 @@
 package com.roc.SuperMaster.utility.quartzUtil;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.Timer;
@@ -19,11 +14,11 @@ import java.util.TimerTask;
  * @Description 用于测试实现定时任务的方法
  * @UpdateUser Roc
  */
+//@RestController
+//@RequestMapping("/testTimer")
+//@Api(tags = "定时任务的实现的第一种方式：Timer")
 @Slf4j
-@RestController
-@RequestMapping("/testTimer")
-@Api(tags = "用于测试实现定时任务的方法01")
-public class TestTimer {
+public class TimerHandle {
 
     /**
      * @Author: Roc
@@ -34,8 +29,8 @@ public class TestTimer {
      * @param
      * @return void
      */
-    @ApiOperation(value = "测试java的Timer")
-    @GetMapping("/testTimer")
+//    @ApiOperation(value = "测试java的Timer")
+//    @GetMapping("/testTimer")
     public void testTimer() {
         log.info("开始测试java的Timer类");
         try{

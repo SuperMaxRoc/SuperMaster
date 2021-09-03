@@ -1,6 +1,5 @@
 package com.roc.SuperMaster.utility.springUtil;
 
-import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.util.StopWatch;
@@ -13,12 +12,20 @@ import org.springframework.util.StopWatch;
  * @Description springUtils
  * @UpdateUser Roc
  */
-@Api
 @Slf4j
 public class SpringUtils {
 
+    /**
+     * @Author: WP
+     * @Date: 2021/9/3 10:18
+     * @Version 1.0
+     * @Description: Spring计时器
+     * @UpdateUser WP
+     * @param  
+     * @return void
+     */
     @Test
-    public void testSpringStopWatch(){
+    public void SpringStopWatchHandle(){
         try {
             //1.Task001
             StopWatch stopWatch = new StopWatch("SpringStopWatch001");

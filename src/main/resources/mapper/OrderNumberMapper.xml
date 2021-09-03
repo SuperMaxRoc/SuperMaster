@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.roc.SuperMaster.mapper.TestOrderMapper">
-  <resultMap id="BaseResultMap" type="com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.TestOrder">
+<mapper namespace="com.roc.SuperMaster.mapper.OrderNumberMapper">
+  <resultMap id="BaseResultMap" type="com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.OrderNumber">
     <!--@mbg.generated-->
-    <!--@Table test_order-->
+    <!--@Table order_Number-->
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
     <result column="create_by" jdbcType="VARCHAR" property="createBy" />
@@ -23,28 +23,28 @@
     <!--@mbg.generated-->
     select 
     <include refid="Base_Column_List" />
-    from test_order
+    from order_Number
     where id = #{id,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     <!--@mbg.generated-->
-    delete from test_order
+    delete from order_Number
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.TestOrder">
+  <insert id="insert" parameterType="com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.OrderNumber">
     <!--@mbg.generated-->
-    insert into test_order (id, remark, create_by, 
-      create_time, update_by, update_time, 
-      delete_time, delete_by, delete_status
-      )
+    insert into order_Number (id, remark, create_by,
+    create_time, update_by, update_time, 
+    delete_time, delete_by, delete_status
+    )
     values (#{id,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{deleteTime,jdbcType=TIMESTAMP}, #{deleteBy,jdbcType=VARCHAR}, #{deleteStatus,jdbcType=BOOLEAN}
-      )
+    #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
+    #{deleteTime,jdbcType=TIMESTAMP}, #{deleteBy,jdbcType=VARCHAR}, #{deleteStatus,jdbcType=BOOLEAN}
+    )
   </insert>
-  <insert id="insertSelective" parameterType="com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.TestOrder">
+  <insert id="insertSelective" parameterType="com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.OrderNumber">
     <!--@mbg.generated-->
-    insert into test_order
+    insert into order_Number
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -104,9 +104,9 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.TestOrder">
+  <update id="updateByPrimaryKeySelective" parameterType="com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.OrderNumber">
     <!--@mbg.generated-->
-    update test_order
+    update order_Number
     <set>
       <if test="remark != null">
         remark = #{remark,jdbcType=VARCHAR},
@@ -135,17 +135,17 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.TestOrder">
+  <update id="updateByPrimaryKey" parameterType="com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.OrderNumber">
     <!--@mbg.generated-->
-    update test_order
+    update order_Number
     set remark = #{remark,jdbcType=VARCHAR},
-      create_by = #{createBy,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_by = #{updateBy,jdbcType=VARCHAR},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
-      delete_time = #{deleteTime,jdbcType=TIMESTAMP},
-      delete_by = #{deleteBy,jdbcType=VARCHAR},
-      delete_status = #{deleteStatus,jdbcType=BOOLEAN}
+    create_by = #{createBy,jdbcType=VARCHAR},
+    create_time = #{createTime,jdbcType=TIMESTAMP},
+    update_by = #{updateBy,jdbcType=VARCHAR},
+    update_time = #{updateTime,jdbcType=TIMESTAMP},
+    delete_time = #{deleteTime,jdbcType=TIMESTAMP},
+    delete_by = #{deleteBy,jdbcType=VARCHAR},
+    delete_status = #{deleteStatus,jdbcType=BOOLEAN}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>

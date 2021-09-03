@@ -11,7 +11,7 @@ import java.util.Random;
  * @Date 2021/8/26 20:09
  * @Version 1.0.0
  * @ClassName ListUtils.java
- * @Description ListUtils
+ * @Description List的Utils
  * @UpdateUser Roc
  */
 @Slf4j

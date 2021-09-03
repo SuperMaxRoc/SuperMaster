@@ -10,7 +10,7 @@ import java.util.Random;
  * @Date 2021/8/12 20:50
  * @Version 1.0.0
  * @ClassName RandomUtils.java
- * @Description 测试随机数的相关用法
+ * @Description 随机数生成的相关用法
  * @UpdateUser Roc
  */
 @Slf4j
@@ -52,7 +52,6 @@ public class RandomUtils {
         String equipmentCode = "SN";
 
         //String.format("%03d", i)在数字前面补零
-
 
     }
 

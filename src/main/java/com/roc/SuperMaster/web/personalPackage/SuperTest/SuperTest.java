@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.web.personalPackage.testEverything;
+package com.roc.SuperMaster.web.personalPackage.SuperTest;
 
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import org.junit.Test;
@@ -13,7 +13,8 @@ import java.util.UUID;
  * @Description testChar
  * @UpdateUser WP
  */
-public class TestChar {
+public class SuperTest {
+
     @Test
     public void testChar(){
         char uniChar = 0x0041;
@@ -29,4 +30,5 @@ public class TestChar {
             System.out.println("不是空白");
         }
     }
+
 }

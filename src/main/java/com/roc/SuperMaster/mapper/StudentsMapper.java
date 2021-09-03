@@ -9,11 +9,12 @@ import org.apache.ibatis.annotations.Mapper;
  * @Date: 2021/8/22 14:15
  * @Version 1.0
  * @ClassName StudentsMapper.java
- * @Description ToDo
+ * @Description StudentsMapper
  * @UpdateUser WP
  */
 @Mapper
 public interface StudentsMapper extends BaseMapper<Students> {
+
     int deleteByPrimaryKey(String studentId);
 
     int insert(Students record);

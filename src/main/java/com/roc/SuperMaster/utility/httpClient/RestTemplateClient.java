@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
  * @Date: 2021/8/30 20:57
  * @Version 1.0
  * @ClassName RestTemplate.java
- * @Description ToDo
+ * @Description Spring封装的Http请求方法
  * @UpdateUser WP
  */
 @Slf4j

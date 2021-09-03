@@ -1,9 +1,6 @@
 package com.roc.SuperMaster.utility.quartzUtil;
 
-import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 
@@ -12,14 +9,14 @@ import java.util.Date;
  * @Date 2021/8/6 13:25
  * @Version 1.0.0
  * @ClassName TestSpringTask.java
- * @Description TestSpringTask
+ * @Description SpringTask
  * @UpdateUser Roc
  */
+//@RequestMapping("/TestSpringTask")
+//@RestController
+//@Api(tags = "定时任务的实现的第二种方式：SpringTask")
 @Slf4j
-@RequestMapping("/TestSpringTask")
-@RestController
-@Api(tags = "用于测试实现定时任务的方法03")
-public class TestSpringTask {
+public class SpringTaskHandle {
 
     /**
      * @Author: WP

@@ -1,6 +1,5 @@
 package com.roc.SuperMaster.utility.quartzUtil;
 
-import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
@@ -16,7 +15,6 @@ import org.springframework.stereotype.Component;
  * @UpdateUser Roc
  */
 @Slf4j
-@Api
 @Component
 public class QuartzJob01 implements Job {
     //使用Quartz的第一步

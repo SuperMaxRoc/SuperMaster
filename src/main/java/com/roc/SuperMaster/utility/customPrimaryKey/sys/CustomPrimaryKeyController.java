@@ -1,8 +1,8 @@
 package com.roc.SuperMaster.utility.customPrimaryKey.sys;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.TestOrder;
-import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.Service.TestOrderService;
+import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.OrderNumber;
+import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.Service.OrderNumberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -21,18 +21,18 @@ import java.util.List;
  * @Author Roc
  * @Date 2021/8/16 15:36
  * @Version 1.0.0
- * @ClassName TestCustomPrimaryKey.java
+ * @ClassName CustomPrimaryKey.java
  * @Description 自定义数据库主键的实现方案
  * @UpdateUser Roc
  */
-@Slf4j
-@Api(value = "自定义数据库主键的实现方案")
+@Api(value = "数据库自定义主键的实现方案")
 @RestController
-@RequestMapping
-public class TestCustomPrimaryKeyController {
+@RequestMapping("/CustomPrimaryKeyHandle")
+@Slf4j
+public class CustomPrimaryKeyController {
 
     @Autowired
-    TestOrderService testOrderService;
+    OrderNumberService orderNumberService;
 
     /**
      *数据库主键：
@@ -64,7 +64,7 @@ public class TestCustomPrimaryKeyController {
     @ApiOperation(value = "测试拼接字符串用于更新一定规则的OrderID")
     @PutMapping("/testCustomNumByJava")
     public void testCustomNum(
-            @RequestBody TestOrder testOrder
+            @RequestBody OrderNumber orderNumber
     ){
         //1.库中创建测试表
         /*create table if not exists test_Order(
@@ -86,7 +86,7 @@ public class TestCustomPrimaryKeyController {
 
         //3.整体思路：库中没有数据，固定插入第一条数据的固定ID/库中有数据，获取最新创建的数据的ID，截取然后+1形成新的ID
         //查询库中的数据
-        List<TestOrder> list = testOrderService.list();
+        List<OrderNumber> list = orderNumberService.list();
 
         //格式化ID的数字部分
         DecimalFormat decimalFormat = new DecimalFormat("000000");
@@ -98,21 +98,21 @@ public class TestCustomPrimaryKeyController {
             String lastTargetId = decimalFormat.format(i);
             //按照规则拼接目标ID
             String numString = stringBuilder.append("FB").append(lastTargetId).toString();
-            testOrder.setId(numString);
+            orderNumber.setId(numString);
         } else {
             //如果库中有数据，则获取最新的订单，进而再做处理
 
             //查询最新的一条数据
-            QueryWrapper<TestOrder> queryWrapper = new QueryWrapper<>();
+            QueryWrapper<OrderNumber> queryWrapper = new QueryWrapper<>();
             //不考虑被逻辑删除的部分
             //放弃时间排序：创建时间相同，容易出错，Date的时间粒度仅在秒级
             //queryWrapper.orderByDesc("create_time");
             queryWrapper.orderByDesc("id");
-            List<TestOrder> orderList = testOrderService.list(queryWrapper);
+            List<OrderNumber> orderNumberList = orderNumberService.list(queryWrapper);
 
             //获取最新数据的ID，且格式化
-            TestOrder targetOrder = orderList.get(0);
-            String targetOrderId = targetOrder.getId();
+            OrderNumber targetOrderNumber = orderNumberList.get(0);
+            String targetOrderId = targetOrderNumber.getId();
             String substring = targetOrderId.substring(2,targetOrderId.length());
             int parseInt = Integer.parseInt(substring);
 
@@ -123,21 +123,21 @@ public class TestCustomPrimaryKeyController {
             StringBuilder stringBuilder = new StringBuilder();
             String targetOrderByString = stringBuilder.append("FB").append(lastTargetId).toString();
 
-            testOrder.setId(targetOrderByString);
+            orderNumber.setId(targetOrderByString);
         }
 
         //新增其他数据
-        testOrder.setRemark("Hello,World!");
-        testOrder.setCreateBy("Roc");
-        testOrder.setCreateTime(new Date());
-        testOrder.setUpdateBy("Roc");
-        testOrder.setUpdateTime(new Date());
-        testOrder.setDeleteBy(null);
-        testOrder.setDeleteTime(null);
-        testOrder.setDeleteStatus(true);
+        orderNumber.setRemark("Hello,World!");
+        orderNumber.setCreateBy("Roc");
+        orderNumber.setCreateTime(new Date());
+        orderNumber.setUpdateBy("Roc");
+        orderNumber.setUpdateTime(new Date());
+        orderNumber.setDeleteBy(null);
+        orderNumber.setDeleteTime(null);
+        orderNumber.setDeleteStatus(true);
 
         //4.开始插入数据
-        testOrderService.insert(testOrder);
+        orderNumberService.insert(orderNumber);
     }
 
     /**

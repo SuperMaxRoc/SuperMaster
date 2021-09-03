@@ -1,4 +1,4 @@
-create table if not exists test_Order(
+create table if not exists order_number(
     id                               varchar(36)          not null primary key  comment '订单编号',
     remark                           varchar(36)          not null              comment '备注',
 #---------------------------------------------------------------------------------------------------------------------------
@@ -11,4 +11,4 @@ create table if not exists test_Order(
     delete_status                    boolean default true not null comment '删除状态：false 0 数据无效已删除,true 1 数据有效未删除'
 )Engine = InnoDB character set utf8 comment '订单表';
 
-select * from test_Order;
+select * from order_number;

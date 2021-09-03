@@ -20,8 +20,6 @@ public class StringUtilsToForce {
         String[] strings = new String[1];
         strings[0] = "true";
         System.out.println(strings[0]);
-
-
     }
 
     @Test

@@ -13,12 +13,8 @@ import java.util.Date;
  * @Description 订单表
  * @UpdateUser Roc
  */
-
-/**
-    * 订单表
-    */
 @Data
-public class TestOrder implements Serializable {
+public class OrderNumber implements Serializable {
     /**
     * 订单编号
     */

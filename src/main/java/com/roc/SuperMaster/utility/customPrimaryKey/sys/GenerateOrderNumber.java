@@ -12,6 +12,7 @@ import java.util.Date;
  * @UpdateUser Roc
  */
 public class GenerateOrderNumber {
+
     // 全局自增数
     private static int count = 0;
 

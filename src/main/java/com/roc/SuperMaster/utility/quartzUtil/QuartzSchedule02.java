@@ -1,13 +1,8 @@
 package com.roc.SuperMaster.utility.quartzUtil;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,14 +10,14 @@ import java.util.concurrent.TimeUnit;
  * @Author Roc
  * @Date 2021/8/6 13:35
  * @Version 1.0.0
- * @ClassName TestQuartzSchedule.java
+ * @ClassName QuartzSchedule.java
  * @Description 使用Quartz的第二部：创建Quartz调用器Schedule
  * @UpdateUser Roc
  */
-@Api(tags = "testQuartzSchedule")
+//@Api(tags = "定时任务的实现的第三种方式：QuartzSchedule")
+//@RequestMapping("/QuartzScheduleHandle")
+//@RestController
 @Slf4j
-@RequestMapping("/TestQuartzSchedule")
-@RestController
 public class QuartzSchedule02 {
 
     /**
@@ -34,8 +29,8 @@ public class QuartzSchedule02 {
      * @param
      * @return void
      */
-    @GetMapping("/testQuartzSchedule")
-    @ApiOperation(value = "测试QuartzSchedule")
+//    @GetMapping("/QuartzSchedule")
+//    @ApiOperation(value = "测试QuartzSchedule")
     public void testQuartzSchedule() throws SchedulerException{
         try{
             log.info("定时任务开始！");

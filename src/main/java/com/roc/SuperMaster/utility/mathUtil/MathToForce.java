@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @Date 2021/8/25 10:47
  * @Version 1.0.0
  * @ClassName MathToForce.java
- * @Description 常见的数学类及方法
+ * @Description 数学类常见的方法
  * @UpdateUser Roc
  */
 @Slf4j

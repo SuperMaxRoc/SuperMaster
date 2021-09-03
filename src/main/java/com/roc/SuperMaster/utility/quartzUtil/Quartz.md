@@ -2,11 +2,10 @@
 
 1.java.util.Timer
 
-2.Thread的操作
+2.ScheduleExcutorService
 
-3.ScheduleExcutorService
+3.Quartz
 
-4.Quartz
+4.SpringTask
 
-5.SpringTask
-
+5.Thread的操作

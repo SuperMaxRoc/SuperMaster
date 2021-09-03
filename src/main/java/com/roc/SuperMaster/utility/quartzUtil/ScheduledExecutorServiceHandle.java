@@ -1,11 +1,6 @@
 package com.roc.SuperMaster.utility.quartzUtil;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.TimerTask;
 import java.util.concurrent.Executors;
@@ -16,15 +11,15 @@ import java.util.concurrent.TimeUnit;
  * @Author Roc
  * @Date 2021/8/6 13:25
  * @Version 1.0.0
- * @ClassName TestScheduledExecutorService.java
- * @Description TestScheduledExecutorService
+ * @ClassName ScheduledExecutorService.java
+ * @Description ScheduledExecutorService
  * @UpdateUser Roc
  */
+//@RequestMapping("/ScheduledExecutorServiceHandle")
+//@RestController
+//@Api(tags = "定时任务的实现的第二种方式：ScheduledExecutor")
 @Slf4j
-@RequestMapping("/TestScheduledExecutorService")
-@RestController
-@Api(tags = "用于测试实现定时任务的方法02部分")
-public class TestScheduledExecutorService {
+public class ScheduledExecutorServiceHandle {
     /**
      * @Author: WP
      * @Date: 2021/8/6 9:47
@@ -34,8 +29,8 @@ public class TestScheduledExecutorService {
      * @param
      * @return void
      */
-    @ApiOperation(value = "测试ScheduledExecutorService")
-    @GetMapping("/testScheduledExecutorService")
+//    @ApiOperation(value = "测试ScheduledExecutorService")
+//    @GetMapping("/ScheduledExecutorService")
     public void test(){
         try{
             ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(10);
