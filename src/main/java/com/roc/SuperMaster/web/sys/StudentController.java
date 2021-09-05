@@ -70,8 +70,8 @@ public class StudentController {
                     .orderByDesc(Students::getCreateTime);
             Page<Students> page = studentsService.page(studentsPage, queryWrapper);
             List<Students> studentsList = page.getRecords();
-
             log.info("查询到的数据条数：{}",page.getRecords().size());
+            log.info("查询到的数据：{}",studentsList);
             return WebApiResult.ok(studentsList);
         }catch (Exception e){
             e.printStackTrace();
