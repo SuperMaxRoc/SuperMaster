@@ -19,6 +19,13 @@ import java.util.Random;
 @Slf4j
 public class AggregateUtils {
 
+    /**
+     * java 数组和集合
+     * https://www.cnblogs.com/tiandi/p/10641773.html
+     * https://blog.csdn.net/feiyanaffection/article/details/81394745
+     */
+
+
 
     /**
      * @Author: WP

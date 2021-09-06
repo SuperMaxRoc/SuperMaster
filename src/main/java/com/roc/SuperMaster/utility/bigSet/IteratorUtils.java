@@ -19,9 +19,6 @@ public class IteratorUtils {
      * https://www.cnblogs.com/zyuze/p/7726582.html
      */
 
-    /**
-     * java 数组和集合
-     * https://www.cnblogs.com/tiandi/p/10641773.html
-     */
+
 
 }
