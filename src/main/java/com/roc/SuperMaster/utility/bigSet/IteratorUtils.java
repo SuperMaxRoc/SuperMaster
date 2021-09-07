@@ -18,7 +18,4 @@ public class IteratorUtils {
      * 迭代器模式：就是提供一种方法对一个容器对象中的各个元素进行访问，而又不暴露该对象容器的内部细节。
      * https://www.cnblogs.com/zyuze/p/7726582.html
      */
-
-
-
 }

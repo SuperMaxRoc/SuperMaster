@@ -3,10 +3,7 @@ package com.roc.SuperMaster.utility.bigSet;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * @Author Roc
@@ -25,7 +22,26 @@ public class AggregateUtils {
      * https://blog.csdn.net/feiyanaffection/article/details/81394745
      */
 
+    /**
+     * java集合和数组
+     * https://www.cnblogs.com/summers/p/4094260.html
+     * 详情请见Java 集合和数组.xlsx
+     */
 
+    /**
+     * java集合类：源码浅析ArrayList、LinkedList和Vector的区别
+     * https://blog.csdn.net/u012814441/article/details/80671604
+     */
+
+    /**
+     * java中Set总结
+     * https://www.jianshu.com/p/d6cff3517688
+     */
+
+    /**
+     * java中Map总结
+     * https://www.jianshu.com/p/27577315af0c
+     */
 
     /**
      * @Author: WP
@@ -39,7 +55,7 @@ public class AggregateUtils {
      */
     @Test
     public void randomGetList(){
-        ArrayList<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
         list.add(3);
@@ -47,6 +63,13 @@ public class AggregateUtils {
         list.add(5);
         list.add(6);
         System.out.println("打印当前的List：" + list);
+        int i1 = list.hashCode();
+        List<String> strings = new ArrayList<>();
+        int i2 = strings.hashCode();
+        System.out.println(i2 == i1);
+        Map<String, String> stringStringHashMap = new HashMap<>();
+        int i3 = stringStringHashMap.hashCode();
+        System.out.println(i2 == i3);
         //定义随机数
         Random random = new Random();
         //规定随机数的范围
@@ -130,7 +153,7 @@ public class AggregateUtils {
     public void remove() {
 
         /**
-         * Java List的remove()方法陷阱
+         * Java List的remove()方法for循环陷阱
          * https://blog.csdn.net/weixin_44727906/article/details/91791982
          */
 
@@ -153,12 +176,11 @@ public class AggregateUtils {
                 //stringsList.remove(stringsList.get(i));
                 stringsList.remove(stringsList.get(i));
                 System.out.println("stringsList的长度：" + stringsList.size());
+                //因为索引缩小，所以i--。
                 i--;
             }else {
                 System.out.println("存在的元素：" + stringsList.get(i));
             }
         }
     }
-
-
 }
