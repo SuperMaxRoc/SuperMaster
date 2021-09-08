@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 /**
  * @Author Roc
@@ -127,28 +128,35 @@ public class ArrayUtils {
         //普通for循环
         System.out.println("遍历一维数组的第一种方法：普通for循环");
         for (int i = 0; i < strings.length; i++) {
-            System.out.println("一维数组：" + strings[i]);
+            System.out.println("一维数组：普通for循环:" + strings[i]);
         }
         //增强for循环
         System.out.println("遍历一维数组的第二种方法：增强for循环");
         for (String string : strings) {
-            System.out.println("一维数组：" + string);
+            System.out.println("一维数组：增强for循环:" + string);
         }
         //while
         System.out.println("遍历一维数组的第三种方法：while");
         int iii = 0;
         while (iii < strings.length){
-            System.out.println("一维数组：" + strings[iii]);
+            System.out.println("一维数组：while:" + strings[iii]);
             iii++;
         }
         //do···while
         System.out.println("遍历一维数组的第四种方法：do···while");
         int lll = 0;
         do {
-            System.out.println("一维数组：" + strings[lll]);
+            System.out.println("一维数组：do···while:" + strings[lll]);
             lll++;
         }
         while (lll < strings.length);
+
+        //迭代器
+        System.out.println("遍历一维数组的第四种方法：迭代器");
+        Iterator<String> iterator = Arrays.stream(strings).iterator();
+        while (iterator.hasNext()){
+            System.out.println("一维数组：迭代器：" + iterator.next());
+        }
     }
     
     /**
