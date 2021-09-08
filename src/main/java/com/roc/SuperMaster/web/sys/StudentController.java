@@ -55,7 +55,6 @@ public class StudentController {
             Students student,
             @RequestParam(name = "pageNum",defaultValue = "1")Integer pageNum,
             @RequestParam(name = "pageSize",defaultValue = "10")Integer pageSize,
-            @RequestParam(name = "deleteStatus",defaultValue = "false") String deleteStatus,
             HttpServletRequest req
     ){
         log.info("开始获取学生列表，筛选条件：{}", JSONUtil.toJsonStr(req.getParameterMap()));
@@ -63,10 +62,8 @@ public class StudentController {
             QueryWrapper<Students> queryWrapper = new QueryWrapper<>(student);
 
             Page<Students> studentsPage = new Page<Students>(pageNum,pageSize);
-//            queryWrapper.ne("delete_status",true)
-//                    .orderByDesc("create_time");
             queryWrapper.lambda()
-//                    .ne(Students::getDeleteStatus,deleteStatus)
+                    .ne(Students::getDeleteStatus,false)
                     .orderByDesc(Students::getCreateTime);
             Page<Students> page = studentsService.page(studentsPage, queryWrapper);
             List<Students> studentsList = page.getRecords();
