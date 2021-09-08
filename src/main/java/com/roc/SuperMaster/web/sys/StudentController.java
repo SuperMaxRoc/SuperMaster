@@ -63,6 +63,7 @@ public class StudentController {
 
             Page<Students> studentsPage = new Page<Students>(pageNum,pageSize);
             queryWrapper.lambda()
+                    //使用了lambda表达式 可以通过方法引用的方式来使用实体字段名的操作，避免直接写数据库表字段名时的错写名字
                     .ne(Students::getDeleteStatus,false)
                     .orderByDesc(Students::getCreateTime);
             Page<Students> page = studentsService.page(studentsPage, queryWrapper);
