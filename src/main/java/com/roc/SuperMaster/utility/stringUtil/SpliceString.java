@@ -16,7 +16,7 @@ import java.util.List;
  * @UpdateUser Roc
  */
 @Slf4j
-public class SplicingString {
+public class SpliceString {
 
     /**
      * 拼接字符串的6种方法

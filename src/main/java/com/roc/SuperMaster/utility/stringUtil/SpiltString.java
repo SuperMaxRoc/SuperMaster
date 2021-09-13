@@ -21,7 +21,7 @@ public class SpiltString {
      * @Author: WP
      * @Date: 2021/9/13 17:10
      * @Version 1.0
-     * @Description: 广义切割字符串的三张方式
+     * @Description: 广义切割字符串的三种方式
      * @UpdateUser WP
      * @param
      * @return void
