@@ -4,9 +4,12 @@ import io.swagger.annotations.ApiModel;
 import org.junit.Test;
 
 /**
- * @author Roc
- * @version 1.0
- * @date 2021/7/13 17:18
+ * @Author Roc
+ * @Date 2021/9/13 16:57
+ * @Version 1.0.0
+ * @ClassName SpiltString.java
+ * @Description 分隔字符串
+ * @UpdateUser Roc
  */
 @ApiModel(value = "String工具类")
 public class StringUtilsToForce {
@@ -15,6 +18,7 @@ public class StringUtilsToForce {
      * String相关的工具类
      * */
 
+    //String类型的数组
     @Test
     public void testStrings(){
         String[] strings = new String[1];
@@ -22,6 +26,7 @@ public class StringUtilsToForce {
         System.out.println(strings[0]);
     }
 
+    //分隔字符串
     @Test
     public void testSpilt(){
         String ids = "1,2";

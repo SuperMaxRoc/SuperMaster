@@ -101,6 +101,7 @@ public class ArrayUtils {
         int02[0][0][1] = 1;
         int02[0][0][2] = 1;
         System.out.println("三维数组02的长度：" + int02.length);
+        //打印数组
         System.out.println("三维数组02：" + Arrays.deepToString(int02));
         System.out.println("三维数组结束：--------------------------------------");
     }
