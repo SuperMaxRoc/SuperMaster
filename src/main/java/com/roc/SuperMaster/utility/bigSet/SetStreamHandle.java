@@ -73,6 +73,11 @@ public class SetStreamHandle {
         Stream<Double> stream3 = Stream.generate(Math::random).limit(2);
         stream3.forEach(System.out::println);
 
+        //使用 Pattern.splitAsStream() 方法，将字符串分隔成流
+        Pattern pattern = Pattern.compile(",");
+        Stream<String> stringStream02 = pattern.splitAsStream("a,b,c,d");
+        stringStream02.forEach(System.out::println);
+
         //使用 BufferedReader.lines() 方法，将每行内容转成流
         BufferedReader reader = null;
         try {
@@ -82,11 +87,6 @@ public class SetStreamHandle {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
-        //使用 Pattern.splitAsStream() 方法，将字符串分隔成流
-        Pattern pattern = Pattern.compile(",");
-        Stream<String> stringStream02 = pattern.splitAsStream("a,b,c,d");
-        stringStream02.forEach(System.out::println);
     }
 
     /**
@@ -162,6 +162,9 @@ public class SetStreamHandle {
     public void useStreamByMap(){
         List<String> stringList = Arrays.asList("a,b,c", "1,2,3");
 
+        //map：接收一个函数作为参数，该函数会被应用到每个元素上，并将其映射成一个新的元素。
+        //flatMap：接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流。
+
         //map
         stringList.stream().map(s -> s.replaceAll(",","")).forEach(System.out::println); //abc 123
 
@@ -170,8 +173,44 @@ public class SetStreamHandle {
             String[] split = s.split(",");
             Stream<String> stream = Arrays.stream(split);
             return stream;
-        }).forEach(System.out::println);
-
+        }).forEach(System.out::println); // abc 123
     }
+
+    /**
+     * @Author: WP
+     * @Date: 2021/9/14 21:51
+     * @Version 1.0
+     * @Description: Stream的基本使用:sorted
+     * @UpdateUser WP
+     * @param  
+     * @return void
+     */
+    @Test
+    public void useStreamBySort(){
+
+        //sorted()：自然排序，流中元素需实现Comparable接口
+        //sorted(Comparator com)：定制排序，自定义Comparator排序器
+
+        List<String> stringList = Arrays.asList("a", "z", "f");
+        stringList.stream().sorted().forEach(System.out::print);
+
+        //Student s1 = new Student("aa", 10);
+        //Student s2 = new Student("bb", 20);
+        //Student s3 = new Student("aa", 30);
+        //Student s4 = new Student("dd", 40);
+        //List<Student> studentList = Arrays.asList(s1, s2, s3, s4);
+
+        ////自定义排序：先按姓名升序，姓名相同则按年龄升序
+        //studentList.stream().sorted(
+        //        (o1, o2) -> {
+        //            if (o1.getName().equals(o2.getName())) {
+        //                return o1.getAge() - o2.getAge();
+        //            } else {
+        //                return o1.getName().compareTo(o2.getName());
+        //            }
+        //        }
+        //).forEach(System.out::println);
+    }
+
 
 }
