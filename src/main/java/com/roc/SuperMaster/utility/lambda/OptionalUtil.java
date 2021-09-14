@@ -214,7 +214,6 @@ public class OptionalUtil {
 //        Optional.ofNullable(user).flatMap(user1 -> user1.getId()).orElse("不存在");
     }
 
-
     /**
      * @Author: WP
      * @Date: 2021/9/14 0:14
