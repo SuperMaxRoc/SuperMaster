@@ -2,6 +2,8 @@ package com.roc.SuperMaster.utility.lambda.pojo;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author WP
  * @version 1.0
@@ -11,7 +13,7 @@ import lombok.Data;
  * @UpdateUser Roc
  */
 @Data
-public class User {
+public class User implements Serializable {
 
     private String id;
 

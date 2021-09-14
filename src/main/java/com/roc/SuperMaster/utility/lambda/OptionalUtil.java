@@ -210,7 +210,8 @@ public class OptionalUtil {
     public void optionalTest09() {
         User user = new User();
         user.setId("这是user");
-//        Object o = Optional.ofNullable(user).flatMap(user01 -> user01.getId()).orElse("不存在");
+//        user.setName(Optional.ofNullable("111"));
+//        Optional.ofNullable(user).flatMap(user1 -> user1.getId()).orElse("不存在");
     }
 
 
