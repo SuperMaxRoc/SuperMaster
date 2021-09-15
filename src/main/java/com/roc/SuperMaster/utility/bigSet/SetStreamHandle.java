@@ -1,5 +1,6 @@
 package com.roc.SuperMaster.utility.bigSet;
 
+import com.roc.SuperMaster.utility.lambda.pojo.User;
 import org.junit.Test;
 
 import java.io.BufferedReader;
@@ -23,6 +24,17 @@ public class SetStreamHandle {
 
     /**
      * power by https://blog.csdn.net/y_k_y/article/details/84633001
+     */
+
+    /**
+     * Stream 是 Java8 中处理集合的关键抽象概念，它可以指定你希望对集合进行的操作，可以执行非常复杂的查找、过滤和映射数据等操作。
+     * 使用Stream API 对集合数据进行操作，就类似于使用 SQL 执行的数据库查询。也可以使用 Stream API 来并行执行操作。
+     * 简而言之，Stream API 提供了一种高效且易于使用的处理数据的方式。
+     *
+     * 特点：
+     *     1. 不是数据结构，不会保存数据。
+     *     2. 不会修改原来的数据源，它会将操作后的数据保存到另外一个对象中。（保留意见：毕竟peek方法可以修改流中元素）
+     *     3. 惰性求值，流在中间处理过程中，只是对操作进行了记录，并不会立即执行，需要等到执行终止操作的时候才会进行实际的计算。
      */
 
     /**
@@ -210,6 +222,31 @@ public class SetStreamHandle {
         //            }
         //        }
         //).forEach(System.out::println);
+    }
+    
+    /**
+     * @Author: WP
+     * @Date: 2021/9/15 10:00
+     * @Version 1.0
+     * @Description: Stream的基本使用:Peek 消费
+     * @UpdateUser WP
+     * @param  
+     * @return void
+     */
+    @Test
+    public void useStreamByPeek(){
+        /**
+         * peek：如同于map，能得到流中的每一个元素。
+         * map接收的是一个Function表达式，有返回值；而peek接收的是Consumer表达式，没有返回值。
+         */
+        //调用User配合类
+        User user01 = new User();
+        User user02 = new User();
+
+        user01.setId("001");
+        user02.setId("002");
+
+        List<User> userList = Arrays.asList(user01, user02);
     }
 
 
