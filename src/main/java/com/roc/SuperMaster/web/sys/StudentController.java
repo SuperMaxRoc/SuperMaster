@@ -10,12 +10,14 @@ import com.roc.SuperMaster.utility.webResult.WebApiResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @Author: WP
@@ -59,8 +61,8 @@ public class StudentController {
     ){
         log.info("开始获取学生列表，筛选条件：{}", JSONUtil.toJsonStr(req.getParameterMap()));
         try{
-            QueryWrapper<Students> queryWrapper = new QueryWrapper<>(student);
-
+            //QueryWrapper<Students> queryWrapper = new QueryWrapper<>(student);
+            QueryWrapper<Students> queryWrapper = new QueryWrapper<Students>();
             Page<Students> studentsPage = new Page<Students>(pageNum,pageSize);
             queryWrapper.lambda()
                     //使用了lambda表达式 可以通过方法引用的方式来使用实体字段名的操作，避免直接写数据库表字段名时的错写名字
@@ -144,5 +146,10 @@ public class StudentController {
             log.error("捕获异常信息：{}",e.getMessage());
             return WebApiResult.error("新增学生失败");
         }
+    }
+
+    @Test
+    public void testUUID(){
+        System.out.println(UUID.randomUUID().toString());
     }
 }
