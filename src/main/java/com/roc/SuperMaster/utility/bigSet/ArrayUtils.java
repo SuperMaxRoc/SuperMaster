@@ -204,4 +204,23 @@ public class ArrayUtils {
         }
     }
 
+    //
+    @Test
+    public void testException() {
+//        String[] strings = {"1", "2", "12"};
+//        Arrays.stream(strings).forEach(System.out::println);
+//
+//        for (String s : strings) {
+//            System.out.println(s);
+//        }
+        String str = null;
+        str += "参数编号："
+                + "1"
+                + "\t参数描述："
+                + "2"
+                + "\t参数值："
+                + "3"
+                + "\r\n";
+        System.out.print(str);
+    }
 }

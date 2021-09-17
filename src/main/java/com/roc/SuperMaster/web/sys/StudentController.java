@@ -61,8 +61,16 @@ public class StudentController {
     ){
         log.info("开始获取学生列表，筛选条件：{}", JSONUtil.toJsonStr(req.getParameterMap()));
         try{
-            //QueryWrapper<Students> queryWrapper = new QueryWrapper<>(student);
-            QueryWrapper<Students> queryWrapper = new QueryWrapper<Students>();
+            /**
+             * 实例化QueryWrapper时参数可以接受请求来的实体对象，也可不接受。
+             * 此地最好的方式是构建自己的分页插件，用于拦截来自客户端的多种请求参数。
+             * QueryWrapper<>(student);
+             * QueryWrapper<>();
+              */
+            //基础框架下实例化QueryWrapper的三种方式。
+            QueryWrapper<Students> queryWrapper = new QueryWrapper<>(student);
+            //QueryWrapper<Students> queryWrapper = new QueryWrapper<Students>();
+            //LambdaQueryWrapper<Students> queryWrapper = new LambdaQueryWrapper<>(student);
             Page<Students> studentsPage = new Page<Students>(pageNum,pageSize);
             queryWrapper.lambda()
                     //使用了lambda表达式 可以通过方法引用的方式来使用实体字段名的操作，避免直接写数据库表字段名时的错写名字
