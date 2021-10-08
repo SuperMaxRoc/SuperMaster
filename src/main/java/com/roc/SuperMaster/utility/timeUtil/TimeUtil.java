@@ -84,7 +84,33 @@ public class TimeUtil {
 
     @Test
     public void testing() {
-        Date date = new Date();
-        System.out.println(date.toString());
+        //Date date = new Date();
+        //System.out.println(date.toString());
+
+        String s1 = "2021-09-23 10:00:00";
+        String s2 = "2021-09-23 10:30:00";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try {
+            Date parse1 = simpleDateFormat.parse(s1);
+            Date parse2 = simpleDateFormat.parse(s2);
+            long l = parse2.getTime() - parse1.getTime();
+            long day=l/(24*60*60*1000);
+            long hour=(l/(60*60*1000)-day*24);
+            long min=((l/(60*1000))-day*24*60-hour*60);
+            long s=(l/1000-day*24*60*60-hour*60*60-min*60);
+            System.out.println(day+"天"+hour+"小时"+min+"分"+s+"秒");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testMonth(){
+        Date nowDate = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(nowDate);
+        int nowMonth = cal.get(Calendar.MONTH)+1;
+        System.out.println(nowMonth);
+
     }
 }
