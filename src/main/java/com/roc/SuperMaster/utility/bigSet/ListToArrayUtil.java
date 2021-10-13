@@ -20,17 +20,17 @@ import java.util.List;
 public class ListToArrayUtil {
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/8 15:15
      * @Version 1.0
      * @Description: 数组转换成list
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void arrayToList(){
-        String[] strings = {"1","2","333"};
+    public void arrayToList() {
+        String[] strings = {"1", "2", "333"};
         System.out.println("转换前的数组：" + Arrays.deepToString(strings));
 
         System.out.println("数组转换成List的第一种方式：Arrays.asList");
@@ -51,21 +51,21 @@ public class ListToArrayUtil {
 
         System.out.println("数组转换成List的第四种方式：Collection.addAll");
         List<String> stringsList04 = new ArrayList<>(strings.length);
-        Collections.addAll(stringsList04,strings);
+        Collections.addAll(stringsList04, strings);
         System.out.println("转换后的List:" + stringsList04);
     }
-    
+
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/8 15:45
      * @Version 1.0
      * @Description: List转数组
      * @UpdateUser WP
-     * @param  
-     * @return void
      */
     @Test
-    public void listToArray(){
+    public void listToArray() {
 
         //相同数据类型的list集合和数组的转换
         List<String> arrayList = new ArrayList<>();

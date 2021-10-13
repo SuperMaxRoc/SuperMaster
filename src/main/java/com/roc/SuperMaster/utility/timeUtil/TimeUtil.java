@@ -94,22 +94,22 @@ public class TimeUtil {
             Date parse1 = simpleDateFormat.parse(s1);
             Date parse2 = simpleDateFormat.parse(s2);
             long l = parse2.getTime() - parse1.getTime();
-            long day=l/(24*60*60*1000);
-            long hour=(l/(60*60*1000)-day*24);
-            long min=((l/(60*1000))-day*24*60-hour*60);
-            long s=(l/1000-day*24*60*60-hour*60*60-min*60);
-            System.out.println(day+"天"+hour+"小时"+min+"分"+s+"秒");
+            long day = l / (24 * 60 * 60 * 1000);
+            long hour = (l / (60 * 60 * 1000) - day * 24);
+            long min = ((l / (60 * 1000)) - day * 24 * 60 - hour * 60);
+            long s = (l / 1000 - day * 24 * 60 * 60 - hour * 60 * 60 - min * 60);
+            System.out.println(day + "天" + hour + "小时" + min + "分" + s + "秒");
         } catch (ParseException e) {
             e.printStackTrace();
         }
     }
 
     @Test
-    public void testMonth(){
+    public void testMonth() {
         Date nowDate = new Date();
         Calendar cal = Calendar.getInstance();
         cal.setTime(nowDate);
-        int nowMonth = cal.get(Calendar.MONTH)+1;
+        int nowMonth = cal.get(Calendar.MONTH) + 1;
         System.out.println(nowMonth);
 
     }

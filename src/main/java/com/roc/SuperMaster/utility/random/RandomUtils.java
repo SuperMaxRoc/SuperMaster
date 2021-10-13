@@ -17,38 +17,38 @@ import java.util.Random;
 public class RandomUtils {
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/12 20:51
      * @Version 1.0
      * @Description: 生成8位随机数
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void testRandom01(){
+    public void testRandom01() {
         StringBuilder str = new StringBuilder();//定义变长字符串
         Random random = new Random();
         //随机生成数字，并添加到字符串
-        for(int i = 0;i < 8;i++){
+        for (int i = 0; i < 8; i++) {
             str.append(random.nextInt(10));
         }
         //将字符串转换为数字并输出
-        int num=Integer.parseInt(str.toString());
+        int num = Integer.parseInt(str.toString());
         System.out.println(num);
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/12 20:54
      * @Version 1.0
      * @Description: 测试8位自增编号
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void testRandom02(){
+    public void testRandom02() {
         String equipmentCode = "SN";
 
         //String.format("%03d", i)在数字前面补零
@@ -56,16 +56,16 @@ public class RandomUtils {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/26 20:26
      * @Version 1.0
      * @Description: 获取一定范围内的随机数
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void getRandom(){
+    public void getRandom() {
         Random random = new Random();
         //规定随机数的最大范围
         int i = random.nextInt(100);

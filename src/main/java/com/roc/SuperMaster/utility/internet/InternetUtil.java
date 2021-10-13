@@ -18,16 +18,16 @@ import java.net.UnknownHostException;
 public class InternetUtil {
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/1 10:25
      * @Version 1.0
      * @Description: 获取本机IP地址及主机名称
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void getIPAddress(){
+    public void getIPAddress() {
         try {
             InetAddress inetAddress = InetAddress.getLocalHost();
             String hostIPAddress = inetAddress.getHostAddress();

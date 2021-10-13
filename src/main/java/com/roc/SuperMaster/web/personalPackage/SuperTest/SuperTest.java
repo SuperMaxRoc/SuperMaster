@@ -16,7 +16,7 @@ import java.util.*;
 public class SuperTest {
 
     @Test
-    public void testChar(){
+    public void testChar() {
         char uniChar = 0x0041;
         System.out.println(uniChar);
         Integer integer = 55;
@@ -24,15 +24,15 @@ public class SuperTest {
         System.out.println(s);
         System.out.println(UUID.randomUUID());
         String string = " ";
-        if(StringUtils.isBlank(string)){
+        if (StringUtils.isBlank(string)) {
             System.out.println("是空白");
-        }else {
+        } else {
             System.out.println("不是空白");
         }
     }
 
     @Test
-    public void testList(){
+    public void testList() {
         ArrayList<String> strings = new ArrayList<>();
         strings.add("12");
         strings.add("11");
@@ -52,8 +52,8 @@ public class SuperTest {
             System.out.println(strings.get(i));
         }
         Map<String, String> map = new HashMap<>();
-        map.put("01","02");
-        map.forEach((k,v) -> System.out.println(k + v));
+        map.put("01", "02");
+        map.forEach((k, v) -> System.out.println(k + v));
         int size = map.size();
         System.out.println(map.get(""));
 

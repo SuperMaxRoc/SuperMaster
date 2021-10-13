@@ -15,16 +15,16 @@ import java.math.BigDecimal;
 public class basicLangQuestions {
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/30 17:31
      * @Version 1.0
      * @Description: 数据精度问题：单精度、双精度、半精度、混合精度的问题
      * @UpdateUser WP
-     * @param  
-     * @return void
      */
     @Test
-    public void precision(){
+    public void precision() {
 
         /**
          * 数据精度问题
@@ -39,7 +39,7 @@ public class basicLangQuestions {
         //数字比大小
         //https://blog.csdn.net/qq_37953002/article/details/102476979?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-3.essearch_pc_relevant&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-3.essearch_pc_relevant
         double a = 0.2;
-        float b =  0.2f;
+        float b = 0.2f;
         System.out.println(a);
         System.out.println(b);
         BigDecimal bigDecimal = new BigDecimal(0.2);

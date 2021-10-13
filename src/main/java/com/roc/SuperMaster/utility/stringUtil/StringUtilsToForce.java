@@ -16,11 +16,11 @@ public class StringUtilsToForce {
 
     /**
      * String相关的工具类
-     * */
+     */
 
     //String类型的数组
     @Test
-    public void testStrings(){
+    public void testStrings() {
         String[] strings = new String[1];
         strings[0] = "true";
         System.out.println(strings[0]);
@@ -28,7 +28,7 @@ public class StringUtilsToForce {
 
     //分隔字符串
     @Test
-    public void testSpilt(){
+    public void testSpilt() {
         String ids = "1,2";
         System.out.println(ids);
         String[] strings = ids.split(",");

@@ -19,22 +19,22 @@ import java.util.Date;
 public class SpringTaskHandle {
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/6 11:52
      * @Version 1.0
      * @Description: 测试SpringTask
      * @UpdateUser WP
-     * @param
-     * @return void
      */
 //    @Scheduled(cron = "0/2 * * * * ?")
-    public void testSpringTask(){
+    public void testSpringTask() {
         log.info("开始测试Spring Task");
-        try{
+        try {
             System.out.println("当前执行任务的时间：" + new Date());
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            log.error("捕获异常信息：{}",e.getMessage());
+            log.error("捕获异常信息：{}", e.getMessage());
         }
     }
 }

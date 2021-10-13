@@ -18,16 +18,16 @@ import java.util.Iterator;
 public class ArrayUtils {
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/6 16:18
      * @Version 1.0
      * @Description: 构建新的数组
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void newArrays(){
+    public void newArrays() {
 
         /**
          * 初始化数组
@@ -37,7 +37,7 @@ public class ArrayUtils {
         System.out.println("一维数组初始化！");
 
         //构建一维数组的方式01：静态初始化：数据类型[] 数组名 = new 数据类型[]{元素1,元素2,元素3…};
-        String [] strings01 = {};
+        String[] strings01 = {};
 
         //因为固定了数组及内容，故不能新增新的数组元素
         //strings01[0] = "0";
@@ -50,7 +50,7 @@ public class ArrayUtils {
 
         //构建一维数组的方式02：动态初始化：数组存储的数据类型[ ] 数组名字 = new 数组存储的数据类型[数组长度];
         //构建一维数组的方式02：动态初始化：数组存储的数据类型 数组名字[ ] = new 数组存储的数据类型[数组长度];
-        String [] strings02 = new String[5];
+        String[] strings02 = new String[5];
         String strings03[] = new String[5];
 
         strings02[0] = "0";
@@ -74,14 +74,14 @@ public class ArrayUtils {
         System.out.println("二维数组初始化！");
 
         //构建二维数组的方式01：静态初始化：数组存储的数据类型[ ][ ] 数组名字 = {{},{}···}
-        int[][] ints01 = {{1,2},{1}};
+        int[][] ints01 = {{1, 2}, {1}};
         System.out.println("二维数组01：" + Arrays.deepToString(ints01));
 
         //构建二维数组的方式02：动态初始化01:数组存储的数据类型[ ][ ] 数组名字 = new数组存储的数据类型[数组长度][数组长度];
         //构建二维数组的方式02：动态初始化02:数组存储的数据类型 数组名字[ ][ ] = new数组存储的数据类型[数组长度][数组长度];
         int[][] ints02 = new int[2][3];
-        int ints03 [][] = {};
-        int ints04 [][] = new int[2][2];
+        int ints03[][] = {};
+        int ints04[][] = new int[2][2];
         ints02[0][0] = 0;
         ints02[0][1] = 1;
         ints02[1][0] = 2;
@@ -93,10 +93,10 @@ public class ArrayUtils {
         System.out.println("三维数组开始：--------------------------------------");
         System.out.println("三维数组初始化！");
 
-        int [][][] int01 = {};
+        int[][][] int01 = {};
         System.out.println("三维数组01的长度：" + int01.length);
 
-        int int02 [][][] = new int[1][2][3];
+        int int02[][][] = new int[1][2][3];
         int02[0][0][0] = 1;
         int02[0][0][1] = 1;
         int02[0][0][2] = 1;
@@ -109,17 +109,18 @@ public class ArrayUtils {
     //一维数组OneDimensional
     //二维数组TwoDimensional
     //三维数组ThreeDimensional
+
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/6 15:18
      * @Version 1.0
      * @Description: 遍历一维数组
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void traverseOneDimensionalArray(){
+    public void traverseOneDimensionalArray() {
         String[] strings = new String[4];
         strings[0] = "0";
         strings[1] = "1";
@@ -139,7 +140,7 @@ public class ArrayUtils {
         //while
         System.out.println("遍历一维数组的第三种方法：while");
         int iii = 0;
-        while (iii < strings.length){
+        while (iii < strings.length) {
             System.out.println("一维数组：while:" + strings[iii]);
             iii++;
         }
@@ -155,25 +156,25 @@ public class ArrayUtils {
         //迭代器
         System.out.println("遍历一维数组的第四种方法：迭代器");
         Iterator<String> iterator = Arrays.stream(strings).iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             System.out.println("一维数组：迭代器：" + iterator.next());
         }
     }
-    
+
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/6 15:57
      * @Version 1.0
      * @Description: 遍历二维数组
      * @UpdateUser WP
-     * @param  
-     * @return void
      */
     @Test
-    public void traverseTwoDimensionalArray(){
+    public void traverseTwoDimensionalArray() {
         //定义一个两行三列的int类型的二维数组.
         //二维数组的长度为行数
-        int ints01 [][] = new int[2][3];
+        int ints01[][] = new int[2][3];
         ints01[0][0] = 0;
         ints01[0][1] = 1;
         ints01[0][2] = 1;
@@ -192,13 +193,13 @@ public class ArrayUtils {
         //外层for循环拿到第几行，然后当成行的一维数组，循环得到当前行的列的值
         for (int i = 0; i < ints01.length; i++) {
             for (int j = 0; j < ints01[i].length; j++) {
-                System.out.println("遍历二维数组01：普通for循环:"+ ints01[i][j]);
+                System.out.println("遍历二维数组01：普通for循环:" + ints01[i][j]);
             }
         }
 
         //遍历二维数组02：增强for循环
-        for (int[] i1:ints01) {
-            for (int k:i1) {
+        for (int[] i1 : ints01) {
+            for (int k : i1) {
                 System.out.println("遍历二维数组02：增强for循环：" + k);
             }
         }

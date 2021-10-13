@@ -24,19 +24,19 @@ public class IteratorUtils {
      * https://www.cnblogs.com/zyuze/p/7726582.html
      */
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/8 10:00
      * @Version 1.0
      * @Description: 迭代器遍历List集合
      * @UpdateUser WP
-     * @param  
-     * @return void
      */
     @Test
-    public void iteratorToGetList(){
+    public void iteratorToGetList() {
 
         //Array数组的迭代遍历
-        String [] stringsArray = new String[5];
+        String[] stringsArray = new String[5];
         stringsArray[0] = "0";
         stringsArray[1] = "0";
         stringsArray[2] = "0";
@@ -44,7 +44,7 @@ public class IteratorUtils {
         stringsArray[4] = "5";
 
         Iterator<String> iterator02 = Arrays.stream(stringsArray).iterator();
-        while (iterator02.hasNext()){
+        while (iterator02.hasNext()) {
             System.out.println("list集合的迭代遍历:" + iterator02.next());
         }
 
@@ -55,7 +55,7 @@ public class IteratorUtils {
         strings.add("3");
         Iterator<String> iterator = strings.iterator();
         //使用while循环
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             System.out.println("list集合的迭代遍历:" + iterator.next());
         }
     }

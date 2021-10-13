@@ -20,25 +20,25 @@ import java.util.TreeMap;
 public class MapUtils {
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/8 10:10
      * @Version 1.0
      * @Description: 构建Map及遍历map
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void hashMapUtils(){
+    public void hashMapUtils() {
 
         //HashMap
         //允许key和值为null
         //key不允许重复
         Map<String, String> map = new HashMap<>();
-        map.put("1","12");
-        map.put(null,null);
-        map.put("3","12");
-        map.put("4","12");
+        map.put("1", "12");
+        map.put(null, null);
+        map.put("3", "12");
+        map.put("4", "12");
 
         //map.toString
         System.out.println("map:" + map);
@@ -46,46 +46,46 @@ public class MapUtils {
 
         //for循环遍历
         System.out.println("遍历HashMap的第一种方法：for循环");
-        for (String key:map.keySet()){
+        for (String key : map.keySet()) {
             System.out.println("key:" + key + " value:" + map.get(key));
         }
 
         //迭代器
         System.out.println("遍历HashMap的第二种方法：迭代器");
         Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             Map.Entry<String, String> stringEntry = iterator.next();
-            System.out.println("key:" +stringEntry.getKey() + " value:" + stringEntry.getValue());
+            System.out.println("key:" + stringEntry.getKey() + " value:" + stringEntry.getValue());
         }
 
         //
         System.out.println("遍历HashMap的第三种方法");
-        for (Map.Entry<String, String> m:map.entrySet() ){
-            System.out.println("key:" +m.getKey() + " value:" + m.getValue());
+        for (Map.Entry<String, String> m : map.entrySet()) {
+            System.out.println("key:" + m.getKey() + " value:" + m.getValue());
         }
 
         //遍历HashMap:取Key
         System.out.println("遍历HashMap:取Key");
-        for (Map.Entry<String,String> m:map.entrySet()){
+        for (Map.Entry<String, String> m : map.entrySet()) {
             System.out.println(m.getKey());
         }
 
         //遍历HashMap:取Value
         System.out.println("遍历HashMap:取Value");
-        for (String m: map.values()){
+        for (String m : map.values()) {
             System.out.println(m);
         }
     }
 
     @Test
-    public void treeMapUtils(){
+    public void treeMapUtils() {
         Map<Integer, Integer> integerTreeMap = new TreeMap<>();
         //key不能为null，且有且唯一，不允许重复
         //值可以为null
-        integerTreeMap.put(1,null);
-        integerTreeMap.put(2,2);
-        integerTreeMap.put(4,2);
-        integerTreeMap.put(3,2);
+        integerTreeMap.put(1, null);
+        integerTreeMap.put(2, 2);
+        integerTreeMap.put(4, 2);
+        integerTreeMap.put(3, 2);
 
         //TreeMap.toString
         System.out.println("integerTreeMap:" + integerTreeMap.toString());
@@ -96,31 +96,31 @@ public class MapUtils {
         //迭代器
         System.out.println("遍历TreeMap的第一种方法：迭代器");
         Iterator<Map.Entry<Integer, Integer>> iterator = integerTreeMap.entrySet().iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             Map.Entry<Integer, Integer> next = iterator.next();
             System.out.println("key:" + next.getKey() + " value:" + next.getValue());
         }
         //for循环
         System.out.println("遍历TreeMap的第二种方法：for循环");
-        for (Integer m:integerTreeMap.keySet()){
+        for (Integer m : integerTreeMap.keySet()) {
             System.out.println("key:" + m + " value:" + integerTreeMap.get(m));
         }
 
         //
         System.out.println("遍历TreeMap的第三种方法：");
-        for (Map.Entry<Integer,Integer> m:integerTreeMap.entrySet()){
+        for (Map.Entry<Integer, Integer> m : integerTreeMap.entrySet()) {
             System.out.println("key:" + m.getKey() + " value:" + m.getValue());
         }
 
         //
         System.out.println("遍历TreeMap：取Key");
-        for (Map.Entry<Integer,Integer> m:integerTreeMap.entrySet()){
+        for (Map.Entry<Integer, Integer> m : integerTreeMap.entrySet()) {
             System.out.println("key:" + m.getKey());
         }
 
         //
         System.out.println("遍历TreeMap：取value");
-        for (Object m:integerTreeMap.values()){
+        for (Object m : integerTreeMap.values()) {
             System.out.println("value:" + m);
         }
     }

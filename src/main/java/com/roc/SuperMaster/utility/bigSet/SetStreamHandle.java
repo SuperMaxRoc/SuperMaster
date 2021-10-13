@@ -38,16 +38,16 @@ public class SetStreamHandle {
      */
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/14 16:24
      * @Version 1.0
      * @Description: 创建流
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void createStream(){
+    public void createStream() {
         List<String> stringList = new ArrayList<String>();
 
         stringList.add("1");
@@ -102,16 +102,16 @@ public class SetStreamHandle {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/14 16:59
      * @Version 1.0
      * @Description: Stream的基本使用:limit
      * @UpdateUser WP
-     * @param  
-     * @return void
      */
     @Test
-    public void useStreamByLimit(){
+    public void useStreamByLimit() {
         List<String> stringList = new ArrayList<String>();
 
         stringList.add("1");
@@ -128,16 +128,16 @@ public class SetStreamHandle {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/14 17:11
      * @Version 1.0
      * @Description: Stream的基本使用:filter等
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void useStreamByFilter(){
+    public void useStreamByFilter() {
         Integer[] integers = new Integer[5];
         integers[0] = 0;
         integers[1] = 1;
@@ -154,31 +154,31 @@ public class SetStreamHandle {
          */
 
         //过滤大于2的数返回
-        stream.filter(s -> s>2).forEach(System.out::println);//3 4
+        stream.filter(s -> s > 2).forEach(System.out::println);//3 4
 
         //过滤大于2的数返回，跳过前1个数，及获取前两个数
-        stream.filter(s -> s>2).skip(1).limit(1).forEach(System.out::println);//4
+        stream.filter(s -> s > 2).skip(1).limit(1).forEach(System.out::println);//4
         stream.close();
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/14 17:27
      * @Version 1.0
      * @Description: Stream的基本使用:map和flatmap
      * @UpdateUser WP
-     * @param  
-     * @return void
      */
     @Test
-    public void useStreamByMap(){
+    public void useStreamByMap() {
         List<String> stringList = Arrays.asList("a,b,c", "1,2,3");
 
         //map：接收一个函数作为参数，该函数会被应用到每个元素上，并将其映射成一个新的元素。
         //flatMap：接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流。
 
         //map
-        stringList.stream().map(s -> s.replaceAll(",","")).forEach(System.out::println); //abc 123
+        stringList.stream().map(s -> s.replaceAll(",", "")).forEach(System.out::println); //abc 123
 
         //flatmap
         stringList.stream().flatMap(s -> {
@@ -189,16 +189,16 @@ public class SetStreamHandle {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/14 21:51
      * @Version 1.0
      * @Description: Stream的基本使用:sorted
      * @UpdateUser WP
-     * @param  
-     * @return void
      */
     @Test
-    public void useStreamBySort(){
+    public void useStreamBySort() {
 
         //sorted()：自然排序，流中元素需实现Comparable接口
         //sorted(Comparator com)：定制排序，自定义Comparator排序器
@@ -223,18 +223,18 @@ public class SetStreamHandle {
         //        }
         //).forEach(System.out::println);
     }
-    
+
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/15 10:00
      * @Version 1.0
      * @Description: Stream的基本使用:Peek 消费
      * @UpdateUser WP
-     * @param  
-     * @return void
      */
     @Test
-    public void useStreamByPeek(){
+    public void useStreamByPeek() {
         /**
          * peek：如同于map，能得到流中的每一个元素。
          * map接收的是一个Function表达式，有返回值；而peek接收的是Consumer表达式，没有返回值。

@@ -16,21 +16,22 @@ import org.springframework.util.StopWatch;
 public class SpringUtils {
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/3 10:18
      * @Version 1.0
      * @Description: Spring计时器
      * @UpdateUser WP
-     * @param  
-     * @return void
      */
     @Test
-    public void SpringStopWatchHandle(){
+    public void SpringStopWatchHandle() {
         try {
             //1.Task001
             StopWatch stopWatch = new StopWatch("SpringStopWatch001");
             stopWatch.start("计算for循环的时间");
-            for (int i = 0; i < 1000; i++) {        }
+            for (int i = 0; i < 1000; i++) {
+            }
             stopWatch.stop();
             //2.Task002
             stopWatch.start("起床");
@@ -53,7 +54,7 @@ public class SpringUtils {
 
             //计算任务的总数
             System.out.println("任务的总数：" + stopWatch.getTaskCount());
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

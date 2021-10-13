@@ -20,17 +20,18 @@ public class PrecisionCalculation {
     //为什么需要使用BigDecimal/BigInteger?---》为了避免丢失精度
     //不论是float 还是double都是浮点数，而计算机是二进制的，浮点数会失去一定的精确度。
     //注:根本原因是:十进制值通常没有完全相同的二进制表示形式;十进制数的二进制表示形式可能不精确。只能无限接近于那个值。
+
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/30 15:17
      * @Version 1.0
      * @Description: 测试精度丢失
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void losePrecision(){
+    public void losePrecision() {
         System.out.println(0.3 - 0.1);
         System.out.println(0.3 * 0.1);
         System.out.println(0.3 / 0.1);
@@ -48,16 +49,16 @@ public class PrecisionCalculation {
     //BigInteger类型的数字范围较 Integer 类型的数字范围要大得多。
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/30 16:09
      * @Version 1.0
      * @Description: test BigInteger的常用方法
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void testBigInteger(){
+    public void testBigInteger() {
 
         //public BigInteger add(BigInteger val):做加法运算
         //public BigInteger subtract(BigInteger val):做减法运算
@@ -95,16 +96,16 @@ public class PrecisionCalculation {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/30 16:10
      * @Version 1.0
      * @Description: test BigDecimal的常用方法
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void testBigDecimal(){
+    public void testBigDecimal() {
         //构建BigDecimal的方式
         //public BigDecimal(double val)
         //public BigDecimal(float val)
@@ -160,7 +161,7 @@ public class PrecisionCalculation {
          *
          * ROUND_UP    //向远离0的方向舍入
          * */
-        BigDecimal divide = bigDecimal01.divide(bigDecimal02,10, BigDecimal.ROUND_HALF_UP);
+        BigDecimal divide = bigDecimal01.divide(bigDecimal02, 10, BigDecimal.ROUND_HALF_UP);
         System.out.println("/:" + divide);
     }
 }

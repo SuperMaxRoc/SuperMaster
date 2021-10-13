@@ -18,16 +18,16 @@ import java.util.StringTokenizer;
 public class SpiltString {
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/13 17:10
      * @Version 1.0
      * @Description: 广义切割字符串的三种方式
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void spiltString(){
+    public void spiltString() {
         String targetString = "a,b,c";
 
         //基于String.spilt的分隔字符串
@@ -39,20 +39,20 @@ public class SpiltString {
         System.out.println("基于String.substring的切割字符串:" + substring);
 
         //基于StringTokenizer的切割字符串
-        StringTokenizer stringTokenizer = new StringTokenizer(targetString,",");
-        while (stringTokenizer.hasMoreTokens()){
+        StringTokenizer stringTokenizer = new StringTokenizer(targetString, ",");
+        while (stringTokenizer.hasMoreTokens()) {
             System.out.println("基于StringTokenizer的切割字符串:" + stringTokenizer.nextToken());
         }
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/13 17:17
      * @Version 1.0
      * @Description: 寻找指定的字符，然后切割目标前或者目标后的部分
      * @UpdateUser WP
-     * @param  
-     * @return void
      */
     @Test
     public void findTargetStringForSub() {
@@ -65,7 +65,7 @@ public class SpiltString {
         //返回第一次出现"w"的索引地址
         int w = string.indexOf("w");
         String substringBefore = string.substring(0, w);
-        String targetSubstring = string.substring(w, w+3);
+        String targetSubstring = string.substring(w, w + 3);
         String substringBack = string.substring(w, string.length());
         System.out.println(substringBefore);
         System.out.println(targetSubstring);

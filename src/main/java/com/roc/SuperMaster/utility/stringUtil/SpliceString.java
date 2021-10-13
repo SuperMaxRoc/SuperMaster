@@ -44,16 +44,16 @@ public class SpliceString {
      * */
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/9 9:45
      * @Version 1.0
      * @Description: test + 拼接字符串
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void testPlus(){
+    public void testPlus() {
         //第一次执行所需的时间：42300ns
         //第二次执行所需的时间：37600ns
         //第三次执行所需的时间：37600ns
@@ -73,16 +73,16 @@ public class SpliceString {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/9 11:05
      * @Version 1.0
      * @Description: test String类的Concat方法
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void testStringConcat(){
+    public void testStringConcat() {
         //第一次执行所需的时间：44800ns
         //第二次执行所需的时间：44900ns
         //第三次执行所需的时间：55300ns
@@ -104,16 +104,16 @@ public class SpliceString {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/9 11:27
      * @Version 1.0
      * @Description: test String.Join方法
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void testStringJoin(){
+    public void testStringJoin() {
         //第一次执行所需的时间：251100ns
         //第二次执行所需的时间：218200ns
         //第三次执行所需的时间：186300ns
@@ -128,7 +128,7 @@ public class SpliceString {
         //方法开始前时间
         long startTime = System.nanoTime();
         //测试的方法
-        System.out.println("拼接好的字符串：" + String.join(" ",list));
+        System.out.println("拼接好的字符串：" + String.join(" ", list));
         //方法结束时间
         long endTime = System.nanoTime();
         //打印消耗的时间
@@ -138,16 +138,16 @@ public class SpliceString {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/9 11:27
      * @Version 1.0
      * @Description: test StringUtils.Join
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void testStringUtilsJoin(){
+    public void testStringUtilsJoin() {
         //第一次执行所需的时间：43648600ns
         //第二次执行所需的时间：44905100ns
         //第三次执行所需的时间：39472100ns
@@ -162,7 +162,7 @@ public class SpliceString {
         //方法开始前时间
         long startTime = System.nanoTime();
         //测试的方法
-        System.out.println("拼接好的字符串：" + StringUtils.join(list,' '));
+        System.out.println("拼接好的字符串：" + StringUtils.join(list, ' '));
         //方法结束时间
         long endTime = System.nanoTime();
         //打印消耗的时间
@@ -172,16 +172,16 @@ public class SpliceString {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/9 11:28
      * @Version 1.0
      * @Description: test StringBuilder
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void testStringBuilder(){
+    public void testStringBuilder() {
         //第一次执行所需的时间：40600ns
         //第二次执行所需的时间：35400ns
         //第三次执行所需的时间：38600ns
@@ -205,16 +205,16 @@ public class SpliceString {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/9 11:28
      * @Version 1.0
      * @Description: test StringBuffer
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void testStringBuffer(){
+    public void testStringBuffer() {
         //第一次执行所需的时间：49600ns
         //第二次执行所需的时间：61100ns
         //第三次执行所需的时间：45100ns

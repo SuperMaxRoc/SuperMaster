@@ -44,17 +44,17 @@ public class ListUtils {
      */
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/26 20:10
      * @Version 1.0
      * @Description: 随机获取list中的一个数据
      * @Description: listUtils+RandomUtils
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void randomGetList(){
+    public void randomGetList() {
         List<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
@@ -78,16 +78,16 @@ public class ListUtils {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/6 10:30
      * @Version 1.0
      * @Description: 遍历集合List
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void traverseArrayList(){
+    public void traverseArrayList() {
 
         List<String> stringsList = new ArrayList<>();
         stringsList.add("1");
@@ -110,7 +110,7 @@ public class ListUtils {
         stringsList.forEach(s -> System.out.println(s));
         System.out.println("---------------------");
         log.info("遍历List集合的第二种方式：forEach循环遍历--第二种形态");
-        for(String s : stringsList){
+        for (String s : stringsList) {
             System.out.println(s);
         }
         System.out.println("---------------------");
@@ -119,7 +119,7 @@ public class ListUtils {
         System.out.println("---------------------");
         log.info("遍历List集合的第三种方式：迭代器");
         Iterator<String> iterator = stringsList.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
         System.out.println("---------------------");
@@ -127,7 +127,7 @@ public class ListUtils {
         //while
         int iii = 0;
         log.info("遍历List集合的第四种方式：while");
-        while (iii<stringsList.size()){
+        while (iii < stringsList.size()) {
             System.out.println(stringsList.get(iii));
             iii++;
         }
@@ -137,17 +137,17 @@ public class ListUtils {
         do {
             System.out.println(stringsList.get(lll));
             lll++;
-        }while (lll<stringsList.size());
+        } while (lll < stringsList.size());
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/6 11:31
      * @Version 1.0
      * @Description: for循环移除List中数据
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
     public void remove() {
@@ -178,23 +178,23 @@ public class ListUtils {
                 System.out.println("stringsList的长度：" + stringsList.size());
                 //因为索引缩小，所以i--。
                 i--;
-            }else {
+            } else {
                 System.out.println("存在的元素：" + stringsList.get(i));
             }
         }
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/8 14:53
      * @Version 1.0
      * @Description: 链表List
      * @UpdateUser WP
-     * @param  
-     * @return void
      */
     @Test
-    public void linkedList(){
+    public void linkedList() {
         LinkedList<String> stringsList = new LinkedList<>();
         //可以重复插入
         //允许null值存在
@@ -204,11 +204,11 @@ public class ListUtils {
         //LinkedList可以指定索引地址，然后进行插入
         //如果没有指定索引地址，则放在链表的最后方然后插入
         //同样如果相同索引地址同时插入的话，后者将替代前者的索引地址
-        stringsList.add(0,"2");
-        stringsList.add(0,"23");
+        stringsList.add(0, "2");
+        stringsList.add(0, "23");
         System.out.println("stringsList:" + stringsList);
         System.out.println("stringsList第一个元素：" + stringsList.getFirst());
-        System.out.println("stringsList最后一个元素：" +stringsList.getLast());
+        System.out.println("stringsList最后一个元素：" + stringsList.getLast());
 
         //Foreach循环+Lambda遍历LinkedList
         System.out.println("Foreach循环+Lambda遍历LinkedList");
@@ -221,7 +221,7 @@ public class ListUtils {
         //范围内清除元素：截取+清理
         //第一个参数：开始，第二个参数：截止到索引的地址，不清除第二参数对应的索引元素。
         //清除索引2和3之间的元素
-        stringsList.subList(1,3).clear();
+        stringsList.subList(1, 3).clear();
         System.out.println("清理后的LinkedList长度：" + stringsList.size());
         for (int i = 0; i < stringsList.size(); i++) {
             System.out.println("stringsList索引地址：" + i + " targetString:" + stringsList.get(i));

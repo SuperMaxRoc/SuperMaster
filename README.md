@@ -2,15 +2,11 @@
 
 集成目前主流的项目技术及项目中常用的工具类，配有简单介绍及测试情况。
 
-如有问题希望指出，共同进步。 
+如有问题希望指出，共同进步。
 
 May the force be with you forever！
 
-
-
 本文搭配MyNotes最佳。
-
-
 
 目前本项目上层为SpringBoot。
 
@@ -29,12 +25,9 @@ May the force be with you forever！
 11. Log日志记录
 12. 自定义主键生成
 
-
-
 尚未涵盖即将涵盖：
 
-
-1. Http处理：httpclient/hutool_http_client/RestTemplate 
+1. Http处理：httpclient/hutool_http_client/RestTemplate
 2. 导入导出Excel处理
 3. 安全框架/权限表的设计：Shiro/···
 4. 字典表的应用

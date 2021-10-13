@@ -17,7 +17,7 @@ import javax.annotation.Resource;
  * @UpdateUser WP
  */
 @Service
-public class PcaServiceImpl extends ServiceImpl<PcaMapper,Pca> implements PcaService {
+public class PcaServiceImpl extends ServiceImpl<PcaMapper, Pca> implements PcaService {
 
     @Resource
     private PcaMapper pcaMapper;
@@ -53,7 +53,7 @@ public class PcaServiceImpl extends ServiceImpl<PcaMapper,Pca> implements PcaSer
     }
 
     @Override
-    public String getPcaNameByCode(String code){
+    public String getPcaNameByCode(String code) {
         return pcaMapper.getPcaNameByCode(code);
     }
 

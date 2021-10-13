@@ -27,7 +27,7 @@ public class InterestingQuestions {
     @GetMapping("/testRepeat")
     public String testRepeat(
             @RequestParam String targetString
-    ){
+    ) {
 
         return null;
     }

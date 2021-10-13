@@ -1,8 +1,8 @@
 package com.roc.SuperMaster.utility.customPrimaryKey.sys;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.OrderNumber;
 import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.Service.OrderNumberService;
+import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.OrderNumber;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -57,7 +57,7 @@ public class CustomPrimaryKeyController {
 
     /**
      * 生成一定规则的编号：一定规则的编号：“FB0001”、“FB0002”
-     *
+     * <p>
      * 思路：1.拼接字符串，每次生成，去库中查询一遍当前表的编号，切割固定的字符串，然后自增+1，（通常采用逻辑删除，不考虑被删除的数据，列表显示会出现编号不连续）
      */
 
@@ -65,7 +65,7 @@ public class CustomPrimaryKeyController {
     @PutMapping("/testCustomNumByJava")
     public void testCustomNum(
             @RequestBody OrderNumber orderNumber
-    ){
+    ) {
         //1.库中创建测试表
         /*create table if not exists test_Order(
                 id                               varchar(36)          not null primary key  comment '订单编号',
@@ -91,7 +91,7 @@ public class CustomPrimaryKeyController {
         //格式化ID的数字部分
         DecimalFormat decimalFormat = new DecimalFormat("000000");
 
-        if (list.size() == 0){
+        if (list.size() == 0) {
             //如果库中没有数据，编号则从“FB000001”开始
             StringBuilder stringBuilder = new StringBuilder();
             int i = 1;
@@ -113,7 +113,7 @@ public class CustomPrimaryKeyController {
             //获取最新数据的ID，且格式化
             OrderNumber targetOrderNumber = orderNumberList.get(0);
             String targetOrderId = targetOrderNumber.getId();
-            String substring = targetOrderId.substring(2,targetOrderId.length());
+            String substring = targetOrderId.substring(2, targetOrderId.length());
             int parseInt = Integer.parseInt(substring);
 
             //拼接最新的数据的ID
@@ -141,32 +141,30 @@ public class CustomPrimaryKeyController {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/16 16:02
      * @Version 1.0
      * @Description: 测试GenerateOrderNumber
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void testGenerateOrderNumber(){
+    public void testGenerateOrderNumber() {
         for (int i = 0; i < 5; i++) {
             System.out.println(GenerateOrderNumber.generateOrder());
         }
     }
 
     @Test
-    public void testVoid(){
-        DecimalFormat decimalFormat=new DecimalFormat("000000");
-        String code="XQ20190417000100";
+    public void testVoid() {
+        DecimalFormat decimalFormat = new DecimalFormat("000000");
+        String code = "XQ20190417000100";
         String codeNew = code.substring(10, code.length());
-        int i=Integer.parseInt(codeNew)+1;
-        String k=decimalFormat.format(i);
+        int i = Integer.parseInt(codeNew) + 1;
+        String k = decimalFormat.format(i);
         System.out.println(k);
     }
-
-
 
 
 }

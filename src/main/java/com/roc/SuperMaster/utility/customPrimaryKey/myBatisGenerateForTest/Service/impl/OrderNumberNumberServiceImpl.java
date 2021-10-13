@@ -5,11 +5,12 @@ import com.roc.SuperMaster.mapper.OrderNumberMapper;
 import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.Service.OrderNumberService;
 import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entity.OrderNumber;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
 
 /**
- * @Author  Roc
- * @Date  2021/8/16 16:14
+ * @Author Roc
+ * @Date 2021/8/16 16:14
  * @Version 1.0.0
  * @ClassName OrderServiceImpl.java
  * @Description TestOrderServiceImpl

@@ -21,19 +21,19 @@ import java.util.TimerTask;
 public class TimerHandle {
 
     /**
+     * @param
+     * @return void
      * @Author: Roc
      * @Date: 2021/8/6 9:42
      * @Version 1.0
      * @Description: 测试Timer类
      * @UpdateUser Roc
-     * @param
-     * @return void
      */
 //    @ApiOperation(value = "测试java的Timer")
 //    @GetMapping("/testTimer")
     public void testTimer() {
         log.info("开始测试java的Timer类");
-        try{
+        try {
             //新建定时任务1
             TimerTask timerTask1 = new TimerTask() {
                 @Override
@@ -51,9 +51,9 @@ public class TimerHandle {
             //新建计时器
             Timer timer = new Timer();
             //新建计时器的执行任务1：延迟一秒，此后每一秒执行一次
-            timer.schedule(timerTask1,1000,1000);
+            timer.schedule(timerTask1, 1000, 1000);
             //新建计时器的执行任务2：延迟一秒，此后每一秒执行一次
-            timer.schedule(timerTask2,2000,3000);
+            timer.schedule(timerTask2, 2000, 3000);
 
             //timer配置一个定时任务队列的方法
             //在时刻 time 处执行任务
@@ -80,9 +80,9 @@ public class TimerHandle {
 
             //清空队列的中的全部任务
             //timer.cancel();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            log.error("捕获异常信息：{}",e.getMessage());
+            log.error("捕获异常信息：{}", e.getMessage());
         }
     }
 }

@@ -13,26 +13,23 @@ import java.util.Date;
  */
 public class GenerateOrderNumber {
 
-    // 全局自增数
-    private static int count = 0;
-
     // 每毫秒秒最多生成多少订单（最好是像9999这种准备进位的值）
     private static final int total = 999;
-
     // 格式化的时间字符串
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmssSSS");
+    // 全局自增数
+    private static int count = 0;
+    // 记录上一次的时间，用来判断是否需要递增全局数
+    private static String now = null;
 
     // 获取当前时间年月日时分秒毫秒字符串
     private static String getNowDateStr() {
         return sdf.format(new Date());
     }
 
-    // 记录上一次的时间，用来判断是否需要递增全局数
-    private static String now = null;
-
     /**
      * 生成一个订单号
-    */
+     */
     public static synchronized String generateOrder() {
         String datastr = getNowDateStr();
         if (datastr.equals(now)) {

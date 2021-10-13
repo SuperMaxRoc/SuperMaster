@@ -19,14 +19,15 @@ import org.springframework.stereotype.Component;
 public class QuartzJob01 implements Job {
     //使用Quartz的第一步
     //创建用于执行的job，相当于Timer的task
+
     /**
+     * @param jobExecutionContext
+     * @return void
      * @Author: WP
      * @Date: 2021/8/9 22:32
      * @Version 1.0
      * @Description: 实现Job的execute方法
      * @UpdateUser WP
-     * @param jobExecutionContext 
-     * @return void
      */
     @Override
     public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {

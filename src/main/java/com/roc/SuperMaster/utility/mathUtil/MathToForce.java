@@ -18,36 +18,36 @@ import java.util.ArrayList;
 public class MathToForce {
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/27 16:01
      * @Version 1.0
      * @Description: 判断是否为数字的字符串
      * @UpdateUser WP
-     * @param  
-     * @return void
      */
     @Test
-    public void ispureNumberString(){
+    public void ispureNumberString() {
         String targetNumber = "1a1";
         //注意：此地引用org.apache.commons.lang3的StringUtils
         if (StringUtils.isNumeric(targetNumber)) {
             System.out.println("这是一个纯数字的字符串");
-        }else {
+        } else {
             System.out.println("这不是一个纯数字的字符串");
         }
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/27 16:25
      * @Version 1.0
      * @Description: 纯数字字符串转为纯数字
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void pureNumberStringToNumber(){
+    public void pureNumberStringToNumber() {
         String target = "11";
         //转换成十进制的相应类型
         int parseInt = Integer.parseInt(target);
@@ -58,9 +58,9 @@ public class MathToForce {
 
         //转换成任意进制的相应类型
         //提供10、2、8或16进制的选择
-        int parseInt1 = Integer.parseInt(target,2);
-        int parseInt2 = Integer.parseInt(target,8);
-        int parseInt3 = Integer.parseInt(target,16);
+        int parseInt1 = Integer.parseInt(target, 2);
+        int parseInt2 = Integer.parseInt(target, 8);
+        int parseInt3 = Integer.parseInt(target, 16);
 
         System.out.println("二进制的Int：" + parseInt1);
         System.out.println("八进制的Int：" + parseInt2);
@@ -68,44 +68,44 @@ public class MathToForce {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/27 16:03
      * @Version 1.0
      * @Description: 判断是否为奇偶数
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void isOddOrEvenNumber(){
+    public void isOddOrEvenNumber() {
         int evenNumber = 10;
         int oddNumber = 11;
         //对目标进行取余计算
-        if(evenNumber % 2 == 0){
+        if (evenNumber % 2 == 0) {
             System.out.println(evenNumber + "是个偶数");
         }
-        if(oddNumber % 2 != 0){
+        if (oddNumber % 2 != 0) {
             System.out.println(oddNumber + "是个奇数");
         }
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/27 16:05
      * @Version 1.0
      * @Description: Math()获取一个double类型的随机数：随机数的范围0.0-1.0
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void getRandom(){
+    public void getRandom() {
         double random = Math.random();
         System.out.println(random);
     }
 
     @Test
-    public void trigonometricFunction(){
+    public void trigonometricFunction() {
         //正弦值
         double sin = Math.sin(2);
         System.out.println("正弦值：" + sin);
@@ -139,30 +139,30 @@ public class MathToForce {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/28 18:05
      * @Version 1.0
      * @Description: 指数运算
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void exponentialOperation(){
+    public void exponentialOperation() {
 
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/28 18:08
      * @Version 1.0
      * @Description: 比大小
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void bigOrSmall(){
+    public void bigOrSmall() {
         int num01 = 10;
         int num02 = 9;
         final int max = Math.max(num01, num02);
@@ -173,16 +173,16 @@ public class MathToForce {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/28 18:09
      * @Version 1.0
      * @Description: 平均数
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void average(){
+    public void average() {
         int num01 = 10;
         int num02 = 9;
         ArrayList<Integer> arrayList = new ArrayList<>();
@@ -196,16 +196,16 @@ public class MathToForce {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/28 18:10
      * @Version 1.0
      * @Description: 比较数字相等
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void isEqual(){
+    public void isEqual() {
         //解决世界性难题：==是判断两个人是不是住在同一个地址，而equals是判断同一个地址里住的人是不是同一个
         //判断的问题涉及到java常量池的概念
         //同一类型且字面量相等的变量：引用地址相等。
@@ -214,7 +214,7 @@ public class MathToForce {
         //同一类型且字面量相等的变量
         int num01 = 10;
         int num02 = 10;
-        int num05 = 9+1;
+        int num05 = 9 + 1;
         if (num01 == num02) {
             //true
             System.out.println("对比的数字相等");
@@ -253,42 +253,42 @@ public class MathToForce {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/28 18:11
      * @Version 1.0
      * @Description: 求整运算
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void toInteger(){
+    public void toInteger() {
 
     }
 
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/28 18:12
      * @Version 1.0
      * @Description: Math的静态常量
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void staticMath(){
+    public void staticMath() {
 
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/28 18:13
      * @Version 1.0
      * @Description: 对数运算
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
     public void logarithm() {

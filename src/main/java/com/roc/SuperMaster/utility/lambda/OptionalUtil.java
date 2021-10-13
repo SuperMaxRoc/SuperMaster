@@ -117,13 +117,13 @@ public class OptionalUtil {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/13 23:36
      * @Version 1.0
      * @Description: Optional.ofNullable.ifPresent:可以检测是否为null，同时该方法还可以接受一个Consumer参数。
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
     public void optionalTest05() {
@@ -133,13 +133,13 @@ public class OptionalUtil {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/13 23:38
      * @Version 1.0
      * @Description: Optional.ofNullable.orElse:目标值为空，返回other
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
     public void optionalTest06() {
@@ -152,13 +152,13 @@ public class OptionalUtil {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/13 23:52
      * @Version 1.0
      * @Description: Optional.ofNullable.orElseGet:如果有值则返回，没有则调用Supplier函数，并返回。
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
     public void optionalTest07() {
@@ -173,13 +173,13 @@ public class OptionalUtil {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/13 23:59
      * @Version 1.0
      * @Description: ToDo
      * @UpdateUser WP
-     * @param  
-     * @return void
      */
     @Test
     public void optionalTest08() {
@@ -198,13 +198,13 @@ public class OptionalUtil {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/14 0:07
      * @Version 1.0
      * @Description: Optional.ofNullable.flatMap
      * @UpdateUser WP
-     * @param  
-     * @return void
      */
     @Test
     public void optionalTest09() {
@@ -215,13 +215,13 @@ public class OptionalUtil {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/9/14 0:14
      * @Version 1.0
      * @Description: Optional.ofNullable.filter
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
     public void optionalTest10() {

@@ -21,10 +21,10 @@ public class GuavaUtil {
 
 
     @Test
-    public void joiner(){
-        List<String> stringList = new ArrayList<String>(Arrays.asList("1","2"));
+    public void joiner() {
+        List<String> stringList = new ArrayList<String>(Arrays.asList("1", "2"));
         System.out.println(Joiner.on(",").join(stringList));
-        String string = String.join("1",stringList);
+        String string = String.join("1", stringList);
 
         System.out.println(string);
     }

@@ -7,6 +7,7 @@ import com.roc.SuperMaster.service.StudentsService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+
 /**
  * @Author: WP
  * @Date: 2021/8/22 14:15
@@ -16,7 +17,7 @@ import javax.annotation.Resource;
  * @UpdateUser WP
  */
 @Service
-public class StudentsServiceImpl extends ServiceImpl<StudentsMapper,Students> implements StudentsService {
+public class StudentsServiceImpl extends ServiceImpl<StudentsMapper, Students> implements StudentsService {
 
     @Resource
     private StudentsMapper studentsMapper;

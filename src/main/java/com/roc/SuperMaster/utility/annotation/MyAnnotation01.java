@@ -12,7 +12,7 @@ package com.roc.SuperMaster.utility.annotation;
 public class MyAnnotation01 {
 
     @MyAnnotation
-    public void test01(){
+    public void test01() {
 
     }
 }

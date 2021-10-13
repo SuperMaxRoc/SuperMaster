@@ -24,14 +24,15 @@ public class ParseIdCardServiceImpl implements ParseIdCardService {
 
     @Autowired
     PcaService pcaService;
+
     /**
+     * @param idCard
+     * @return java.lang.String
      * @Author: WP
      * @Date: 2021/9/3 14:01
      * @Version 1.0
      * @Description: 获取PCA代码
      * @UpdateUser WP
-     * @param idCard
-     * @return java.lang.String
      */
     public String getStringToPCA(
             String idCard
@@ -41,34 +42,34 @@ public class ParseIdCardServiceImpl implements ParseIdCardService {
     }
 
     /**
+     * @param idCard
+     * @return java.lang.String
      * @Author: WP
      * @Date: 2021/9/3 14:01
      * @Version 1.0
      * @Description: 获取BirthAndAge代码
      * @UpdateUser WP
-     * @param idCard
-     * @return java.lang.String
      */
     public String getStringToBirthAndAge(
             String idCard
-    ){
+    ) {
         String substringToBirthAndAge = idCard.substring(6, 14);
         return substringToBirthAndAge;
     }
 
     /**
+     * @param idCard
+     * @return java.lang.String
      * @Author: WP
      * @Date: 2021/9/3 14:02
      * @Version 1.0
      * @Description: 获取Sex代码
      * @UpdateUser WP
-     * @param idCard
-     * @return java.lang.String
      */
     public String getStringToSex(
             String idCard
-    ){
-        String substringToToSex = idCard.substring(16,17);
+    ) {
+        String substringToToSex = idCard.substring(16, 17);
         return substringToToSex;
     }
 
@@ -95,7 +96,7 @@ public class ParseIdCardServiceImpl implements ParseIdCardService {
         String pcaNameByCode = pcaService.getPcaNameByCode(stringToPCA);
         if (pcaNameByCode == null) {
             log.error("无法解析PCA，请输入正确的身份证号码");
-            int a = 1/0;
+            int a = 1 / 0;
             return null;
         } else {
             return pcaNameByCode;
@@ -119,7 +120,7 @@ public class ParseIdCardServiceImpl implements ParseIdCardService {
             return age;
         } else {
             log.error("年龄解析不合法，请输入正确的身份证号码");
-            int a = 1/0;
+            int a = 1 / 0;
             return 0;
         }
     }
@@ -132,7 +133,7 @@ public class ParseIdCardServiceImpl implements ParseIdCardService {
         int parseAge = this.parseAge(idCard);
         if (parseAge == 0) {
             log.error("生日解析不合法，请输入正确的身份证号码");
-            int a = 1/0;
+            int a = 1 / 0;
             return null;
         } else {
             String year = stringToBirthAndAge.substring(0, 4);
@@ -150,16 +151,16 @@ public class ParseIdCardServiceImpl implements ParseIdCardService {
     ) {
         //StringUtils.isNumeric() 方法:isNumeric() 可以判断 字符串是否为数字字符串，即只能判断纯数字字符串
         String stringToSex = this.getStringToSex(idCard);
-        if (StringUtils.isNumeric(stringToSex)){
+        if (StringUtils.isNumeric(stringToSex)) {
             int i = Integer.parseInt(stringToSex);
             if (i % 2 == 0) {
                 return "女";
             } else {
                 return "男";
             }
-        }else {
+        } else {
             log.error("性别解析不合法，请输入正确的身份证号");
-            int a = 1/0;
+            int a = 1 / 0;
             return null;
         }
     }

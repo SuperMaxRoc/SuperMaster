@@ -35,22 +35,22 @@ public class StringBB {
 
     /**
      * 参考文档：
-     *1.Java StringBuffer 和 StringBuilder 类详解：
-     *    https://www.runoob.com/java/java-stringbuffer.html
-     *    https://www.runoob.com/manual/jdk11api/java.base/java/lang/StringBuffer.html
-     *    https://www.runoob.com/manual/jdk11api/java.base/java/lang/StringBuilder.html
-     *2.StringBuilder扩容规则：
-     *    https://blog.csdn.net/chiting5096/article/details/100726861?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-3.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-3.control
-     *3.StringBuffer扩容原理：
-     *    https://www.jianshu.com/p/9b8ed3721b11
-     *4.什么是线程安全？
-     *    https://blog.csdn.net/zxc456733/article/details/78871972
-     *5.java常量池：
-     *    https://blog.csdn.net/qq_41376740/article/details/80338158
-     * */
+     * 1.Java StringBuffer 和 StringBuilder 类详解：
+     * https://www.runoob.com/java/java-stringbuffer.html
+     * https://www.runoob.com/manual/jdk11api/java.base/java/lang/StringBuffer.html
+     * https://www.runoob.com/manual/jdk11api/java.base/java/lang/StringBuilder.html
+     * 2.StringBuilder扩容规则：
+     * https://blog.csdn.net/chiting5096/article/details/100726861?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-3.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-3.control
+     * 3.StringBuffer扩容原理：
+     * https://www.jianshu.com/p/9b8ed3721b11
+     * 4.什么是线程安全？
+     * https://blog.csdn.net/zxc456733/article/details/78871972
+     * 5.java常量池：
+     * https://blog.csdn.net/qq_41376740/article/details/80338158
+     */
 
     @Test
-    public void testStringBuffer(){
+    public void testStringBuffer() {
         StringBuffer stringBuffer = new StringBuffer();
         String string01 = "higher";
         String string02 = "faster";
@@ -92,20 +92,20 @@ public class StringBB {
         System.out.println("stringBuffer的长度：" + length);
         System.out.println("------------------------------------------------------------------------------");
         //插入新的字符串
-        stringBuffer.insert(0,"dreaming");
-        stringBuffer.insert(8," ");
+        stringBuffer.insert(0, "dreaming");
+        stringBuffer.insert(8, " ");
         System.out.println("插入新字符串后的：" + stringBuffer.toString());
         System.out.println("当前stringBuffer的容量：" + stringBuffer.capacity());
         System.out.println("stringBuffer的长度：" + length);
         System.out.println("------------------------------------------------------------------------------");
         //替换此序列的字符串的字符
-        stringBuffer.replace(0,8,"life");
+        stringBuffer.replace(0, 8, "life");
         System.out.println("替换序列中的字符串后的：" + stringBuffer);
         System.out.println("当前stringBuffer的容量：" + stringBuffer.capacity());
         System.out.println("stringBuffer的长度：" + length);
         System.out.println("------------------------------------------------------------------------------");
         //删除某一段的字符
-        stringBuffer.delete(0,3);
+        stringBuffer.delete(0, 3);
         System.out.println("删除后的stringBuffer：" + stringBuffer.toString());
         System.out.println("当前stringBuffer的容量：" + stringBuffer.capacity());
         System.out.println("stringBuffer的长度：" + length);
@@ -116,14 +116,14 @@ public class StringBB {
         System.out.println("当前stringBuffer的容量：" + stringBuffer.capacity());
         System.out.println("------------------------------------------------------------------------------");
         //开始测试异常
-        try{
+        try {
             StringBuffer buffer = new StringBuffer();
-            for (int i = 0;i<= 3;i++){
+            for (int i = 0; i <= 3; i++) {
                 buffer.append(i);
                 System.out.println(buffer);
             }
-        }catch (StringIndexOutOfBoundsException e){
-            log.info("捕获异常信息：{}" , e.getMessage());
+        } catch (StringIndexOutOfBoundsException e) {
+            log.info("捕获异常信息：{}", e.getMessage());
             e.printStackTrace();
         }
     }

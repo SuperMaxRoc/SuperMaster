@@ -21,18 +21,18 @@ import java.util.concurrent.TimeUnit;
 public class QuartzSchedule02 {
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/8/6 13:38
      * @Version 1.0
      * @Description: 实现Quartz调用器
      * @UpdateUser WP
-     * @param
-     * @return void
      */
 //    @GetMapping("/QuartzSchedule")
 //    @ApiOperation(value = "测试QuartzSchedule")
-    public void testQuartzSchedule() throws SchedulerException{
-        try{
+    public void testQuartzSchedule() throws SchedulerException {
+        try {
             log.info("定时任务开始！");
             //1.创建调度器scheduler
             StdSchedulerFactory stdSchedulerFactory = new StdSchedulerFactory();
@@ -48,7 +48,7 @@ public class QuartzSchedule02 {
                     .build();
 
             //4.执行Quartz
-            scheduler.scheduleJob(build,build1);
+            scheduler.scheduleJob(build, build1);
             scheduler.start();
 
             //5.利用TimeUnit实现延时操作
@@ -58,9 +58,9 @@ public class QuartzSchedule02 {
             scheduler.shutdown();
             log.info("定时任务结束！");
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            log.error("捕获异常信息：{}",e.getMessage());
+            log.error("捕获异常信息：{}", e.getMessage());
         }
     }
 }

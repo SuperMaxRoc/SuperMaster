@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
  * @Description 自定义注解
  * @UpdateUser Roc
  */
-@Target({ElementType.TYPE,ElementType.METHOD})
+@Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MyAnnotation {
     String name() default "";
