@@ -3,8 +3,9 @@ server:
 
 spring:
   datasource: #数据库连接配置
-    driver-class-name: com.mysql.cj.jdbc.Driver   #数据库连接驱动
-    url: jdbc:mysql://localhost:3306/school?useUnicode=true&characterEncoding=utf8    #数据库URL
+    #driver-class-name: com.mysql.cj.jdbc.Driver   #数据库连接驱动
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver   #数据库连接驱动
+    url: jdbc:p6spy:mysql://localhost:3306/school?useUnicode=true&characterEncoding=utf8    #数据库URL
     username: root    #账户
     password: 123456    #密码
 
@@ -31,6 +32,6 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
 
-logging:
-  level: ##打印sql
-    com.roc.SuperMaster.mapper: debug   # mapper/dao层的路径
+#logging:
+#  level: ##打印sql
+#    com.roc.SuperMaster.mapper: debug   # mapper/dao层的路径
