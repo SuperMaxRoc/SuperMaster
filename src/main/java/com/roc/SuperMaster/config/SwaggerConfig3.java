@@ -16,7 +16,7 @@ import springfox.documentation.spring.web.plugins.Docket;
  */
 @Configuration
 @Api(tags = "swagger3的配置类")
-public class swaggerConfig3 {
+public class SwaggerConfig3 {
     @Bean
     public Docket getDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
