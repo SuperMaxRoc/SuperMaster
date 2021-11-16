@@ -37,7 +37,17 @@ public class InternetUtil {
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
-
     }
 
+    @Test
+    public void testInfo(){
+        System.out.println(f(10));
+    }
+    public static long f(long i){
+        if (i==1){
+            return 1;
+        }else {
+            return i*f(i-1);
+        }
+    }
 }
