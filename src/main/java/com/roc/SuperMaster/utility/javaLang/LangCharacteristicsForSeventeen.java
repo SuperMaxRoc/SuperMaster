@@ -8,5 +8,5 @@ package com.roc.SuperMaster.utility.javaLang;
  * @Description java17版本的语言特性
  * @UpdateUser Roc
  */
-public class langCharacteristicsForSeventeen {
+public class LangCharacteristicsForSeventeen {
 }

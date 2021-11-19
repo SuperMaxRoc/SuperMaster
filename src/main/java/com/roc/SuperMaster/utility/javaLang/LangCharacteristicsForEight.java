@@ -5,8 +5,8 @@ package com.roc.SuperMaster.utility.javaLang;
  * @Date 2021/9/8 18:02
  * @Version 1.0.0
  * @ClassName langCharacteristicsForEight.java
- * @Description java8.0版本的语言特性
+ * @Description java1.8.0版本的语言特性
  * @UpdateUser Roc
  */
-public class langCharacteristicsForEight {
+public class LangCharacteristicsForEight {
 }
