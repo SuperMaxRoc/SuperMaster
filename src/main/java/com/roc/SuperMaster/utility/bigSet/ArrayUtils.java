@@ -205,7 +205,15 @@ public class ArrayUtils {
         }
     }
 
-    //
+    /**
+     * @Author: WP
+     * @Date: 2021/11/20 16:08
+     * @Version 1.0
+     * @Description: ToDo
+     * @UpdateUser WP
+     * @param  
+     * @return void
+     */
     @Test
     public void testException() {
 //        String[] strings = {"1", "2", "12"};

@@ -45,7 +45,7 @@ public class IteratorUtils {
 
         Iterator<String> iterator02 = Arrays.stream(stringsArray).iterator();
         while (iterator02.hasNext()) {
-            System.out.println("list集合的迭代遍历:" + iterator02.next());
+            System.out.println("Array数组的迭代遍历:" + iterator02.next());
         }
 
         //list集合的迭代遍历
