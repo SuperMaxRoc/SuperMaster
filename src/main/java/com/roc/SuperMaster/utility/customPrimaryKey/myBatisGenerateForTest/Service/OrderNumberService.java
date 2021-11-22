@@ -15,7 +15,7 @@ import com.roc.SuperMaster.utility.customPrimaryKey.myBatisGenerateForTest.entit
 public interface OrderNumberService extends IService<OrderNumber> {
 
 
-    int deleteByPrimaryKey(String id);
+    public abstract int deleteByPrimaryKey(String id);
 
     int insert(OrderNumber record);
 
