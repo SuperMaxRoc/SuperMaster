@@ -4,13 +4,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.FileInputStream;
 
 /**
  * @Author Roc
  * @Date 2021/10/8 17:47
  * @Version 1.0.0
  * @ClassName SuperIo.java
- * @Description ToDo
+ * @Description 超级IO
  * @UpdateUser Roc
  */
 @Slf4j
@@ -32,6 +33,41 @@ public class SuperIo {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * @Author: WP
+     * @Date: 2021/11/23 11:26
+     * @Version 1.0
+     * @Description: FileInputStream
+     * @UpdateUser WP
+     * @param  
+     * @return void
+     */
+    @Test
+    public void testIo() throws Exception{
+        String filePath = "D:\\abc.txt";
+        FileInputStream fileInputStream = new FileInputStream(filePath);
+        //创建字节缓冲区
+        byte[] bytes = new byte[1024];
+        int count = 0;
+        if ((count = fileInputStream.read(bytes)) != -1){
+            //英文字母不区分大小及英文标点符号写占一个字节。
+            //数字占一个字节。
+            //汉字及汉字标点符号目前测试的占三个字节。
+            System.out.println("总共的字节数：" + count);
+            System.out.println(new String(bytes));
+        }
+    }
+
+    @Test
+    public void tes() throws Exception{
+        String filePath = "D:\\abc.txt";
+        FileInputStream fileInputStream = new FileInputStream(filePath);
+        int count = 0;
+        while ((count = fileInputStream.read()) != -1){
+            System.out.print(count + " ");
         }
     }
 
