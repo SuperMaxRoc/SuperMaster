@@ -11,7 +11,7 @@ import com.roc.SuperMaster.entity.domain.Students;
  * @Description 基本的学生服务
  * @UpdateUser WP
  */
-public interface StudentsService extends IService<Students> {
+public abstract interface StudentsService extends IService<Students> {
 
     int deleteByPrimaryKey(String studentId);
 
