@@ -135,18 +135,18 @@ public class basicLangQuestions extends Object {
         System.out.println(str07 == str08);
         System.out.println("--------------------------");
     }
-    
+
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/12/3 10:49
      * @Version 1.0
      * @Description: 一次性解决==和equals()方法的区别，同时针对面试整理的面试题02
      * @UpdateUser WP
-     * @param  
-     * @return void
      */
     @Test
-    public void testEquals02(){
+    public void testEquals02() {
         Integer integer01 = 100;
         Integer integer02 = 100;
         Integer integer03 = 200;
@@ -191,6 +191,105 @@ public class basicLangQuestions extends Object {
         //true
         System.out.println(str07.equals(str08));
         System.out.println("--------------------------");
+    }
+
+    /**
+     * @param
+     * @return void
+     * @Author: WP
+     * @Date: 2021/12/6 15:02
+     * @Version 1.0
+     * @Description: 彻底搞懂位运算
+     * @UpdateUser WP
+     */
+    @Test
+    public void testByteOperation() {
+
+        /*
+         * 2021年12月6日15:05:48
+         * 此处容易被忽略，且作为高频面试点~曾经载坑一次
+         * 整体涉及：进制计算,机器码,原码,补码,反码,移码，java的移位运算符，离散数学
+         * */
+
+        /**
+         * 位运算：
+         * 移位运算：左移<<，右移>>，无符号右移>>>
+         * 位与:&
+         * 位或:|
+         * 异或:^
+         * 非:~
+         */
+
+        /*
+        左移：左移一位，相当于扩大一倍
+         */
+
+        /**
+         * 由位运算操作符衍生而来的有：
+         * 左移赋值：<<=
+         * 右移赋值：>>=
+         * 无符号右移赋值：>>>=
+         * 位与赋值：&=
+         * 位或赋值：|=
+         * 位非赋值：^=
+         *
+         * 以上相当于+=运算
+         */
+
+        /**
+         * 面试例题1：如果最快计算出2*8的结果
+         */
+
+        /**
+         * 面试例题2：输出下面的结果
+         * public class Test {
+         *     public static void main(String args[]) {
+         *         int x, y;
+         *         x = 5 >> 2;
+         *         y = x >>> 2;
+         *         System.out.println(y);
+         *     }
+         * }
+         */
+        //左移
+        //1的二进制：0000 0001
+        //左移一位：0000 0010
+        //左移两位：0000 0100
+        //2的二进制：0000 0010
+        //左移三位：0001 0000
+        //0001 0000二进制转换为十进制：16
+        System.out.println("左移");
+        System.out.println(1<<1);
+        System.out.println(1<<2);
+        System.out.println(2<<3);
+        System.out.println("-------------------------");
+
+        //右移：又称为有符号右移
+        //1的二进制：0000 0001
+        //右移一位：0000 0000
+        //右移两位：0000 0000
+        //8的二进制：0000 1000
+        //右移移到最后就是0
+        //-8的二进制：1000 1000
+        System.out.println("右移");
+        System.out.println(1>>1);
+        System.out.println(1>>2);
+        System.out.println(8>>3);
+        System.out.println(8>>4);
+        System.out.println(-8>>8);
+        System.out.println("-------------------------");
+
+        //无符号右移
+        //1的二进制：0000 0001
+        //8的二进制：0000 1000
+        //-8的二进制：1000 1000
+        System.out.println("无符号右移");
+        System.out.println(8>>>1);
+        System.out.println(-8>>>1);//2147483644
+        System.out.println("-------------------------");
+
+        //与，或，非，异或
+
     }
 
 }
