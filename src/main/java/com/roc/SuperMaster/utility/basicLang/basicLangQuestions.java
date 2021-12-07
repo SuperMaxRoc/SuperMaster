@@ -209,6 +209,7 @@ public class basicLangQuestions extends Object {
          * 2021年12月6日15:05:48
          * 此处容易被忽略，且作为高频面试点~曾经载坑一次
          * 整体涉及：进制计算,机器码,原码,补码,反码,移码，java的移位运算符，离散数学
+         * 注：计算机中的数组存储一律采用补码进行。
          * */
 
         /**
@@ -233,7 +234,7 @@ public class basicLangQuestions extends Object {
          * 位或赋值：|=
          * 位非赋值：^=
          *
-         * 以上相当于+=运算
+         * 以上类比于+=运算
          */
 
         /**
@@ -259,9 +260,10 @@ public class basicLangQuestions extends Object {
         //左移三位：0001 0000
         //0001 0000二进制转换为十进制：16
         System.out.println("左移");
-        System.out.println(1<<1);
-        System.out.println(1<<2);
-        System.out.println(2<<3);
+        System.out.println(1 << 1);
+        System.out.println(1 << 2);
+        System.out.println(2 << 3);
+        System.out.println(Integer.toBinaryString(-8));
         System.out.println("-------------------------");
 
         //右移：又称为有符号右移
@@ -270,13 +272,13 @@ public class basicLangQuestions extends Object {
         //右移两位：0000 0000
         //8的二进制：0000 1000
         //右移移到最后就是0
-        //-8的二进制：1000 1000
+        //-8的二进制：-1000
         System.out.println("右移");
-        System.out.println(1>>1);
-        System.out.println(1>>2);
-        System.out.println(8>>3);
-        System.out.println(8>>4);
-        System.out.println(-8>>8);
+        System.out.println(1 >> 1);
+        System.out.println(1 >> 2);
+        System.out.println(8 >> 3);
+        System.out.println(8 >> 4);
+        System.out.println(-8 >> 8);
         System.out.println("-------------------------");
 
         //无符号右移
@@ -284,12 +286,31 @@ public class basicLangQuestions extends Object {
         //8的二进制：0000 1000
         //-8的二进制：1000 1000
         System.out.println("无符号右移");
-        System.out.println(8>>>1);
-        System.out.println(-8>>>1);//2147483644
+        System.out.println(8 >>> 1);
+        System.out.println(-8 >>> 1);//2147483644
         System.out.println("-------------------------");
 
         //与，或，非，异或
+        System.out.println("与");//& 当两边的操作数的位同时为 1结果为1，否则为 0
+        System.out.println(1 & 0);
+        System.out.println(1 & 1);
+        System.out.println(0 & 0);
+        System.out.println("-------------------------");
 
+        System.out.println("或");//| 当两边的操作数的位有1结果为1，否则为0
+        System.out.println(1 | 1);
+        System.out.println(1 | 0);
+        System.out.println(0 | 0);
+        System.out.println("-------------------------");
+
+        System.out.println("非");//~ 0 变 1,1 变 0
+        System.out.println(~1);
+        System.out.println(~0);
+        System.out.println("-------------------------");
+
+        System.out.println("异或");//两边不同结果为 1 ，否则为0
+        System.out.println(1 ^ 0);
+        System.out.println(1 ^ 0);
+        System.out.println(1 ^ 0);
     }
-
 }
