@@ -50,6 +50,9 @@ public class SonClass extends FatherClass{
     //     * 子类：无参构造方法8
     //     * 父类：普通代码块
     //     * */
+    //
+    //    //打印当前主机环境下类加载器能加载的jar包的路径，熟悉的就包含rt包、ext包等
+    //    System.out.println(System.getProperty("java.class.path"));
     //}
 
 }
