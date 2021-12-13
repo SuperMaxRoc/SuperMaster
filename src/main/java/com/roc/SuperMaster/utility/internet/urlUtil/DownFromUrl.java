@@ -22,8 +22,8 @@ public class DownFromUrl {
         FileOutputStream fileOutputStream = new FileOutputStream("src/main/java/com/roc/SuperMaster/utility/internet/urlUtil/targetPicture.png");
         byte[] bytes = new byte[1024];
         int len;
-        while ((len = inputStream.read(bytes)) != -1){
-            fileOutputStream.write(bytes,0,bytes.length);
+        while ((len = inputStream.read(bytes)) != -1) {
+            fileOutputStream.write(bytes, 0, bytes.length);
         }
         fileOutputStream.close();
         inputStream.close();
