@@ -13,7 +13,7 @@ import java.net.Socket;
  * @Description TCP客户端发送消息
  * @UpdateUser Roc
  */
-public class TcpClientToMsg {
+public class TcpClientSendMsg {
 
     public static void main(String[] args) throws Exception {
         //获得目标服务端的IP

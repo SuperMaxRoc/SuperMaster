@@ -12,7 +12,7 @@ import java.net.Socket;
  * @Description TCP客户端实现文件上传
  * @UpdateUser Roc
  */
-public class TcpClientToFile {
+public class TcpClientUploadFile {
     public static void main(String[] args) throws Exception {
         //创建服务器地址：本机
         InetAddress inetAddress = InetAddress.getByName("localhost");
