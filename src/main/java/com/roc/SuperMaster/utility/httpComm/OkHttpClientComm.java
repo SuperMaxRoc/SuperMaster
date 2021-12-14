@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.httpClient;
+package com.roc.SuperMaster.utility.httpCommunication;
 
 /**
  * @Author: WP
@@ -8,5 +8,5 @@ package com.roc.SuperMaster.utility.httpClient;
  * @Description OkHttpClient
  * @UpdateUser WP
  */
-public class OkHttpClient {
+public class OkHttpClientComm {
 }

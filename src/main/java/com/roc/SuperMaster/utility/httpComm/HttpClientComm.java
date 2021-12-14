@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.httpClient;
+package com.roc.SuperMaster.utility.httpCommunication;
 
 /**
  * @Author Roc
@@ -8,5 +8,5 @@ package com.roc.SuperMaster.utility.httpClient;
  * @Description HttpClient
  * @UpdateUser Roc
  */
-public class HttpClient {
+public class HttpClientComm {
 }

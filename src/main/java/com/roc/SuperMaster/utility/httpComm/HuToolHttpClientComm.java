@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.httpClient;
+package com.roc.SuperMaster.utility.httpCommunication;
 
 /**
  * @Author Roc
@@ -8,6 +8,6 @@ package com.roc.SuperMaster.utility.httpClient;
  * @Description HuTool中请求Http的方法
  * @UpdateUser Roc
  */
-public class HuToolHttpClient {
+public class HuToolHttpClientComm {
 
 }

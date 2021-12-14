@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.httpClient;
+package com.roc.SuperMaster.utility.httpCommunication;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -11,6 +11,6 @@ import lombok.extern.slf4j.Slf4j;
  * @UpdateUser WP
  */
 @Slf4j
-public class RestTemplateClient {
+public class RestTemplateClientComm {
 
 }
