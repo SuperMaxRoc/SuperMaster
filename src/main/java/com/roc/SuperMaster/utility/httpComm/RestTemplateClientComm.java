@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.httpCommunication;
+package com.roc.SuperMaster.utility.httpComm;
 
 import lombok.extern.slf4j.Slf4j;
 

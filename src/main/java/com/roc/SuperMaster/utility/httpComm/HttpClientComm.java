@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.httpCommunication;
+package com.roc.SuperMaster.utility.httpComm;
 
 /**
  * @Author Roc
