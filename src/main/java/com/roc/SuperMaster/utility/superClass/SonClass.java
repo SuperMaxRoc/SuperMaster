@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.SuperClass;
+package com.roc.SuperMaster.utility.superClass;
 
 /**
  * @Author Roc
