@@ -11,5 +11,5 @@ import lombok.extern.slf4j.Slf4j;
  * @UpdateUser Roc
  */
 @Slf4j
-public class JSONUtil {
+public class JsonUtil {
 }

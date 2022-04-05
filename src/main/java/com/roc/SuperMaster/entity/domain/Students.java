@@ -6,7 +6,9 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
@@ -26,6 +28,8 @@ import java.util.Date;
  */
 @ApiModel(value = "com-roc-SuperMaster-entity-domain-Students")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Students implements Serializable {
 
     private static final long serialVersionUID = 1L;
