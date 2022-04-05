@@ -72,3 +72,8 @@ mybatis-plus:
 #      reset-enable: false
 #      login-username: admin
 #      login-password: admin
+
+# SuperBase_URL
+SuperBase:
+  GetUrl: http://localhost:8889/GuardianInfo/getGuardianInfoList
+  PostUrl: http://localhost:8889/GuardianInfo/addGuardian
