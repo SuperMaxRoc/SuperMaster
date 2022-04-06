@@ -1,8 +1,5 @@
 package com.roc.SuperMaster.utility.stringUtil;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.roc.SuperMaster.utility.lambda.pojo.User;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.buf.StringUtils;
 import org.junit.Test;
@@ -246,38 +243,6 @@ public class SpliceString {
         //String strDateFormat = "yyyyMM";
         //SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
         //System.out.println(sdf.format(date));
-
-        //User user001 = new User() {{
-        //    setId(null);
-        //    setName("nihao");
-        //}};
-        //
-        //JSONObject jsonObject = JSONObject.parseObject(JSON.toJSONString(user001));
-        //for(String string : jsonObject.keySet()){
-        //    if (ObjectUtil.isNull(jsonObject.getString(string))) {
-        //        jsonObject.remove(string);
-        //    }
-        //}
-        //Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        //System.out.println(gson.toJson(jsonObject));
-        User user = new User() {{
-            setId(null);
-            setName("nihao");
-        }};
-        String s = JSON.toJSONString(
-                user,
-                //格式化输出
-                SerializerFeature.PrettyFormat,
-                //不输出为null的字段
-                SerializerFeature.WriteMapNullValue,
-                //按字段名称排序后输出
-                SerializerFeature.SortField,
-                //数值字段如果为null，输出0，而非null
-                SerializerFeature.WriteNullNumberAsZero,
-                //Boolean字段如果为null,输出为false,而非null
-                SerializerFeature.WriteNullBooleanAsFalse
-        );
-        System.out.println(s);
     }
 
 }

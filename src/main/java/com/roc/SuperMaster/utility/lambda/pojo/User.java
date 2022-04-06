@@ -1,6 +1,8 @@
 package com.roc.SuperMaster.utility.lambda.pojo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -13,6 +15,8 @@ import java.io.Serializable;
  * @UpdateUser Roc
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User implements Serializable {
 
     private String id;
