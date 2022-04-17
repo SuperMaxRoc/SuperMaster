@@ -1,9 +1,11 @@
 package com.roc.SuperMaster.web.sys;
 
 import cn.hutool.json.JSONUtil;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.roc.SuperMaster.entity.domain.Students;
+import com.roc.SuperMaster.mapper.StudentsMapper;
 import com.roc.SuperMaster.service.ParseIdCardService;
 import com.roc.SuperMaster.service.StudentsService;
 import com.roc.SuperMaster.utility.webResult.WebApiResult;
@@ -15,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -159,5 +162,29 @@ public class StudentController {
     @Test
     public void testUUID() {
         System.out.println(UUID.randomUUID().toString());
+    }
+
+    @Autowired
+    StudentsMapper studentsMapper;
+
+    @GetMapping("batchGetInfo")
+    public List<Students> batchGetInfos(
+            @RequestParam List<String> ids
+    ) {
+        List<Students> students = new ArrayList<>();
+        for (String id : ids) {
+            LambdaQueryWrapper<Students> studentsLambdaQueryWrapper = new LambdaQueryWrapper<>();
+            studentsLambdaQueryWrapper.eq(Students::getStudentId, id);
+            Students serviceOne = studentsService.getOne(studentsLambdaQueryWrapper);
+            students.add(serviceOne);
+        }
+        return students;
+    }
+
+    @GetMapping("/getStudent")
+    public Students getOne(
+            Students students
+    ) {
+        return studentsMapper.getOnerous(students);
     }
 }
