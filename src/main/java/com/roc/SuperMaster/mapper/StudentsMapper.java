@@ -26,4 +26,6 @@ public interface StudentsMapper extends BaseMapper<Students> {
     int updateByPrimaryKeySelective(Students record);
 
     int updateByPrimaryKey(Students record);
+
+    Students getOnerous(Students students);
 }
