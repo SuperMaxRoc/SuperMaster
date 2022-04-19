@@ -33,12 +33,28 @@ May the force be with you forever！
 4. 字典表的应用
 5. 消息队列
 6. redis
-7. 大数据处理
+7. 大数据处理（ha，hai，xia···）
 8. 国际化
-9. 整合前端
+9. 读取配置文件的方法
 10. 工作流
 11. 金钱交易
 12. 疑点问题随机记录
+13. 异常处理
+14. 优秀的第三方工具类
+15. 函数式编程
+16. 语法糖
+17. java流式编程
+18. JDBC
+19. SpringTemplateS：RestTemplate，RedisTemplate，JDBCTemplate
+20. NIO
+21. Mybatis3的动态SQL
+22. 转发与重定向
+23. URL Encode
+24. RPC框架
+25. java Optional
+26. 转义
+27. JUC
+28. 优秀（骚气）的代码块~~~
 
 注：项目结构暂未遵循严格的java规范，Util包下仅为代码块的展示及调用测试
 
