@@ -1,7 +1,11 @@
 package com.roc.SuperMaster.utility.springUtil;
 
+import com.roc.SuperMaster.entity.domain.Guardian;
+import com.roc.SuperMaster.entity.domain.Officer;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.beanutils.PropertyUtils;
 import org.junit.Test;
+import org.springframework.beans.BeanUtils;
 import org.springframework.util.StopWatch;
 
 /**
@@ -54,6 +58,37 @@ public class SpringUtils {
 
             //计算任务的总数
             System.out.println("任务的总数：" + stopWatch.getTaskCount());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * @param
+     * @return void
+     * @Author: WangPeng
+     * @Date: 2022/4/7 16:08
+     * @Description: BeanUtil
+     */
+    @Test
+    public void beanUtil() {
+        try {
+            Guardian guardian = new Guardian();
+            Officer officer001 = new Officer(1, true, guardian);
+            Officer officer002 = new Officer(2, false, null);
+            Officer officer003 = new Officer();
+            Officer officer004 = officer001.clone();
+            BeanUtils.copyProperties(officer001, officer003);
+            System.out.println("officer001=officer002?:" + (officer001.equals(officer002)));
+            System.out.println(officer003);
+            System.out.println("officer003=officer001?:" + (officer003 == officer001));
+            System.out.println("officer004=officer001?:" + (officer004 == officer001));
+            System.out.println(officer001.getGuardian().hashCode());
+            //System.out.println(officer003.getGuardian().hashCode());//空指针异常：并没有实际
+            Officer officer005 = new Officer();
+            System.out.println("------------------------");
+            PropertyUtils.copyProperties(officer005, officer001);
+            System.out.println(officer005);
         } catch (Exception e) {
             e.printStackTrace();
         }

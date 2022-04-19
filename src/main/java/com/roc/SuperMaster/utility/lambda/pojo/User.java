@@ -1,5 +1,6 @@
 package com.roc.SuperMaster.utility.lambda.pojo;
 
+import com.roc.SuperMaster.entity.domain.Guardian;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,5 +23,9 @@ public class User implements Serializable {
     private String id;
 
     private String name;
+
+    private int age;
+
+    private Guardian guardian;
 
 }
