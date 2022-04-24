@@ -1,7 +1,7 @@
 package com.roc.SuperMaster.utility.thirdPartUtilPackage.guava;
 
 import com.google.common.base.Joiner;
-import com.roc.SuperMaster.utility.lambda.pojo.User;
+import com.roc.SuperMaster.entity.systemDomain.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -48,4 +48,16 @@ public class GuavaUtil {
     //https://blog.csdn.net/pzjtian/article/details/106910046?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2.pc_relevant_default&utm_relevant_index=5
     //https://blog.csdn.net/weixin_41563161/article/details/109765790?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2.pc_relevant_default&utm_relevant_index=5
 
+    //com.google.common.annotations：普通注解类型。
+    //com.google.common.base：基本工具类库和接口。
+    //com.google.common.cache：缓存工具包，非常简单易用且功能强大的JVM内缓存。
+    //com.google.common.collect：带泛型的集合接口扩展和实现，以及工具类，这里你会发现很多好玩的集合。
+    //com.google.common.eventbus：发布订阅风格的事件总线。
+    //com.google.common.hash： 哈希工具包。
+    //com.google.common.io：I/O工具包。
+    //com.google.common.math：原始算术类型和超大数的运算工具包。
+    //com.google.common.net：网络工具包。
+    //com.google.common.primitives：八种原始类型和无符号类型的静态工具包。
+    //com.google.common.reflect：反射工具包。
+    //com.google.common.util.concurrent：多线程工具包。
 }

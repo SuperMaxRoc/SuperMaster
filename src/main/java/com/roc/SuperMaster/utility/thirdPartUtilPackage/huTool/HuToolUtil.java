@@ -1,5 +1,8 @@
 package com.roc.SuperMaster.utility.thirdPartUtilPackage.huTool;
 
+import com.roc.SuperMaster.entity.systemDomain.User;
+import org.junit.Test;
+
 /**
  * @ClassName HuToolUtil
  * @Description 强大的HuTool工具包
@@ -13,5 +16,13 @@ public class HuToolUtil {
     //日期和时间：日期时间工具，日期时间对象，农历日期，本地日期工具，计时器工具
     //IO
     //字符串工具：结合Apache Commons Lang的StringUtil工具类共同使用
+    //枚举类工具
+
+    @Test
+    public void testNotNull() {
+        User user = new User();
+        //user.setId(UUID.randomUUID().toString());
+        System.out.println(user);
+    }
 
 }

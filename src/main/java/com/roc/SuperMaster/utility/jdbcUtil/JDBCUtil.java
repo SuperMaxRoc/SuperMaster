@@ -2,7 +2,7 @@ package com.roc.SuperMaster.utility.jdbcUtil;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-import com.roc.SuperMaster.entity.domain.Students;
+import com.roc.SuperMaster.entity.serviceDomain.Students;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.dbcp.BasicDataSource;

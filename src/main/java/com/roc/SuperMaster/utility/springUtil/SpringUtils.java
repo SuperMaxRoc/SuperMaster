@@ -1,7 +1,7 @@
 package com.roc.SuperMaster.utility.springUtil;
 
-import com.roc.SuperMaster.entity.domain.Guardian;
-import com.roc.SuperMaster.entity.domain.Officer;
+import com.roc.SuperMaster.entity.serviceDomain.Guardian;
+import com.roc.SuperMaster.entity.serviceDomain.Officer;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.junit.Test;

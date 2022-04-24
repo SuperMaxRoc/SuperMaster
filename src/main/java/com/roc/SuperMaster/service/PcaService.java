@@ -1,7 +1,7 @@
 package com.roc.SuperMaster.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.roc.SuperMaster.entity.domain.Pca;
+import com.roc.SuperMaster.entity.serviceDomain.Pca;
 
 /**
  * @Author: WP

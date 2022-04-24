@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.roc.SuperMaster.mapper.StudentsMapper">
-    <resultMap id="BaseResultMap" type="com.roc.SuperMaster.entity.domain.Students">
+    <resultMap id="BaseResultMap" type="com.roc.SuperMaster.entity.serviceDomain.Students">
         <!--@mbg.generated-->
         <!--@Table students-->
         <id column="student_id" jdbcType="VARCHAR" property="studentId"/>
@@ -57,7 +57,7 @@
         from students
         where student_id = #{studentId,jdbcType=VARCHAR}
     </delete>
-    <insert id="insert" parameterType="com.roc.SuperMaster.entity.domain.Students">
+    <insert id="insert" parameterType="com.roc.SuperMaster.entity.serviceDomain.Students">
         <!--@mbg.generated-->
         insert into students (student_id, student_name, student_number,
         student_card_id, student_sex, student_age,
@@ -86,7 +86,7 @@
         #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{deleteBy,jdbcType=VARCHAR},
         #{deleteTime,jdbcType=TIMESTAMP}, #{deleteStatus,jdbcType=BOOLEAN})
     </insert>
-    <insert id="insertSelective" parameterType="com.roc.SuperMaster.entity.domain.Students">
+    <insert id="insertSelective" parameterType="com.roc.SuperMaster.entity.serviceDomain.Students">
         <!--@mbg.generated-->
         insert into students
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -274,7 +274,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.roc.SuperMaster.entity.domain.Students">
+    <update id="updateByPrimaryKeySelective" parameterType="com.roc.SuperMaster.entity.serviceDomain.Students">
         <!--@mbg.generated-->
         update students
         <set>
@@ -368,7 +368,7 @@
         </set>
         where student_id = #{studentId,jdbcType=VARCHAR}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.roc.SuperMaster.entity.domain.Students">
+    <update id="updateByPrimaryKey" parameterType="com.roc.SuperMaster.entity.serviceDomain.Students">
         <!--@mbg.generated-->
         update students
         set student_name = #{studentName,jdbcType=VARCHAR},
@@ -402,7 +402,7 @@
         delete_status = #{deleteStatus,jdbcType=BOOLEAN}
         where student_id = #{studentId,jdbcType=VARCHAR}
     </update>
-    <select id="getOnerous" resultType="com.roc.SuperMaster.entity.domain.Students">
+    <select id="getOnerous" resultType="com.roc.SuperMaster.entity.serviceDomain.Students">
         select *
         from students
         where 1 = 1

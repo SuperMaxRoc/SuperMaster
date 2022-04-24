@@ -6,7 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.roc.SuperMaster.utility.lambda.pojo.User;
+import com.roc.SuperMaster.entity.systemDomain.User;
 import lombok.var;
 import org.junit.Test;
 

@@ -1,9 +1,11 @@
-package com.roc.SuperMaster.utility.lambda.pojo;
+package com.roc.SuperMaster.entity.systemDomain;
 
-import com.roc.SuperMaster.entity.domain.Guardian;
+import com.roc.SuperMaster.entity.serviceDomain.Guardian;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 
@@ -16,16 +18,30 @@ import java.io.Serializable;
  * @UpdateUser Roc
  */
 @Data
-@AllArgsConstructor
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class User implements Serializable {
 
+    /**
+     * id
+     */
+    @NotNull(value = "id不能为空")
     private String id;
 
+    /**
+     * name
+     */
     private String name;
 
+    /**
+     * age
+     */
     private int age;
 
+    /**
+     * id
+     */
     private Guardian guardian;
 
 }

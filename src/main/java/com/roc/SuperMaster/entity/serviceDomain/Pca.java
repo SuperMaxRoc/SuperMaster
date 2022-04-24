@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.entity.domain;
+package com.roc.SuperMaster.entity.serviceDomain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;

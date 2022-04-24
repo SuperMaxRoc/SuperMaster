@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.entity.domain;
+package com.roc.SuperMaster.entity.serviceDomain;
 
 import cn.afterturn.easypoi.excel.annotation.Excel;
 import com.baomidou.mybatisplus.annotation.IdType;

@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.entity.domain;
+package com.roc.SuperMaster.entity.serviceDomain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

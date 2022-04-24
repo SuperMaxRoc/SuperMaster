@@ -1,6 +1,6 @@
 package com.roc.SuperMaster.utility.lambda;
 
-import com.roc.SuperMaster.utility.lambda.pojo.User;
+import com.roc.SuperMaster.entity.systemDomain.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 

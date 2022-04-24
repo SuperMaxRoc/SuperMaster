@@ -1,6 +1,6 @@
 package com.roc.SuperMaster.utility.bigSet;
 
-import com.roc.SuperMaster.utility.lambda.pojo.User;
+import com.roc.SuperMaster.entity.systemDomain.User;
 import org.junit.Test;
 
 import java.io.BufferedReader;

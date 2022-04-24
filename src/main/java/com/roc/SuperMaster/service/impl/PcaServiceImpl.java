@@ -1,7 +1,7 @@
 package com.roc.SuperMaster.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.roc.SuperMaster.entity.domain.Pca;
+import com.roc.SuperMaster.entity.serviceDomain.Pca;
 import com.roc.SuperMaster.mapper.PcaMapper;
 import com.roc.SuperMaster.service.PcaService;
 import org.springframework.stereotype.Service;

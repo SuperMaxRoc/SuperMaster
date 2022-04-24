@@ -4,7 +4,7 @@ import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.roc.SuperMaster.entity.domain.Students;
+import com.roc.SuperMaster.entity.serviceDomain.Students;
 import com.roc.SuperMaster.mapper.StudentsMapper;
 import com.roc.SuperMaster.service.ParseIdCardService;
 import com.roc.SuperMaster.service.StudentsService;
@@ -47,7 +47,7 @@ public class StudentController {
      * @param pageNum
      * @param pageSize
      * @param req
-     * @return com.roc.SuperMaster.utility.webResult.WebApiResult<java.util.List < com.roc.SuperMaster.entity.domain.Students>>
+     * @return com.roc.SuperMaster.utility.webResult.WebApiResult<java.util.List < com.roc.SuperMaster.entity.serviceDomain.Students>>
      * @Author: WP
      * @Date: 2021/8/22 20:01
      * @Version 1.0
