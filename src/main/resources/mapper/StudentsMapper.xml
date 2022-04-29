@@ -405,96 +405,97 @@
     <select id="getOnerous" resultType="com.roc.SuperMaster.entity.serviceDomain.Students">
         select *
         from students
-        where 1 = 1
-        <if test="studentId != null">
-            and student_id = #{studentId,jdbcType=VARCHAR}
-        </if>
-        <if test="studentName != null">
-            and student_name = #{studentName,jdbcType=VARCHAR}
-        </if>
-        <if test="studentNumber != null">
-            and student_number = #{studentNumber,jdbcType=VARCHAR}
-        </if>
-        <if test="studentCardId != null">
-            and student_card_id = #{studentCardId,jdbcType=VARCHAR}
-        </if>
-        <if test="studentSex != null">
-            and student_sex = #{studentSex,jdbcType=VARCHAR}
-        </if>
-        <if test="studentAge != null">
-            and student_age = #{studentAge,jdbcType=INTEGER}
-        </if>
-        <if test="studentGrade != null">
-            and student_grade = #{studentGrade,jdbcType=VARCHAR}
-        </if>
-        <if test="studentGradeName != null">
-            and student_grade_name = #{studentGradeName,jdbcType=VARCHAR}
-        </if>
-        <if test="studentClass != null">
-            and student_class = #{studentClass,jdbcType=VARCHAR}
-        </if>
-        <if test="studentClassName != null">
-            and student_class_name = #{studentClassName,jdbcType=VARCHAR}
-        </if>
-        <if test="studentEmail != null">
-            and student_email = #{studentEmail,jdbcType=VARCHAR}
-        </if>
-        <if test="studentStatus != null">
-            and student_status = #{studentStatus,jdbcType=VARCHAR}
-        </if>
-        <if test="studentBirthday != null">
-            and student_birthday = #{studentBirthday,jdbcType=VARCHAR}
-        </if>
-        <if test="studentAddress != null">
-            and student_address = #{studentAddress,jdbcType=VARCHAR}
-        </if>
-        <if test="studentPhone != null">
-            and student_phone = #{studentPhone,jdbcType=VARCHAR}
-        </if>
-        <if test="studentGuardianId != null">
-            and student_guardian_id = #{studentGuardianId,jdbcType=VARCHAR}
-        </if>
-        <if test="studentGuardianName != null">
-            and student_guardian_name = #{studentGuardianName,jdbcType=VARCHAR}
-        </if>
-        <if test="studentGuardianPhone != null">
-            and student_guardian_phone = #{studentGuardianPhone,jdbcType=VARCHAR}
-        </if>
-        <if test="studentGuardianRelationship != null">
-            and student_guardian_relationship = #{studentGuardianRelationship,jdbcType=VARCHAR}
-        </if>
-        <if test="studentAdmissionTime != null">
-            and student_admission_time = #{studentAdmissionTime,jdbcType=DATE}
-        </if>
-        <if test="studentLeaveTime != null">
-            and student_leave_time = #{studentLeaveTime,jdbcType=DATE}
-        </if>
-        <if test="studentRegisteredResidence != null">
-            and student_Registered_residence = #{studentRegisteredResidence,jdbcType=VARCHAR}
-        </if>
-        <if test="remark != null">
-            and remark = #{remark,jdbcType=LONGVARCHAR}
-        </if>
-        <if test="createBy != null">
-            and create_by = #{createBy,jdbcType=VARCHAR}
-        </if>
-        <if test="createTime != null">
-            and create_time = #{createTime,jdbcType=TIMESTAMP}
-        </if>
-        <if test="updateBy != null">
-            and update_by = #{updateBy,jdbcType=VARCHAR}
-        </if>
-        <if test="updateTime != null">
-            and update_time = #{updateTime,jdbcType=TIMESTAMP}
-        </if>
-        <if test="deleteBy != null">
-            and delete_by = #{deleteBy,jdbcType=VARCHAR}
-        </if>
-        <if test="deleteTime != null">
-            and delete_time = #{deleteTime,jdbcType=TIMESTAMP}
-        </if>
-        <if test="deleteStatus != null">
-            and delete_status = #{deleteStatus,jdbcType=BOOLEAN}
-        </if>
+        <where>
+            <if test="studentId != null">
+                and student_id = #{studentId,jdbcType=VARCHAR}
+            </if>
+            <if test="studentName != null">
+                and student_name = #{studentName,jdbcType=VARCHAR}
+            </if>
+            <if test="studentNumber != null">
+                and student_number = #{studentNumber,jdbcType=VARCHAR}
+            </if>
+            <if test="studentCardId != null">
+                and student_card_id = #{studentCardId,jdbcType=VARCHAR}
+            </if>
+            <if test="studentSex != null">
+                and student_sex = #{studentSex,jdbcType=VARCHAR}
+            </if>
+            <if test="studentAge != null">
+                and student_age = #{studentAge,jdbcType=INTEGER}
+            </if>
+            <if test="studentGrade != null">
+                and student_grade = #{studentGrade,jdbcType=VARCHAR}
+            </if>
+            <if test="studentGradeName != null">
+                and student_grade_name = #{studentGradeName,jdbcType=VARCHAR}
+            </if>
+            <if test="studentClass != null">
+                and student_class = #{studentClass,jdbcType=VARCHAR}
+            </if>
+            <if test="studentClassName != null">
+                and student_class_name = #{studentClassName,jdbcType=VARCHAR}
+            </if>
+            <if test="studentEmail != null">
+                and student_email = #{studentEmail,jdbcType=VARCHAR}
+            </if>
+            <if test="studentStatus != null">
+                and student_status = #{studentStatus,jdbcType=VARCHAR}
+            </if>
+            <if test="studentBirthday != null">
+                and student_birthday = #{studentBirthday,jdbcType=VARCHAR}
+            </if>
+            <if test="studentAddress != null">
+                and student_address = #{studentAddress,jdbcType=VARCHAR}
+            </if>
+            <if test="studentPhone != null">
+                and student_phone = #{studentPhone,jdbcType=VARCHAR}
+            </if>
+            <if test="studentGuardianId != null">
+                and student_guardian_id = #{studentGuardianId,jdbcType=VARCHAR}
+            </if>
+            <if test="studentGuardianName != null">
+                and student_guardian_name = #{studentGuardianName,jdbcType=VARCHAR}
+            </if>
+            <if test="studentGuardianPhone != null">
+                and student_guardian_phone = #{studentGuardianPhone,jdbcType=VARCHAR}
+            </if>
+            <if test="studentGuardianRelationship != null">
+                and student_guardian_relationship = #{studentGuardianRelationship,jdbcType=VARCHAR}
+            </if>
+            <if test="studentAdmissionTime != null">
+                and student_admission_time = #{studentAdmissionTime,jdbcType=DATE}
+            </if>
+            <if test="studentLeaveTime != null">
+                and student_leave_time = #{studentLeaveTime,jdbcType=DATE}
+            </if>
+            <if test="studentRegisteredResidence != null">
+                and student_Registered_residence = #{studentRegisteredResidence,jdbcType=VARCHAR}
+            </if>
+            <if test="remark != null">
+                and remark = #{remark,jdbcType=LONGVARCHAR}
+            </if>
+            <if test="createBy != null">
+                and create_by = #{createBy,jdbcType=VARCHAR}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime,jdbcType=TIMESTAMP}
+            </if>
+            <if test="updateBy != null">
+                and update_by = #{updateBy,jdbcType=VARCHAR}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime,jdbcType=TIMESTAMP}
+            </if>
+            <if test="deleteBy != null">
+                and delete_by = #{deleteBy,jdbcType=VARCHAR}
+            </if>
+            <if test="deleteTime != null">
+                and delete_time = #{deleteTime,jdbcType=TIMESTAMP}
+            </if>
+            <if test="deleteStatus != null">
+                and delete_status = #{deleteStatus,jdbcType=BOOLEAN}
+            </if>
+        </where>
     </select>
 </mapper>

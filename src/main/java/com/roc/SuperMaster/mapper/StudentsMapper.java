@@ -17,6 +17,7 @@ public interface StudentsMapper extends BaseMapper<Students> {
 
     int deleteByPrimaryKey(String studentId);
 
+    @Override
     int insert(Students record);
 
     int insertSelective(Students record);

@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 
@@ -26,7 +25,7 @@ public class User implements Serializable {
     /**
      * id
      */
-    @NotNull(value = "id不能为空")
+    //@NotNull(value = "id不能为空")
     private String id;
 
     /**
