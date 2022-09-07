@@ -1,11 +1,26 @@
 package com.roc.SuperMaster.utility.timeUtil;
 
+import cn.hutool.core.date.DateField;
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.math.Calculator;
+import com.roc.SuperMaster.entity.serviceDomain.Students;
+import com.roc.SuperMaster.service.StudentsService;
+import net.bytebuddy.build.ToStringPlugin;
 import org.junit.Test;
+import org.quartz.SimpleTrigger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 
+import javax.annotation.Resource;
+import java.sql.SQLOutput;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * @author Roc
@@ -13,6 +28,9 @@ import java.util.Date;
  * @date 2021/7/13 17:18
  */
 public class TimeUtil {
+
+    @Resource
+    private StudentsService studentsService;
     /**
      *
      * 时间相关的工具类
@@ -111,6 +129,108 @@ public class TimeUtil {
         cal.setTime(nowDate);
         int nowMonth = cal.get(Calendar.MONTH) + 1;
         System.out.println(nowMonth);
+    }
 
+    /**
+     * @param startTime
+     * @param endPart
+     * @return
+     * @Desc 开始时间 + 时间段（分钟） = 结束时间【转换成毫秒数进行加减】
+     */
+    public static Date convertStartPlusEndToDate(String startTime, int endPart) {
+        Date dateTime = null;
+        try {
+            Date date = DateUtil.parse(startTime);
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            dateTime = DateUtil.parse(formatter.format(new Date((date.getTime() + (endPart * 60000L)))));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dateTime;
+    }
+
+    @Test
+    public void testTimePlus() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.MONTH, -1);
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM");
+        String s = df.format(calendar.getTime());
+        System.out.println(df.format(calendar.getTime()));
+        //String abacus = ",123456";
+        //System.out.println(abacus.substring(0, 1));
+    }
+
+    @Test
+    public void testDealStringent() {
+        String s = ",12,,123,";
+        if (!StringUtils.isEmpty(s)) {
+            if (s.startsWith(",")) {
+                s = s.substring(1, s.length());
+            }
+            if (s.contains(",,")) {
+                s = s.replace(",,", ",");
+            }
+            if (s.endsWith(",")) {
+                s = s.substring(0, s.length() - 1);
+            }
+        }
+        System.out.println(s);
+    }
+
+    @Test
+    public void testCalPlusOneMonth() {
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM");
+        calendar.add(Calendar.MONTH, 1);
+        String endTime = df.format(calendar.getTime());
+        System.out.println(endTime);
+    }
+
+    @Test
+    public void testStringBuilder() {
+        /**
+         * month = “2022-08”
+         * lastMonth = 1
+         * return = “2022-09”
+         */
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM");
+        String targetMonth = null;
+        String month = "2022-08";
+        int calculate = 2;
+        if (!StringUtils.isEmpty(month)) {
+            Date newDate = DateUtil.offset(DateUtil.parseDate(month + "-01"), DateField.MONTH, calculate);
+            targetMonth = df.format(newDate);
+        }
+        System.out.println(targetMonth);
+    }
+
+    @Test
+    public void testament(){
+        //ArrayList<CompletableFuture> futures = new ArrayList<>();
+        //CompletableFuture[] completableFutures = new CompletableFuture[2];
+        //futures.add(new CompletableFuture());
+        //CompletableFuture[] completableFutures1 = futures.toArray(completableFutures);
+        //CompletableFuture.allOf(completableFutures1).join();
+        //System.out.println("123");
+        //List<Students> list = studentsService.getStudentsList();
+        int ceil =(int)( Math.ceil( (11275 / 1000.0)));
+        //ArrayList<Integer> integers = new ArrayList<>();
+        //for (int abacus= 1; abacus<= 10;abacus++) {;
+        //    integers.add(abacus);
+        //}
+        System.out.println(ceil);
+    }
+    public String percent(int x, int y){
+        String percent = "";
+        double xx = x * 100.0;
+        double yy = y * 100.0;
+        double zz = xx / yy;
+        DecimalFormat df = new DecimalFormat("##%");
+        if (Math.abs(zz) < 0.000000000001) {
+            percent = "0.00%";
+        } else {
+            percent = df.format(zz);
+        }
+        return percent;
     }
 }
