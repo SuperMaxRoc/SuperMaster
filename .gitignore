@@ -1,34 +1,88 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+######################
+# Project Specific
+######################
+/config
+/target
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
+######################
+# Intellij
+######################
+.idea/**
 .idea
-*.iws
 *.iml
+*.iws
 *.ipr
+*.ids
+*.orig
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+######################
+# Maven
+######################
+/log/**
+/*/target/**
 
-### VS Code ###
-.vscode/
-### log ###
+######################
+# Gradle
+######################
+.gradle/**
+
+######################
+# Package Files
+######################
+*.jar
+*.war
+*.ear
+
+######################
+# Windows
+######################
+# Windows image file caches
+Thumbs.db
+*.db
+
+# Folder config file
+Desktop.ini
+
+######################
+# Mac OSX
+######################
+.DS_Store
+.svn
+
+# Thumbnails
+._*
+
+
+######################
+# Directories
+######################
+/build/**
+/bin/**
+/spring_loaded/**
+/deploy/**
+
+######################
+# Logs
+######################
 *.log
+
+######################
+# Others
+######################
+*.class
+*.*~
+*~
+.merge_file*
+*.serial
+
+######################
+# Gradle Wrapper
+######################
+!gradle/wrapper/gradle-wrapper.jar
+
+######################
+# Maven Wrapper
+######################
+!.mvn/wrapper/maven-wrapper.jar
+
+logs/
