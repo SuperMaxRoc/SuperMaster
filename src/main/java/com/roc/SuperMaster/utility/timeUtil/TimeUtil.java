@@ -2,25 +2,19 @@ package com.roc.SuperMaster.utility.timeUtil;
 
 import cn.hutool.core.date.DateField;
 import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.math.Calculator;
-import com.roc.SuperMaster.entity.serviceDomain.Students;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
 import com.roc.SuperMaster.service.StudentsService;
-import net.bytebuddy.build.ToStringPlugin;
+import org.apache.commons.collections4.CollectionUtils;
 import org.junit.Test;
-import org.quartz.SimpleTrigger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
-import java.sql.SQLOutput;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 /**
  * @author Roc
@@ -232,5 +226,45 @@ public class TimeUtil {
             percent = df.format(zz);
         }
         return percent;
+    }
+
+    @Test
+    public void getMs() {
+        try {
+            long overdueTime;
+            if (System.currentTimeMillis() <= (new SimpleDateFormat("yyyy-MM-dd").parse("2022-11-24").getTime())) {
+                overdueTime = 90 * 24 * 3600000L;
+            } else {
+                overdueTime = 30 * 24 * 3600000L;
+            }
+            System.out.println(overdueTime);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("1234567891234".substring(0, 10));
+    }
+
+    @Test
+    public void testGoogleGuavaMultMaple() {
+        Multimap<String, String> multimap = ArrayListMultimap.create();
+        multimap.put("WO1", "1");
+        multimap.put("WO1", "2");
+        multimap.put("WO1", "3");
+        multimap.put("WO2", "4");
+        System.out.println(multimap.keySet());
+        if (CollectionUtils.isNotEmpty(multimap.keySet())) {
+            for (String s : multimap.keySet()) {
+                for (String s1 : multimap.get(s)) {
+                    System.out.println(s1);
+                }
+            }
+        }
+    }
+
+    @Test
+    public void testPlus() {
+        int a = 0;
+        a += 1;
+        System.out.println(a);
     }
 }
