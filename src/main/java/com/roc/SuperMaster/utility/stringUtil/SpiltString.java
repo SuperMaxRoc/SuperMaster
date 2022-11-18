@@ -2,6 +2,7 @@ package com.roc.SuperMaster.utility.stringUtil;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.springframework.util.StringUtils;
 
 import java.util.Arrays;
 import java.util.StringTokenizer;
@@ -70,6 +71,25 @@ public class SpiltString {
         System.out.println(substringBefore);
         System.out.println(targetSubstring);
         System.out.println(substringBack);
+    }
 
+    /**
+     * 字符串的首尾处理
+     */
+    @Test
+    public void testDealStringent() {
+        String s = ",12,,123,";
+        if (!StringUtils.isEmpty(s)) {
+            if (s.startsWith(",")) {
+                s = s.substring(1, s.length());
+            }
+            if (s.contains(",,")) {
+                s = s.replace(",,", ",");
+            }
+            if (s.endsWith(",")) {
+                s = s.substring(0, s.length() - 1);
+            }
+        }
+        System.out.println(s);
     }
 }

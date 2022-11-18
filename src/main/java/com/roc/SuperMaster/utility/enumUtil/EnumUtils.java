@@ -1,4 +1,4 @@
-package com.roc.SuperMaster.utility.EnumUtil;
+package com.roc.SuperMaster.utility.enumUtil;
 
 import cn.hutool.core.util.EnumUtil;
 import com.roc.SuperMaster.entity.enums.StudentStatus;

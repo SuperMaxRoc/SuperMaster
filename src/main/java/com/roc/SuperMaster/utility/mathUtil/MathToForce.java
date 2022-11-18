@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -293,6 +294,34 @@ public class MathToForce {
     @Test
     public void logarithm() {
 
+    }
+
+    @Test
+    public void testFori() {
+        for (int i = -1; i >= -31; i--) {
+            System.out.println(i);
+        }
+    }
+
+    /**
+     * 计算百分比
+     *
+     * @param x
+     * @param y
+     * @return
+     */
+    public String percent(int x, int y) {
+        String percent = "";
+        double xx = x * 100.0;
+        double yy = y * 100.0;
+        double zz = xx / yy;
+        DecimalFormat df = new DecimalFormat("##%");
+        if (Math.abs(zz) < 0.000000000001) {
+            percent = "0.00%";
+        } else {
+            percent = df.format(zz);
+        }
+        return percent;
     }
 
 }

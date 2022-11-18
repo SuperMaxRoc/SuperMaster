@@ -2,15 +2,11 @@ package com.roc.SuperMaster.utility.timeUtil;
 
 import cn.hutool.core.date.DateField;
 import cn.hutool.core.date.DateUtil;
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.Multimap;
 import com.roc.SuperMaster.service.StudentsService;
-import org.apache.commons.collections4.CollectionUtils;
 import org.junit.Test;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -143,6 +139,9 @@ public class TimeUtil {
         return dateTime;
     }
 
+    /**
+     * 计算月份
+     */
     @Test
     public void testTimePlus() {
         Calendar calendar = Calendar.getInstance();
@@ -150,25 +149,6 @@ public class TimeUtil {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM");
         String s = df.format(calendar.getTime());
         System.out.println(df.format(calendar.getTime()));
-        //String abacus = ",123456";
-        //System.out.println(abacus.substring(0, 1));
-    }
-
-    @Test
-    public void testDealStringent() {
-        String s = ",12,,123,";
-        if (!StringUtils.isEmpty(s)) {
-            if (s.startsWith(",")) {
-                s = s.substring(1, s.length());
-            }
-            if (s.contains(",,")) {
-                s = s.replace(",,", ",");
-            }
-            if (s.endsWith(",")) {
-                s = s.substring(0, s.length() - 1);
-            }
-        }
-        System.out.println(s);
     }
 
     @Test
@@ -207,64 +187,49 @@ public class TimeUtil {
         //CompletableFuture.allOf(completableFutures1).join();
         //System.out.println("123");
         //List<Students> list = studentsService.getStudentsList();
-        int ceil =(int)( Math.ceil( (11275 / 1000.0)));
+        int ceil = (int) (Math.ceil((11275 / 1000.0)));
         //ArrayList<Integer> integers = new ArrayList<>();
         //for (int abacus= 1; abacus<= 10;abacus++) {;
         //    integers.add(abacus);
         //}
-        System.out.println(ceil);
-    }
-    public String percent(int x, int y){
-        String percent = "";
-        double xx = x * 100.0;
-        double yy = y * 100.0;
-        double zz = xx / yy;
-        DecimalFormat df = new DecimalFormat("##%");
-        if (Math.abs(zz) < 0.000000000001) {
-            percent = "0.00%";
-        } else {
-            percent = df.format(zz);
-        }
-        return percent;
+
+        //String myBankUrl = "alipays://platformapi/startapp?appId=2021002115660005&nbupdate=syncforce&query=outMchId%3D{outMchId}%26isv%3D{ISV_ORG_ID}%26app%3Dbkclfs%26t%3DREGISTER%26uid%3D{uid}";
+        //myBankUrl = myBankUrl.replaceFirst("outMchId}",("123"+"}"));
+        //System.out.println(myBankUrl.indexOf("="));
+        //System.out.println(myBankUrl.indexOf("&"));
+        //System.out.println(myBankUrl.substring((myBankUrl.indexOf("=")+1), myBankUrl.indexOf("&")));
+        System.out.println(String.format("服务商：%s，V码：%s，创建账户记录成功", "123", "456"));
     }
 
+    /**
+     * @param
+     * @return void
+     * @Author: WangPeng
+     * @Date: 2022/10/10 15:03
+     * @Description: 格式化时间
+     */
     @Test
-    public void getMs() {
-        try {
-            long overdueTime;
-            if (System.currentTimeMillis() <= (new SimpleDateFormat("yyyy-MM-dd").parse("2022-11-24").getTime())) {
-                overdueTime = 90 * 24 * 3600000L;
-            } else {
-                overdueTime = 30 * 24 * 3600000L;
-            }
-            System.out.println(overdueTime);
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("1234567891234".substring(0, 10));
+    public void testTimeFormatPlus() {
+        /**
+         * 示例：
+         * yyyy-MM-dd 00:00:00 --> 2022-10-10 00:00:00
+         * yyyy-MM-dd 23:59:59 --> 2022-10-10 23:59:59
+         */
+        //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd 00:00:00");
+        //System.out.println(simpleDateFormat.format(String.valueOf("2022-07-10")));
+        String dateStr = "2022-03-01";
+        //Date date = DateUtil.parse(dateStr, "MM-dd");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd");
+        System.out.println(simpleDateFormat.format(new Date()));
     }
 
+    /**
+     * 根据毫秒数获取时间
+     */
     @Test
-    public void testGoogleGuavaMultMaple() {
-        Multimap<String, String> multimap = ArrayListMultimap.create();
-        multimap.put("WO1", "1");
-        multimap.put("WO1", "2");
-        multimap.put("WO1", "3");
-        multimap.put("WO2", "4");
-        System.out.println(multimap.keySet());
-        if (CollectionUtils.isNotEmpty(multimap.keySet())) {
-            for (String s : multimap.keySet()) {
-                for (String s1 : multimap.get(s)) {
-                    System.out.println(s1);
-                }
-            }
-        }
-    }
-
-    @Test
-    public void testPlus() {
-        int a = 0;
-        a += 1;
-        System.out.println(a);
+    public void testDatePlush() {
+        Date targetDate = null;
+        targetDate = DateUtil.parse(String.valueOf(new Date(new Date().getTime() + (-1 * 1000 * 60 * 60 * 24L))));
+        System.out.println(targetDate);
     }
 }

@@ -1,6 +1,9 @@
 package com.roc.SuperMaster.utility.bigSet;
 
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections4.CollectionUtils;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -122,6 +125,26 @@ public class MapUtils {
         System.out.println("遍历TreeMap：取value");
         for (Object m : integerTreeMap.values()) {
             System.out.println("value:" + m);
+        }
+    }
+
+    /**
+     * 测试Guava的Map
+     */
+    @Test
+    public void testGoogleGuavaMultMaple() {
+        Multimap<String, String> multimap = ArrayListMultimap.create();
+        multimap.put("WO1", "1");
+        multimap.put("WO1", "2");
+        multimap.put("WO1", "3");
+        multimap.put("WO2", "4");
+        System.out.println(multimap.keySet());
+        if (CollectionUtils.isNotEmpty(multimap.keySet())) {
+            for (String s : multimap.keySet()) {
+                for (String s1 : multimap.get(s)) {
+                    System.out.println(s1);
+                }
+            }
         }
     }
 }
