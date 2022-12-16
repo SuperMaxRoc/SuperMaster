@@ -232,4 +232,53 @@ public class TimeUtil {
         targetDate = DateUtil.parse(String.valueOf(new Date(new Date().getTime() + (-1 * 1000 * 60 * 60 * 24L))));
         System.out.println(targetDate);
     }
+
+    @Test
+    public void testDate() {
+        System.out.println(getMonthByParams(null, 0));
+    }
+
+    public String getMonthByParams(String monthChoose, int calculate) {
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM");
+        Calendar calendar = Calendar.getInstance();
+        if (!StringUtils.isEmpty(monthChoose)) {
+            calendar.add(Calendar.MONTH, calculate);
+        }
+        return df.format(calendar.getTime());
+    }
+
+    /**
+     * @param date
+     * @param pattern
+     * @return java.lang.String
+     * @Author: WangPeng
+     * @Date: 2022/10/10 15:14
+     * @Description: 格式化时间plus
+     */
+    public static String formatDateTimeFormDateStringPlus(Date date, String pattern) {
+        /**
+         * 示例：
+         * pattern：yyyy-MM-dd 00:00:00
+         * 出参：2022-10-10 00:00:00
+         */
+        if (date == null || org.apache.commons.lang3.StringUtils.isBlank(pattern)) {
+            return null;
+        }
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        return simpleDateFormat.format(date);
+    }
+
+    @Test
+    public void testamentPlush() {
+        System.out.println(formatDateTimeFormDateStringPlus(new Date(), "yyyy-MM-dd"));
+    }
+
+    @Test
+    public void testamentPlushToString() {
+        /**
+         * 打印结果：
+         * Fri Dec 16 14:18:09 CST 2022
+         */
+        System.out.println(new Date().toString());
+    }
 }

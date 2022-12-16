@@ -11,6 +11,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -40,6 +41,7 @@ public class Students implements Serializable {
     @TableId(type = IdType.AUTO)
     @ApiModelProperty(value = "学生ID")
     @Excel(name = "学生ID", width = 15.0)
+    @NotBlank(message = "学生ID不可为空")
     private String studentId;
     /**
      * 学生姓名

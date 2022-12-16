@@ -442,6 +442,12 @@
             <artifactId>easyexcel</artifactId>
             <version>3.0.5</version>
         </dependency>
+        <!-- 用于后端mock数据 -->
+        <dependency>
+            <groupId>com.github.jsonzou</groupId>
+            <artifactId>jmockdata</artifactId>
+            <version>4.3.0</version>
+        </dependency>
 
     </dependencies>
 

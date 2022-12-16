@@ -1,11 +1,8 @@
 package com.roc.SuperMaster.utility.basicLang;
 
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 
 /**
  * @Author Roc
@@ -316,34 +313,5 @@ public class basicLangQuestions extends Object {
         System.out.println(1 ^ 0);
         System.out.println(1 ^ 0);
     }
-
-    @Test
-    public void testSoutMap() {
-        System.out.println((int) (Math.ceil(10 / 9.0)));
-    }
-
-    public static String getPercent(int x, int y) {
-        double d1 = x * 1.0;
-        double d2 = y * 1.0;
-        NumberFormat percentInstance = NumberFormat.getPercentInstance();
-        // 设置保留几位小数，这里设置的是保留两位小数
-        percentInstance.setMinimumFractionDigits(2);
-        return percentInstance.format(d1 / d2);
-    }
-
-    public static String percent(double zz) {
-        String percent = "";
-        if (StringUtils.isBlank(String.valueOf(zz))) {
-            return percent;
-        }
-        DecimalFormat df = new DecimalFormat("##%");
-        if (Math.abs(zz) < 0.000000000001) {
-            percent = "0.00%";
-        } else {
-            percent = df.format(zz);
-        }
-        return percent;
-    }
-
 
 }

@@ -3,6 +3,8 @@ package com.roc.SuperMaster.web.sys;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.jsonzou.jmockdata.JMockData;
+import com.github.jsonzou.jmockdata.TypeReference;
 import com.roc.SuperMaster.entity.serviceDomain.Students;
 import com.roc.SuperMaster.mapper.StudentsMapper;
 import com.roc.SuperMaster.service.ParseIdCardService;
@@ -16,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,6 +107,15 @@ public class StudentController {
             Students students
     ) {
         return studentsMapper.getOnerous(students);
+    }
+
+    @PostMapping("/testMock")
+    public Students testMock(
+            @RequestBody @Valid Students students
+    ) {
+        Students mock = JMockData.mock(new TypeReference<Students>() {
+        });
+        return mock;
     }
 
     @Test

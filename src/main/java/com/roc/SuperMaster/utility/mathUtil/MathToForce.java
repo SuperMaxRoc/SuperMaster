@@ -5,6 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 /**
@@ -296,25 +297,18 @@ public class MathToForce {
 
     }
 
-    @Test
-    public void testFori() {
-        for (int i = -1; i >= -31; i--) {
-            System.out.println(i);
-        }
-    }
-
     /**
-     * 计算百分比
-     *
-     * @param x
-     * @param y
-     * @return
+     * @param
+     * @return java.lang.String
+     * @Author: WangPeng
+     * @Date: 2022/9/28 15:27
+     * @Description: 格式化展示百分数
      */
-    public String percent(int x, int y) {
+    public static String percent(double zz) {
         String percent = "";
-        double xx = x * 100.0;
-        double yy = y * 100.0;
-        double zz = xx / yy;
+        if (StringUtils.isBlank(String.valueOf(zz))) {
+            return percent;
+        }
         DecimalFormat df = new DecimalFormat("##%");
         if (Math.abs(zz) < 0.000000000001) {
             percent = "0.00%";
@@ -323,5 +317,32 @@ public class MathToForce {
         }
         return percent;
     }
+
+    /**
+     * @param x
+     * @param y
+     * @param minimumBitmap
+     * @return java.lang.String
+     * @Author: WangPeng
+     * @Date: 2022/12/16 14:15
+     * @Description: 获取小数方法Plus版本
+     */
+    public static String getPercentPlus(double x, double y, int minimumBitmap) {
+        NumberFormat percentInstance = NumberFormat.getPercentInstance();
+        // 设置保留几位小数，这里设置的是保留两位小数
+        percentInstance.setMinimumFractionDigits(minimumBitmap);
+        return percentInstance.format(x / y);
+    }
+
+
+    public static String getPercent(int x, int y) {
+        double d1 = x * 1.0;
+        double d2 = y * 1.0;
+        NumberFormat percentInstance = NumberFormat.getPercentInstance();
+        // 设置保留几位小数，这里设置的是保留两位小数
+        percentInstance.setMinimumFractionDigits(2);
+        return percentInstance.format(d1 / d2);
+    }
+
 
 }

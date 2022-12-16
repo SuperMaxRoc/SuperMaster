@@ -42,23 +42,6 @@ public class RandomUtils {
      * @param
      * @return void
      * @Author: WP
-     * @Date: 2021/8/12 20:54
-     * @Version 1.0
-     * @Description: 测试8位自增编号
-     * @UpdateUser WP
-     */
-    @Test
-    public void testRandom02() {
-        String equipmentCode = "SN";
-
-        //String.format("%03d", i)在数字前面补零
-
-    }
-
-    /**
-     * @param
-     * @return void
-     * @Author: WP
      * @Date: 2021/8/26 20:26
      * @Version 1.0
      * @Description: 获取一定范围内的随机数
