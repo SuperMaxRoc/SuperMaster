@@ -1,16 +1,21 @@
 package com.roc.SuperMaster.utility.httpComm;
 
 import cn.hutool.core.convert.Convert;
+import com.alibaba.fastjson.JSONObject;
 import com.roc.SuperMaster.utility.webResult.WebApiResult;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.Duration;
 import java.util.List;
 
 /**
@@ -51,6 +56,22 @@ public class RestTemplateClientComm {
         System.out.println(list.get(0));
 
         return null;
+    }
+
+    @GetMapping("/testTimeOut")
+    public void testTimeOut() {
+        long startTime = System.currentTimeMillis();
+        //RestTemplate restTemplate = new RestTemplate();
+        try {
+            RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder().setConnectTimeout(Duration.ofMillis(1000));
+            RestTemplate restTemplate1 = restTemplateBuilder.build();
+            ResponseEntity<JSONObject> exchange = restTemplate1.exchange("https://www.jb51.net/pl.asp?id=235219", HttpMethod.GET, null, JSONObject.class);
+            System.out.println(exchange.getStatusCode());
+        } catch (RestClientException e) {
+            log.error(e.getMessage());
+        }
+        log.info("耗时：{}ms", (System.currentTimeMillis() - startTime));
+
     }
 
 }
