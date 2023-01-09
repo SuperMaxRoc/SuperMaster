@@ -7,8 +7,10 @@ import com.github.jsonzou.jmockdata.JMockData;
 import com.github.jsonzou.jmockdata.TypeReference;
 import com.roc.SuperMaster.entity.serviceDomain.Students;
 import com.roc.SuperMaster.mapper.StudentsMapper;
+import com.roc.SuperMaster.service.FormatSQLService;
 import com.roc.SuperMaster.service.ParseIdCardService;
 import com.roc.SuperMaster.service.StudentsService;
+import com.roc.SuperMaster.utility.webResult.ExecuteResult;
 import com.roc.SuperMaster.utility.webResult.WebApiResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -41,6 +43,9 @@ public class StudentController {
 
     @Autowired
     private ParseIdCardService parseIdCardService;
+
+    @Autowired
+    private FormatSQLService formatSQLService;
 
     /**
      * @param student
@@ -129,5 +134,14 @@ public class StudentController {
 
         connect = JSONObject.toJSONString(jsonObject, SerializerFeature.WriteMapNullValue);
         System.out.println(connect);
+    }
+
+    @PostMapping("formatSQL")
+    public ExecuteResult<String> formatSQL(
+            @RequestBody JSONObject jsonObject
+    ) {
+        String preparingSQL = jsonObject.getString("preparingSQL");
+        String parameters = jsonObject.getString("parameters");
+        return formatSQLService.formatSql(preparingSQL, parameters);
     }
 }
