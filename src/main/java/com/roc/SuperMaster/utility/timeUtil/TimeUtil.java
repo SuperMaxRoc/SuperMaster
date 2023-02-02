@@ -1,14 +1,19 @@
 package com.roc.SuperMaster.utility.timeUtil;
 
 import cn.hutool.core.date.DateField;
+import cn.hutool.core.date.DateTime;
+import cn.hutool.core.date.DateUnit;
 import cn.hutool.core.date.DateUtil;
 import com.roc.SuperMaster.service.StudentsService;
 import org.junit.Test;
+import org.mapstruct.ap.shaded.freemarker.template.SimpleDate;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -18,6 +23,16 @@ import java.util.Date;
  * @date 2021/7/13 17:18
  */
 public class TimeUtil {
+
+    /**
+     * 时间格式化：自定义时间格式化方法
+     */
+    /**
+     * 计算时间间隔
+     * 转成时间戳通过求差值计算时间间隔
+     * 使用HuTool.DateUtil计算时间间隔
+     */
+
 
     @Resource
     private StudentsService studentsService;
@@ -179,7 +194,7 @@ public class TimeUtil {
     }
 
     @Test
-    public void testament(){
+    public void testament() {
         //ArrayList<CompletableFuture> futures = new ArrayList<>();
         //CompletableFuture[] completableFutures = new CompletableFuture[2];
         //futures.add(new CompletableFuture());
@@ -280,5 +295,102 @@ public class TimeUtil {
          * Fri Dec 16 14:18:09 CST 2022
          */
         System.out.println(new Date().toString());
+    }
+
+    // 计算两个日期之间的间隔
+    @Test
+    public void testCalTwoDayInterval() {
+        Date dateTime = DateUtil.parse("2023-02-04", "yyyy-MM-dd");
+        long between = DateUtil.betweenDay(dateTime, new Date(), true);
+        System.out.println(between);
+    }
+
+
+    // 测试LocalDate
+    @Test
+    public void testLocalDate() {
+        LocalDate localDate = LocalDate.now();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //String format = simpleDateFormat.format(localDate.);
+        //System.out.println(format);
+    }
+
+
+    // 使用Calendar类
+    @Test
+    public void testCalendar() {
+        Calendar calendar = Calendar.getInstance();
+        System.out.println(calendar.getTime());
+        System.out.println(calendar.getWeekYear());
+        calendar.set(Calendar.DAY_OF_MONTH, calendar.get(Calendar.DAY_OF_MONTH) + 1);
+        calendar.set(Calendar.DAY_OF_YEAR, calendar.get(Calendar.DAY_OF_YEAR) + 1);
+        System.out.println(formatDateTimeFormDateStringPlus(calendar.getTime(), "yyyy-MM-dd HH:mm:ss"));
+    }
+
+
+    @Test
+    public void testJDKTimePackageMethod() {
+        //LocalDateTime start = LocalDateTime.of(2022, 1, 1, 8, 0, 0);
+        //LocalDateTime end = LocalDateTime.of(2022, 1, 6, 8, 30, 30);
+        //
+        //Duration duration = Duration.between(start, end);
+        //System.out.println(duration.toDays());
+
+        LocalDateTime startDateTime = LocalDateTime.of(LocalDate.now(), LocalTime.now());
+        LocalDateTime endDateTime = LocalDateTime.of(LocalDate.parse("2023-02-02"), LocalTime.parse("00:00:00"));
+        Duration duration = Duration.between(startDateTime, endDateTime);
+        System.out.println(duration.toDays());
+    }
+
+    // 给定一个字符串（yyyy-MM-dd）计算时间差(日为单位)
+    public long calculateTargetDifference(String startDate, String endDate) {
+        long difference = 0;
+        if (StringUtils.isEmpty(startDate) || StringUtils.isEmpty(endDate)) {
+            return 0;
+        }
+        LocalDateTime start = LocalDateTime.of(LocalDate.parse(startDate), LocalTime.parse("00:00:00"));
+        LocalDateTime end = LocalDateTime.of(LocalDate.parse(endDate), LocalTime.parse("00:00:00"));
+        Duration duration = Duration.between(start, end);
+        difference = duration.toDays();
+        return difference;
+    }
+
+
+    // 计算两个目标日期之间目标单位的时间差
+
+    @Test
+    public void testCalculateTargetDifferenceForTimeUnit() throws Exception {
+        System.out.println(this.calculateTargetDifferenceForTimeUnit("2023-02-02 12:00:00", "2023-02-02 00:00:00", "SECOND"));
+    }
+
+    public long calculateTargetDifferenceForTimeUnit(String startDate, String endDate, String timeUnit) throws Exception {
+        long difference = 0;
+
+        if (org.apache.commons.lang3.StringUtils.isBlank(startDate) || org.apache.commons.lang3.StringUtils.isBlank(endDate) || org.apache.commons.lang3.StringUtils.isBlank(timeUnit)) {
+            return difference;
+        }
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date start = simpleDateFormat.parse(startDate);
+        Date end = simpleDateFormat.parse(endDate);
+
+        if ("DAY".equals(timeUnit)) {
+            difference = DateUtil.betweenDay(start, end, true);
+        } else if ("MONTH".equals(timeUnit)) {
+            difference = DateUtil.betweenMonth(start, end, true);
+        } else if ("YEAR".equals(timeUnit)) {
+            difference = DateUtil.betweenYear(start, end, true);
+        } else if ("WEEK".equals(timeUnit)) {
+            difference = DateUtil.betweenWeek(start, end, true);
+        } else if ("MS".equals(timeUnit)) {
+            difference = DateUtil.betweenMs(start, end);
+        } else if ("HOUR".equals(timeUnit)) {
+            difference = DateUtil.between(start, end, DateUnit.HOUR);
+        } else if ("MINUTE".equals(timeUnit)) {
+            difference = DateUtil.between(start, end, DateUnit.MINUTE);
+        } else if ("SECOND".equals(timeUnit)) {
+            difference = DateUtil.between(start, end, DateUnit.SECOND);
+        }
+        return difference;
     }
 }
