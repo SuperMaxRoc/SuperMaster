@@ -393,4 +393,32 @@ public class TimeUtil {
         }
         return difference;
     }
+
+    @Test
+    public void testPlus() throws Exception {
+        String enroll = this.testEnroll("2023", "春", "2023-01-01");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        System.out.println(calculateTargetDifferenceForTimeUnit(simpleDateFormat.format(new Date()), simpleDateFormat.format(DateUtil.parseDate(enroll)), "DAY"));
+    }
+
+    public String testEnroll(String year, String seasonChineseName, String schoolDeadline) {
+        if (org.apache.commons.lang3.StringUtils.isBlank(year) || org.apache.commons.lang3.StringUtils.isBlank(seasonChineseName)) {
+            return null;
+        }
+        Integer newYear = Integer.parseInt(year) - 1;
+        String date = null;
+        String targetEndDate = null;
+        if ("春".equals(seasonChineseName) && org.apache.commons.lang3.StringUtils.isBlank(schoolDeadline)) {
+            date = "-03-01";
+        } else if ("秋".equals(seasonChineseName) && org.apache.commons.lang3.StringUtils.isBlank(schoolDeadline)) {
+            date = "-11-01";
+        } else if (org.apache.commons.lang3.StringUtils.isNotBlank(schoolDeadline)) {
+            return schoolDeadline;
+        }
+
+        targetEndDate = newYear + date;
+
+        return targetEndDate;
+    }
+
 }
