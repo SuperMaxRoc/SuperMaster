@@ -105,21 +105,16 @@ public class CustomEasyPoiUtil {
         private String excelHeaderName;
     }
 
-    public List<List<String>> contentData(List<JSONObject> data, List<ColumnInfo> columnInfoList) {
+    public static List<List<String>> contentData(List<JSONObject> data, List<ColumnInfo> columnInfoList) {
         List<List<String>> list = ListUtils.newArrayList();
         for (JSONObject datum : data) {
-            Set<String> strings = datum.keySet();
+            //Set<String> strings = datum.keySet();
             List<String> listen = new LinkedList<String>();
             for (ColumnInfo columnInfo : columnInfoList) {
-                for (String string : strings) {
-                    if (string.equals(columnInfo.getColumnName())) {
-                        listen.add(datum.getString(string));
-                    }
-                }
+                listen.add(datum.getString(columnInfo.getColumnName()));
             }
             list.add(listen);
         }
-
         return list;
     }
 }
