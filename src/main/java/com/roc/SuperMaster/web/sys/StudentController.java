@@ -123,7 +123,7 @@ public class StudentController {
     }
 
     @GetMapping("/testCode")
-    @LogAnnotation
+    @LogAnnotation("ceshi")
     public String testCode(
             @RequestParam String code,
             @RequestBody List<Students> testament

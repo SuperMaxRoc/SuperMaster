@@ -39,6 +39,9 @@ public class MethodLoggingAspect {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         String[] parameterNames = signature.getParameterNames();
         Object[] args = joinPoint.getArgs();
+        // 获取注解的信息
+        LogAnnotation logAnnotation = signature.getMethod().getAnnotation(LogAnnotation.class);
+        String customMethodName = logAnnotation.value();
         // 处理参数名和参数值
         JSONObject jsonObject = new JSONObject();
         for (int i = 0; i < parameterNames.length; i++) {
@@ -48,12 +51,18 @@ public class MethodLoggingAspect {
         }
         logger.error(
                 "\n" +
-                        "方法执行信息: {}.{};\n" +
-                        "入参: {};\n" +
-                        "出参: {};\n" +
+                        "方法执行信息: {}.{}\n" +
+                        "方法名称: {}\n" +
+                        "入参: {}\n" +
+                        "出参: {}\n" +
                         "执行耗时: {} ms",
-                joinPoint.getSignature().getDeclaringTypeName(), joinPoint.getSignature().getName(),
-                JSON.toJSONString(jsonObject), result, elapsedTime);
+                joinPoint.getSignature().getDeclaringTypeName(),
+                joinPoint.getSignature().getName(),
+                customMethodName,
+                JSON.toJSONString(jsonObject),
+                result,
+                elapsedTime
+        );
         return result;
     }
 
@@ -63,6 +72,9 @@ public class MethodLoggingAspect {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         String[] parameterNames = signature.getParameterNames();
         Object[] args = joinPoint.getArgs();
+        // 获取注解的信息
+        LogAnnotation logAnnotation = signature.getMethod().getAnnotation(LogAnnotation.class);
+        String customMethodName = logAnnotation.value();
         // 处理参数名和参数值
         JSONObject jsonObject = new JSONObject();
         for (int i = 0; i < parameterNames.length; i++) {
@@ -75,12 +87,15 @@ public class MethodLoggingAspect {
 
         logger.error(
                 "\n" +
-                        "方法执行信息: {}.{};\n" +
-                        "入参: {};\n" +
+                        "方法执行信息: {}.{}\n" +
+                        "方法名称: {}\n" +
+                        "入参: {}\n" +
                         "异常信息:",
                 methodName,
                 className,
+                customMethodName,
                 JSON.toJSONString(jsonObject),
-                ex);
+                ex
+        );
     }
 }

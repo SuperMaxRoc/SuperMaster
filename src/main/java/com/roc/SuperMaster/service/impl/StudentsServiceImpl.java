@@ -184,7 +184,7 @@ public class StudentsServiceImpl extends ServiceImpl<StudentsMapper, Students> i
     }
 
     @Override
-    @LogAnnotation
+    @LogAnnotation("测试日志")
     public String testLogAnnotation(String name) {
         return "Hello " + name;
     }
