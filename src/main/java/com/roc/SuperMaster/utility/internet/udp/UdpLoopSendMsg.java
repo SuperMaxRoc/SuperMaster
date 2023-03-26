@@ -25,7 +25,7 @@ public class UdpLoopSendMsg {
             InetAddress inetAddress = InetAddress.getByName("localhost");
             DatagramPacket datagramPacket = new DatagramPacket(s.getBytes(), 0, s.getBytes().length, inetAddress, 9999);
             socket.send(datagramPacket);
-            if (s.equals("bye")){
+            if (s.equals("bye")) {
                 break;
             }
         }

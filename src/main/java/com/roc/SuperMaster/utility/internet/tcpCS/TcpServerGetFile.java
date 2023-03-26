@@ -13,7 +13,7 @@ import java.net.Socket;
  * @UpdateUser Roc
  */
 public class TcpServerGetFile {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         //创建接收连接
         ServerSocket serverSocket = new ServerSocket(9999);
         //接收连接监听发送连接
@@ -25,8 +25,8 @@ public class TcpServerGetFile {
 
         byte[] buffer = new byte[1024];
         int len = 0;
-        while ((len = inputStream.read(buffer)) != -1){
-            fileOutputStream.write(buffer,0,len);
+        while ((len = inputStream.read(buffer)) != -1) {
+            fileOutputStream.write(buffer, 0, len);
         }
 
         //接收完毕，通知客户端

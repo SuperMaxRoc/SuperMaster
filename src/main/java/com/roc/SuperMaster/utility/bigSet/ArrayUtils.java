@@ -206,13 +206,13 @@ public class ArrayUtils {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/11/20 16:08
      * @Version 1.0
      * @Description: ToDo
      * @UpdateUser WP
-     * @param  
-     * @return void
      */
     @Test
     public void testException() {

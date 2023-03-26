@@ -12,19 +12,19 @@ import org.junit.Test;
  * @UpdateUser Roc
  */
 @Slf4j
-public class TestThread extends Thread{
+public class TestThread extends Thread {
     @Override
     public void run() {
         System.out.println("Hello");
     }
 
     @Test
-    public void testThread01(){
+    public void testThread01() {
         //int a = 100;
         //int b = 100;
         Integer integer01 = 120;
         Integer integer02 = 120;
-        System.out.println(integer01==integer02);
+        System.out.println(integer01 == integer02);
         System.out.println(integer01.equals(integer02));
 
         //String s01 = "Hello";

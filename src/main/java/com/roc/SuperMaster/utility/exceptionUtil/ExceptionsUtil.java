@@ -15,20 +15,20 @@ import org.junit.Test;
 public class ExceptionsUtil {
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/11/18 17:15
      * @Version 1.0
      * @Description: ToDo
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
-    public void testException(){
+    public void testException() {
         int a = 1;
         int b = 0;
         try {
-            System.out.println(a/b);
+            System.out.println(a / b);
         } catch (ArithmeticException e) {
             System.out.println("123");
             //添加throw将异常直接抛出，程序终止

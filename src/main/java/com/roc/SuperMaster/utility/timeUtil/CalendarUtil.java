@@ -51,7 +51,7 @@ public class CalendarUtil {
         HashMultimap<Integer, String> objectHashMultimap = HashMultimap.create();
         for (String dateDay : dayList) {
             LocalDate parse = LocalDate.parse(dateDay);
-            objectHashMultimap.put(getDayOfWeek(parse),dateDay );
+            objectHashMultimap.put(getDayOfWeek(parse), dateDay);
         }
         System.out.println(objectHashMultimap.keySet().stream().filter(p -> !p.toString().equals("6") && !p.toString().equals("7")).sorted().collect(Collectors.toList()));
         List<String> stringList = objectHashMultimap.entries().stream().filter(p -> !p.toString().equals("6") && !p.toString().equals("7")).map(Map.Entry::getValue).collect(Collectors.toList());

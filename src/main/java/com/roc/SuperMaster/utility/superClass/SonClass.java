@@ -8,7 +8,7 @@ package com.roc.SuperMaster.utility.superClass;
  * @Description 探究父类与子类的加载顺序
  * @UpdateUser Roc
  */
-public class SonClass extends FatherClass{
+public class SonClass extends FatherClass {
 
     public static final String SON_NAME = "I am Son.3";
 

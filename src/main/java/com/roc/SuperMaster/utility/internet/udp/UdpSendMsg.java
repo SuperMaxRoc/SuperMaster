@@ -14,12 +14,12 @@ import java.net.InetAddress;
  */
 public class UdpSendMsg {
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         DatagramSocket datagramSocket = new DatagramSocket();
         InetAddress inetAddress = InetAddress.getByName("localhost");
         int port = 9999;
         byte[] bytes = "你好".getBytes();
-        DatagramPacket datagramPacket = new DatagramPacket(bytes,0,bytes.length,inetAddress,port);
+        DatagramPacket datagramPacket = new DatagramPacket(bytes, 0, bytes.length, inetAddress, port);
         datagramSocket.send(datagramPacket);
         datagramSocket.close();
     }

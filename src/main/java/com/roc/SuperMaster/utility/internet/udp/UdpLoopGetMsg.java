@@ -24,7 +24,7 @@ public class UdpLoopGetMsg {
             String s = new String(datagramPacket.getData(), 0, datagramPacket.getData().length);
             System.out.println(s);
             bytes = new byte[1024];
-            if (s.equals("bye")){
+            if (s.equals("bye")) {
                 break;
             }
         }

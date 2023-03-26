@@ -32,7 +32,7 @@ public class FatherClass {
         System.out.println("父类：有参构造方法6");
     }
 
-    public void sayHello(){
+    public void sayHello() {
         {
             System.out.println("父类：普通代码块");
         }

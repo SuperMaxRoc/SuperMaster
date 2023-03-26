@@ -15,7 +15,7 @@ import java.net.Socket;
  * @UpdateUser Roc
  */
 public class TcpServerGetMsg {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
 
         ServerSocket serverSocket = null;
         Socket accept = null;

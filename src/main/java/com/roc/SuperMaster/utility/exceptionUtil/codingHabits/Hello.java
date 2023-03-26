@@ -35,10 +35,10 @@ public class Hello {
                     e.printStackTrace();
                 }
             }
-            if (socket != null){
-                try{
+            if (socket != null) {
+                try {
                     socket.close();
-                }catch (IOException e){
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }

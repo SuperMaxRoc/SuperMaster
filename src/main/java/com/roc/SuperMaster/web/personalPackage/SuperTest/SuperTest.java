@@ -1,4 +1,5 @@
 package com.roc.SuperMaster.web.personalPackage.SuperTest;
+
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.security.MessageDigest;
@@ -100,11 +101,11 @@ public class SuperTest {
 
     @Test
     public void testament() {
-        String[] strings = {"","123","   "};
+        String[] strings = {"", "123", "   "};
         for (String string : strings) {
             if (org.apache.commons.lang3.StringUtils.isBlank(string)) {
                 System.out.println("这是一个空空kong值");
-            }else {
+            } else {
                 System.out.println("这不是一个空空值");
             }
         }
@@ -114,12 +115,12 @@ public class SuperTest {
      * String.format
      */
     @Test
-    public  void testStringFormat(){
-        System.out.printf("%s,123%s，%s%n","ssss","qqq","www");
+    public void testStringFormat() {
+        System.out.printf("%s,123%s，%s%n", "ssss", "qqq", "www");
     }
 
     @Test
-    public void testString(){
+    public void testString() {
         ArrayList<Students> students = new ArrayList<>();
         students.add(new Students());
         JSONArray objects = JSONArray.parseArray(JSON.toJSONString(students));
@@ -143,7 +144,7 @@ public class SuperTest {
      * UrlBuilder
      */
     @Test
-    public void testURLBuilder(){
+    public void testURLBuilder() {
         String url = new UrlBuilder().setScheme("https")
                 .setHost("192.168.0.0")
                 .setPort(9999)
@@ -153,8 +154,8 @@ public class SuperTest {
     }
 
     @Test
-    public void subString(){
-        String target ="GA0T720000032N5LRTZE";
+    public void subString() {
+        String target = "GA0T720000032N5LRTZE";
 
         if (target.length() > 20) {
             target = target.substring(0, 13);
@@ -165,22 +166,22 @@ public class SuperTest {
     }
 
     @Test
-    public void subList(){
+    public void subList() {
         double abacus = (double) 14;
         double babble = 20.0;
-        System.out.println((int)(Math.ceil(abacus/babble)));
-        System.out.println(1<2.0);
+        System.out.println((int) (Math.ceil(abacus / babble)));
+        System.out.println(1 < 2.0);
     }
 
     @Test
     public void testMathCeil() {
-        ArrayList<String>       list = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<>();
         list.add("a");
         list.add("b");
         list.add("c");
         int serviceCodeListen = 1;
         int pageSize = 20;
-        int pageNum =   1;
+        int pageNum = 1;
         int pageStartIndex;
         if ((int) (Math.ceil((double) serviceCodeListen / (double) pageSize)) < pageNum) {
             pageStartIndex = ((int) (Math.ceil((double) serviceCodeListen / (double) pageSize) - 1) * pageSize);
@@ -192,20 +193,21 @@ public class SuperTest {
     }
 
     @Test
-    public void testReplace(){
+    public void testReplace() {
         String phone = "15612345678";
         System.out.println(phone.length());
-        if (phone.length() == 11){
-            System.out.println(phone.replaceAll("(\\d{3})\\d{4}(\\d{4})","$1****$2"));
+        if (phone.length() == 11) {
+            System.out.println(phone.replaceAll("(\\d{3})\\d{4}(\\d{4})", "$1****$2"));
         }
     }
+
     @Test
-    public void testSubString(){
+    public void testSubString() {
         String phone = "山东省德州市";
         //System.out.println(phone.replace(phone.substring(3), "****************"));
-        System.out.println((int)Math.floor(0.0));
-        System.out.println((int)Math.floor(2.7));
-        System.out.println((int)Math.floor(2.1));
+        System.out.println((int) Math.floor(0.0));
+        System.out.println((int) Math.floor(2.7));
+        System.out.println((int) Math.floor(2.1));
     }
 
 }

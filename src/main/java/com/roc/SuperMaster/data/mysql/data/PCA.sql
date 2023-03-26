@@ -1,22 +1,47 @@
-use school;
+use
+school;
 
 drop table if exists PCA;
 
 create table if not exists PCA
 (
-    pca_id        bigint auto_increment primary key not null comment 'ID',
-    pca_code      varchar(250)                      not null comment '行政区code',
-    pca_name      varchar(250)                      not null comment '行政区name',
-    remarks       text                              null comment '备注',
-    create_by     varchar(250)                      null comment '创建人',
-    create_time   datetime                          null comment '创建时间',
-    update_by     varchar(250)                      null comment '更新人',
-    update_time   datetime                          null comment '更新时间',
-    delete_by     varchar(250)                      null comment '删除人',
-    delete_time   datetime                          null comment '删除时间',
-    delete_status boolean default false             null comment '删除状态'
-) character set UTF8
-  ENGINE = InnoDB comment '2018版全国行政区代码表';
+    pca_id
+    bigint
+    auto_increment
+    primary
+    key
+    not
+    null
+    comment
+    'ID',
+    pca_code
+    varchar
+(
+    250
+) not null comment '行政区code',
+    pca_name varchar
+(
+    250
+) not null comment '行政区name',
+    remarks text null comment '备注',
+    create_by varchar
+(
+    250
+) null comment '创建人',
+    create_time datetime null comment '创建时间',
+    update_by varchar
+(
+    250
+) null comment '更新人',
+    update_time datetime null comment '更新时间',
+    delete_by varchar
+(
+    250
+) null comment '删除人',
+    delete_time datetime null comment '删除时间',
+    delete_status boolean default false null comment '删除状态'
+    ) character set UTF8
+    ENGINE = InnoDB comment '2018版全国行政区代码表';
 
 INSERT INTO school.pca (pca_id, pca_code, pca_name, remarks, create_by, create_time, update_by, update_time, delete_by,
                         delete_time, delete_status)

@@ -41,13 +41,13 @@ public class SparseArrayUtils {
     }
 
     /**
+     * @param
+     * @return void
      * @Author: WP
      * @Date: 2021/11/16 16:20
      * @Version 1.0
      * @Description: 二维数组的遍历
      * @UpdateUser WP
-     * @param
-     * @return void
      */
     @Test
     public void testTwoArrays() {
@@ -99,13 +99,13 @@ public class SparseArrayUtils {
     }
 
     /**
+     * @param ints
+     * @return void
      * @Author: WP
      * @Date: 2021/11/16 16:11
      * @Version 1.0
      * @Description: 目标二维数组转换为稀疏数组
      * @UpdateUser WP
-     * @param ints
-     * @return void
      */
     public static int[][] sparseArraysConvert(int[][] ints) {
 
@@ -122,7 +122,7 @@ public class SparseArrayUtils {
         //值的个数
         int numCount = 0;
 
-        if (ints.length != 0){
+        if (ints.length != 0) {
             //寻找值的个数
             for (int i = 0; i < ints.length; i++) {
                 for (int j = 0; j < ints[i].length; j++) {
@@ -133,7 +133,7 @@ public class SparseArrayUtils {
             }
 
             //用于接收数据的稀疏数组
-            int[][] sparse = new int[numCount+1][3];
+            int[][] sparse = new int[numCount + 1][3];
             //给与稀疏数组赋值：优先存储目标二维数组的基础信息：几行几列，几个特殊值
             sparse[0][0] = ints.length;
             sparse[0][1] = ints[0].length;
@@ -152,22 +152,22 @@ public class SparseArrayUtils {
                 }
             }
             return sparse;
-        }else {
+        } else {
             System.out.println("~~~~~~~~~目标数组不规范~~~~~~~~~");
             return null;
         }
     }
 
     /**
+     * @param ints
+     * @return int[][]
      * @Author: WP
      * @Date: 2021/11/16 17:04
      * @Version 1.0
      * @Description: 稀疏数组转换为原始数组
      * @UpdateUser WP
-     * @param ints
-     * @return int[][]
      */
-    public static int[][] twoArraysConvert(int[][] ints){
+    public static int[][] twoArraysConvert(int[][] ints) {
         int row = ints[0][0];
         int col = ints[0][1];
         int[][] target = new int[row][col];
@@ -176,8 +176,8 @@ public class SparseArrayUtils {
         int colNum = 0;
 
         for (int i = 1; i < ints.length; i++) {
-            rowNum =ints[i][0] ;
-            colNum = ints[i][1] ;
+            rowNum = ints[i][0];
+            colNum = ints[i][1];
             target[rowNum][colNum] = ints[i][2];
         }
         return target;

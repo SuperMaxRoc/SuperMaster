@@ -13,7 +13,7 @@ import org.junit.Test;
 public class QuickSort {
 
     @Test
-    public void quickSort(){
+    public void quickSort() {
 
     }
 

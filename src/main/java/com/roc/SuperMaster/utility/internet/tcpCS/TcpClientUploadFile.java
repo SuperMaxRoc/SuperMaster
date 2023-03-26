@@ -36,8 +36,8 @@ public class TcpClientUploadFile {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         byte[] buffer02 = new byte[1024];
         int len02 = 0;
-        while((len02 = inputStream.read(buffer02)) != -1){
-            byteArrayOutputStream.write(buffer02,0,len02);
+        while ((len02 = inputStream.read(buffer02)) != -1) {
+            byteArrayOutputStream.write(buffer02, 0, len02);
         }
         System.out.println(byteArrayOutputStream.toString());
 

@@ -22,7 +22,6 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -116,5 +115,14 @@ public class CustomEasyPoiUtil {
             list.add(listen);
         }
         return list;
+    }
+
+    public void testament() {
+        List<ColumnInfo> columnInfoList = new ArrayList<>();
+        for (ColumnInfo columnInfo : columnInfoList) {
+            List<String> objects = ListUtils.newArrayList();
+            objects.add(columnInfo.getExcelHeaderName());
+            ListUtils.newArrayList().add(objects.stream().sorted().collect(Collectors.toList()));
+        }
     }
 }

@@ -10,7 +10,7 @@ package com.roc.SuperMaster.utility.internet.udp.udpAndThread;
  */
 public class ChatA {
     public static void main(String[] args) {
-        new Thread(new SentThread(9999,"localhost",7777)).start();
-        new Thread(new ReceiveThread("ChatB",8888)).start();
+        new Thread(new SentThread(9999, "localhost", 7777)).start();
+        new Thread(new ReceiveThread("ChatB", 8888)).start();
     }
 }

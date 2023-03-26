@@ -40,14 +40,15 @@ public class InternetUtil {
     }
 
     @Test
-    public void testInfo(){
+    public void testInfo() {
         System.out.println(f(10));
     }
-    public static long f(long i){
-        if (i==1){
+
+    public static long f(long i) {
+        if (i == 1) {
             return 1;
-        }else {
-            return i*f(i-1);
+        } else {
+            return i * f(i - 1);
         }
     }
 }
