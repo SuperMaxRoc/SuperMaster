@@ -8,6 +8,7 @@ import com.roc.SuperMaster.entity.serviceDomain.Students;
 import com.roc.SuperMaster.mapper.StudentsMapper;
 import com.roc.SuperMaster.service.ParseIdCardService;
 import com.roc.SuperMaster.service.StudentsService;
+import com.roc.SuperMaster.utility.springUtil.LogAnnotation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -180,5 +181,11 @@ public class StudentsServiceImpl extends ServiceImpl<StudentsMapper, Students> i
             log.error("捕获异常信息：{}", e.getMessage());
             return false;
         }
+    }
+
+    @Override
+    @LogAnnotation
+    public String testLogAnnotation(String name) {
+        return "Hello " + name;
     }
 }

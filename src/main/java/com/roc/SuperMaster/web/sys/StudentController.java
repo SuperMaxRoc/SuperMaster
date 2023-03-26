@@ -1,7 +1,6 @@
 package com.roc.SuperMaster.web.sys;
 
 import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.github.jsonzou.jmockdata.JMockData;
 import com.github.jsonzou.jmockdata.TypeReference;
@@ -10,12 +9,12 @@ import com.roc.SuperMaster.mapper.StudentsMapper;
 import com.roc.SuperMaster.service.FormatSQLService;
 import com.roc.SuperMaster.service.ParseIdCardService;
 import com.roc.SuperMaster.service.StudentsService;
+import com.roc.SuperMaster.utility.springUtil.LogAnnotation;
 import com.roc.SuperMaster.utility.webResult.ExecuteResult;
 import com.roc.SuperMaster.utility.webResult.WebApiResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -123,17 +122,22 @@ public class StudentController {
         return mock;
     }
 
-    @Test
-    public void testCode() {
-        String connect = null;
+    @GetMapping("/testCode")
+    @LogAnnotation
+    public String testCode(
+            @RequestParam String code,
+            @RequestBody List<Students> testament
+    ) {
+        //String connect = null;
 
-        JSONObject jsonObject = new JSONObject() {{
-            put("expno", null);
-            put("orderno", "nihao");
-        }};
-
-        connect = JSONObject.toJSONString(jsonObject, SerializerFeature.WriteMapNullValue);
-        System.out.println(connect);
+        //JSONObject jsonObject = new JSONObject() {{
+        //    put("expno", null);
+        //    put("orderno", "nihao");
+        //}};
+        //connect = JSONObject.toJSONString(jsonObject, SerializerFeature.WriteMapNullValue);
+        System.out.println(code);
+        //System.out.println(1/0);
+        return studentsService.testLogAnnotation(code);
     }
 
     @PostMapping("formatSQL")

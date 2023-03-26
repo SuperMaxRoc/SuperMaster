@@ -70,4 +70,6 @@ public abstract interface StudentsService extends IService<Students> {
      */
     Boolean insertStudent(Students student);
 
+    String testLogAnnotation(String name);
+
 }
