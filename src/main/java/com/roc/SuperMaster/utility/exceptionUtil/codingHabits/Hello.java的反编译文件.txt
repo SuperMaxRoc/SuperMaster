@@ -1,0 +1,99 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.Socket;
+
+public class Hello {
+    public Hello() {
+    }
+
+    public static void main(String[] var0) {
+        Socket var1 = null;
+        OutputStream var2 = null;
+
+        try {
+            var1 = new Socket();
+            var2 = var1.getOutputStream();
+            String var3 = "你好";
+            var2.write(var3.getBytes(), 0, var3.getBytes().length);
+            System.out.println(var2.toString());
+        } catch (Exception var16) {
+            var16.printStackTrace();
+        } finally {
+            if (var2 != null) {
+                try {
+                    var2.close();
+                } catch (IOException var15) {
+                    var15.printStackTrace();
+                }
+            }
+
+            if (var1 != null) {
+                try {
+                    var1.close();
+                } catch (IOException var14) {
+                    var14.printStackTrace();
+                }
+            }
+
+        }
+
+    }
+
+    public void testTryWithResource() {
+        try {
+            Socket var1 = new Socket();
+            Throwable var2 = null;
+
+            try {
+                OutputStream var3 = var1.getOutputStream();
+                Throwable var4 = null;
+
+                try {
+                    String var5 = "你好";
+                    var3.write(var5.getBytes(), 0, var5.getBytes().length);
+                    System.out.println(var3.toString());
+                } catch (Throwable var29) {
+                    var4 = var29;
+                    throw var29;
+                } finally {
+                    if (var3 != null) {
+                        if (var4 != null) {
+                            try {
+                                var3.close();
+                            } catch (Throwable var28) {
+                                var4.addSuppressed(var28);
+                            }
+                        } else {
+                            var3.close();
+                        }
+                    }
+
+                }
+            } catch (Throwable var31) {
+                var2 = var31;
+                throw var31;
+            } finally {
+                if (var1 != null) {
+                    if (var2 != null) {
+                        try {
+                            var1.close();
+                        } catch (Throwable var27) {
+                            var2.addSuppressed(var27);
+                        }
+                    } else {
+                        var1.close();
+                    }
+                }
+
+            }
+        } catch (Exception var33) {
+            var33.printStackTrace();
+        }
+
+    }
+}
